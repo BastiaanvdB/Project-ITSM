@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1Gz/OxgtLpo3/UzoKHxnJ9C2teMcG6jgj/jra8R8OA39JlPawiQGFkRLGzm8eKinKmo4UHK9gAW55bc3QJaUbg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\basti\\Desktop\\NoSQL Test\\NoDesk\\NoDeskModels\\NoDeskModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\basti\\.nuget\\packages\\mongodb.bson\\2.13.1\\mongodb.bson.2.13.1.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

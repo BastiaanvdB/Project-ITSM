@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Test_Terminal</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NoDeskDAL\NoDeskDAL.csproj" />
+    <ProjectReference Include="..\NoDeskModels\NoDeskModels.csproj" />
+  </ItemGroup>
+
+</Project>
