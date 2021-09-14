@@ -7,8 +7,46 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "NoDeskUI/1.0.0": {
+        "dependencies": {
+          "ScottPlot": "4.1.20",
+          "ScottPlot.WinForms": "4.1.20"
+        },
         "runtime": {
           "NoDeskUI.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/5.0.0": {},
+      "Microsoft.Win32.SystemEvents/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        }
+      },
+      "ScottPlot/4.1.20": {
+        "dependencies": {
+          "System.Drawing.Common": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/ScottPlot.dll": {
+            "assemblyVersion": "4.1.20.0",
+            "fileVersion": "4.1.20.0"
+          }
+        }
+      },
+      "ScottPlot.WinForms/4.1.20": {
+        "dependencies": {
+          "ScottPlot": "4.1.20",
+          "System.Drawing.Common": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/ScottPlot.WinForms.dll": {
+            "assemblyVersion": "4.1.20.0",
+            "fileVersion": "4.1.20.0"
+          }
+        }
+      },
+      "System.Drawing.Common/5.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
         }
       }
     }
@@ -18,6 +56,41 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "ScottPlot/4.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yBTQj+ZpC4Xy6V4alcqTbz6VrPHS6xSYW9Qxhc1O0drWSZTx9NM1Qk6NGTafG1eGm/JHMxgSD6fwZfhpDPjKqw==",
+      "path": "scottplot/4.1.20",
+      "hashPath": "scottplot.4.1.20.nupkg.sha512"
+    },
+    "ScottPlot.WinForms/4.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AwcG/uacQTPrBFwC/is4ZT0v6XmWUz3pUPTvwKGza73t8XfJ8boQwsUfI0M//0QIPs4BqUm0T27jDrTly5d5Ow==",
+      "path": "scottplot.winforms/4.1.20",
+      "hashPath": "scottplot.winforms.4.1.20.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
+      "path": "system.drawing.common/5.0.0",
+      "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
     }
   }
 }

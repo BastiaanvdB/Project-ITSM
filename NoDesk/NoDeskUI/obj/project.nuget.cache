@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "JEz4X8s8qSe479Z57TutRuYy7829u1HW8C5ZxIk1A0tYjg1lAExd54HO+AGl4tOHFMK2/elRCml1hS88zttPGQ==",
+  "dgSpecHash": "iGjg7vyi6sy4xIgGLw/ip81hzlgztQdhSOd6pGfees0x1kBGVq7qiOPAe/uESDMrdOQox2yW2sk3hIFyrZhvzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\scottplot\\4.1.20\\scottplot.4.1.20.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\scottplot.winforms\\4.1.20\\scottplot.winforms.4.1.20.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
