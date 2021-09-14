@@ -26,18 +26,42 @@ namespace NoDeskUI
         private void TestCharts()
         {
             // chart 1
-            double[] values1 = { 7, 15 };
-            formsPlotUnresolved.Plot.AddPie(values1, true);
+
+            double[] values = { 7, 15 };
+            string centerTextpieUnresolved = $"{7}/{15}";
+            
+            var pieUnresolved = formsPlotUnresolved.plt.AddPie(values);
+            pieUnresolved.DonutSize = .6;
+            pieUnresolved.DonutLabel = centerTextpieUnresolved;
+            pieUnresolved.CenterFont.Color = Color.Black;
+            pieUnresolved.Explode = true;
+            pieUnresolved.SliceFillColors = new Color[] { Color.Orange, Color.LightGray };
             formsPlotUnresolved.Render();
 
             // chart 2
+ 
             double[] values2 = { 7, 15 };
-            formsPlotPastDeadline.Plot.AddPie(values2, true);
+            string centerTextpiePastDeadline = $"{1}";
+
+            var piePastDeadline = formsPlotPastDeadline.plt.AddPie(values);
+            piePastDeadline.DonutSize = .6;
+            piePastDeadline.DonutLabel = centerTextpiePastDeadline;
+            piePastDeadline.CenterFont.Color = Color.Black;
+            piePastDeadline.Explode = true;
+            piePastDeadline.SliceFillColors = new Color[] { Color.Red, Color.LightGray };
             formsPlotPastDeadline.Render();
 
             // chart 3
-            double[] values3 = { 7, 15 };
-            formsPlotResolved.Plot.AddPie(values3, true);
+
+            double[] valuesPieResolved = { 7, 15 };
+            string centerTextPieResolved = $"{16}";
+
+            var pieResolved = formsPlotResolved.plt.AddPie(values);
+            pieResolved.DonutSize = .6;
+            pieResolved.DonutLabel = centerTextPieResolved;
+            pieResolved.CenterFont.Color = Color.Black;
+            pieResolved.Explode = true;
+            pieResolved.SliceFillColors = new Color[] { Color.Green, Color.LightGray };
             formsPlotResolved.Render();
         }
 

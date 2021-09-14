@@ -19,3 +19,4 @@ C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.WinForms.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CopyComplete
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.AssemblyReference.cache
