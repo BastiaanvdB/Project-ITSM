@@ -1,5 +1,5 @@
 ﻿using System;
-using NoDeskDAL;
+using NoDeskLogic;
 using NoDeskModels;
 namespace Test_Terminal
 {
@@ -13,9 +13,9 @@ namespace Test_Terminal
 
         public void Start()
         {
-            Ticket_DAL ticket_DAL = new Ticket_DAL();
-            
-            var recs = ticket_DAL.GetTickets();
+            // test
+            Ticket_Service ticket_Service = new Ticket_Service();
+            var recs = ticket_Service.GetTickets();
 
             foreach (var rec in recs)
             {

@@ -14,18 +14,21 @@ namespace NoDeskDAL
             this.db = client.GetDatabase("NoDesk");
         }
 
+        // Insert Records
         protected void InsertRecord<T>(string table, T record)
         {
             var collection = db.GetCollection<T>(table);
             collection.InsertOne(record);
         }
 
+        // Get records
         protected List<T> LoadRecords<T>(string table)
         {
             var collection = db.GetCollection<T>(table);
             return collection.Find(new BsonDocument()).ToList();
         }
 
+        // Get specific record by id
         protected T LoadRecordById<T>(string table, Guid id)
         {
             var collection = db.GetCollection<T>(table);
@@ -33,6 +36,7 @@ namespace NoDeskDAL
             return collection.Find(filter).First();
         }
 
+        // Update specific record by id
         protected void UpdateRecordById<T>(string table, Guid id, UpdateDefinition<T> Record)
         {
             var collection = db.GetCollection<T>(table);
@@ -40,6 +44,7 @@ namespace NoDeskDAL
             collection.UpdateOne(filter, Record, new UpdateOptions() { IsUpsert = true });
         }
 
+        // Delete specific record by id
         protected void DeleteRecordById<T>(string table, Guid id)
         {
             var collection = db.GetCollection<T>(table);

@@ -182,6 +182,20 @@
           "bin/placeholder/NoDeskDAL.dll": {}
         }
       },
+      "NoDeskLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "NoDeskDAL": "1.0.0",
+          "NoDeskModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NoDeskLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NoDeskLogic.dll": {}
+        }
+      },
       "NoDeskModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -474,6 +488,11 @@
       "path": "../NoDeskDAL/NoDeskDAL.csproj",
       "msbuildProject": "../NoDeskDAL/NoDeskDAL.csproj"
     },
+    "NoDeskLogic/1.0.0": {
+      "type": "project",
+      "path": "../NoDeskLogic/NoDeskLogic.csproj",
+      "msbuildProject": "../NoDeskLogic/NoDeskLogic.csproj"
+    },
     "NoDeskModels/1.0.0": {
       "type": "project",
       "path": "../NoDeskModels/NoDeskModels.csproj",
@@ -482,7 +501,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "NoDeskDAL >= 1.0.0",
+      "NoDeskLogic >= 1.0.0",
       "NoDeskModels >= 1.0.0"
     ]
   },
@@ -522,8 +541,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj": {
-              "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj"
+            "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj": {
+              "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj"
             },
             "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
               "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"

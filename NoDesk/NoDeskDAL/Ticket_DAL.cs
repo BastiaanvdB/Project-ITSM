@@ -27,9 +27,9 @@ namespace NoDeskDAL
             UpdateRecordById("Tickets", ticket.Id, update);
         }
 
-        public void DeleteTicketById()
+        public void DeleteTicketById(Ticket ticket)
         {
-
+            DeleteRecordById<Ticket>("Tickets", ticket.Id);
         }
     }
 }

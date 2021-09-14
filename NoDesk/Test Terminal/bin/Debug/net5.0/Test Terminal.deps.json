@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Test Terminal/1.0.0": {
         "dependencies": {
-          "NoDeskDAL": "1.0.0",
+          "NoDeskLogic": "1.0.0",
           "NoDeskModels": "1.0.0"
         },
         "runtime": {
@@ -133,6 +133,15 @@
           "NoDeskDAL.dll": {}
         }
       },
+      "NoDeskLogic/1.0.0": {
+        "dependencies": {
+          "NoDeskDAL": "1.0.0",
+          "NoDeskModels": "1.0.0"
+        },
+        "runtime": {
+          "NoDeskLogic.dll": {}
+        }
+      },
       "NoDeskModels/1.0.0": {
         "dependencies": {
           "MongoDB.Bson": "2.13.1"
@@ -220,6 +229,11 @@
       "hashPath": "system.text.encoding.codepages.4.5.1.nupkg.sha512"
     },
     "NoDeskDAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NoDeskLogic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
