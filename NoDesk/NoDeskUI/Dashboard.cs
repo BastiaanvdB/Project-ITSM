@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ScottPlot;
 using ScottPlot.Renderable;
 namespace NoDeskUI
 {
@@ -26,43 +27,44 @@ namespace NoDeskUI
         private void TestCharts()
         {
             // chart 1
-
-            double[] values = { 7, 15 };
-            string centerTextpieUnresolved = $"{7}/{15}";
-            
-            var pieUnresolved = formsPlotUnresolved.plt.AddPie(values);
-            pieUnresolved.DonutSize = .6;
-            pieUnresolved.DonutLabel = centerTextpieUnresolved;
-            pieUnresolved.CenterFont.Color = Color.Black;
-            pieUnresolved.Explode = true;
-            pieUnresolved.SliceFillColors = new Color[] { Color.Orange, Color.LightGray };
-            formsPlotUnresolved.Render();
+            double[] values = { 15, 35, 12 };
+            string[] labels = { "Solved", "Unresolved", "Past deadline"};
+            var PlotDayPie = formsPlotDayPie.plt.AddPie(values);
+            PlotDayPie.SliceLabels = labels;
+            PlotDayPie.ShowLabels = true;
+            PlotDayPie.Explode = true;
+            PlotDayPie.SliceFillColors = new Color[] { Color.Green, Color.SteelBlue, Color.DarkOrange };
+            formsPlotDayPie.Render();
 
             // chart 2
- 
-            double[] values2 = { 7, 15 };
-            string centerTextpiePastDeadline = $"{1}";
+            // generate random data to plot
+            int groupCount = 7;
+            Random rand = new(0);
+            double[] values1 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            double[] values2 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            double[] values3 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            double[] errors1 = DataGen.RandomNormal(rand, groupCount, 0, 0);
+            double[] errors2 = DataGen.RandomNormal(rand, groupCount, 0, 0);
+            double[] errors3 = DataGen.RandomNormal(rand, groupCount, 0, 0);
 
-            var piePastDeadline = formsPlotPastDeadline.plt.AddPie(values);
-            piePastDeadline.DonutSize = .6;
-            piePastDeadline.DonutLabel = centerTextpiePastDeadline;
-            piePastDeadline.CenterFont.Color = Color.Black;
-            piePastDeadline.Explode = true;
-            piePastDeadline.SliceFillColors = new Color[] { Color.Red, Color.LightGray };
-            formsPlotPastDeadline.Render();
+            // group all data together
+            string[] groupNames = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            string[] seriesNames = { "Unresolved", "Past deadline", "Resolved" };
+            double[][] valuesBySeries = { values1, values2, values3 };
+            double[][] errorsBySeries = { errors1, errors2, errors3 };
 
-            // chart 3
+            chartWeek.ForeColor = Color.Red;
 
-            double[] valuesPieResolved = { 7, 15 };
-            string centerTextPieResolved = $"{16}";
+            // add the grouped bar plots and show a legend
+            chartWeek.plt.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
+            chartWeek.plt.Legend(location: Alignment.UpperRight);
 
-            var pieResolved = formsPlotResolved.plt.AddPie(values);
-            pieResolved.DonutSize = .6;
-            pieResolved.DonutLabel = centerTextPieResolved;
-            pieResolved.CenterFont.Color = Color.Black;
-            pieResolved.Explode = true;
-            pieResolved.SliceFillColors = new Color[] { Color.Green, Color.LightGray };
-            formsPlotResolved.Render();
+
+
+            chartWeek.BackColor = Color.White;
+            chartWeek.plt.SetAxisLimits(yMin: 0);
+            
+            chartWeek.Render();
         }
 
     }

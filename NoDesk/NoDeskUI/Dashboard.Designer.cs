@@ -37,22 +37,17 @@ namespace NoDeskUI
             this.DashboardBTN = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.formsPlotUnresolved = new ScottPlot.FormsPlot();
-            this.formsPlotPastDeadline = new ScottPlot.FormsPlot();
-            this.formsPlotResolved = new ScottPlot.FormsPlot();
+            this.formsPlotDayPie = new ScottPlot.FormsPlot();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chartWeek = new ScottPlot.FormsPlot();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -101,7 +96,7 @@ namespace NoDeskUI
             this.UMBTN.Name = "UMBTN";
             this.UMBTN.Size = new System.Drawing.Size(199, 51);
             this.UMBTN.TabIndex = 2;
-            this.UMBTN.Text = "Incident Management";
+            this.UMBTN.Text = "User Management";
             this.UMBTN.UseVisualStyleBackColor = false;
             // 
             // IMBTN
@@ -134,10 +129,10 @@ namespace NoDeskUI
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::NoDeskUI.Properties.Resources.panel_R;
-            this.pictureBox2.Location = new System.Drawing.Point(371, 151);
+            this.pictureBox2.Image = global::NoDeskUI.Properties.Resources.panel_big_R;
+            this.pictureBox2.Location = new System.Drawing.Point(383, 151);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(295, 449);
+            this.pictureBox2.Size = new System.Drawing.Size(619, 449);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -152,42 +147,14 @@ namespace NoDeskUI
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // formsPlotDayPie
             // 
-            this.pictureBox1.Image = global::NoDeskUI.Properties.Resources.panel_R;
-            this.pictureBox1.Location = new System.Drawing.Point(706, 151);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(295, 449);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // formsPlotUnresolved
-            // 
-            this.formsPlotUnresolved.BackColor = System.Drawing.Color.Transparent;
-            this.formsPlotUnresolved.Location = new System.Drawing.Point(37, 225);
-            this.formsPlotUnresolved.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.formsPlotUnresolved.Name = "formsPlotUnresolved";
-            this.formsPlotUnresolved.Size = new System.Drawing.Size(295, 342);
-            this.formsPlotUnresolved.TabIndex = 5;
-            // 
-            // formsPlotPastDeadline
-            // 
-            this.formsPlotPastDeadline.BackColor = System.Drawing.Color.Transparent;
-            this.formsPlotPastDeadline.Location = new System.Drawing.Point(371, 225);
-            this.formsPlotPastDeadline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.formsPlotPastDeadline.Name = "formsPlotPastDeadline";
-            this.formsPlotPastDeadline.Size = new System.Drawing.Size(295, 342);
-            this.formsPlotPastDeadline.TabIndex = 6;
-            // 
-            // formsPlotResolved
-            // 
-            this.formsPlotResolved.BackColor = System.Drawing.Color.Transparent;
-            this.formsPlotResolved.Location = new System.Drawing.Point(706, 225);
-            this.formsPlotResolved.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.formsPlotResolved.Name = "formsPlotResolved";
-            this.formsPlotResolved.Size = new System.Drawing.Size(295, 342);
-            this.formsPlotResolved.TabIndex = 7;
+            this.formsPlotDayPie.BackColor = System.Drawing.Color.Transparent;
+            this.formsPlotDayPie.Location = new System.Drawing.Point(37, 225);
+            this.formsPlotDayPie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.formsPlotDayPie.Name = "formsPlotDayPie";
+            this.formsPlotDayPie.Size = new System.Drawing.Size(295, 342);
+            this.formsPlotDayPie.TabIndex = 5;
             // 
             // label2
             // 
@@ -195,35 +162,11 @@ namespace NoDeskUI
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(79, 164);
+            this.label2.Location = new System.Drawing.Point(59, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 25);
+            this.label2.Size = new System.Drawing.Size(241, 25);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Unresolved incidents";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(412, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Incidents past deadline";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(772, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 25);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Resolved incidents";
+            this.label2.Text = "Today\'s incident overview";
             // 
             // label5
             // 
@@ -236,41 +179,50 @@ namespace NoDeskUI
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 11;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(398, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "These tickets need immediate attention";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(788, 189);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 17);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Amount resolved tickets ";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(107, 189);
+            this.label8.Location = new System.Drawing.Point(117, 189);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 17);
+            this.label8.Size = new System.Drawing.Size(114, 17);
             this.label8.TabIndex = 14;
-            this.label8.Text = "All tickets currently open";
+            this.label8.Text = "All current tickets";
+            // 
+            // chartWeek
+            // 
+            this.chartWeek.BackColor = System.Drawing.Color.Transparent;
+            this.chartWeek.Location = new System.Drawing.Point(383, 225);
+            this.chartWeek.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.chartWeek.Name = "chartWeek";
+            this.chartWeek.Size = new System.Drawing.Size(619, 346);
+            this.chartWeek.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(571, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(239, 25);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Weekly incident overview";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(601, 189);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "All tickets through the week";
             // 
             // NoDesk
             // 
@@ -278,17 +230,13 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 628);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.chartWeek);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.formsPlotResolved);
-            this.Controls.Add(this.formsPlotPastDeadline);
-            this.Controls.Add(this.formsPlotUnresolved);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.formsPlotDayPie);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.TopPanel);
@@ -301,7 +249,6 @@ namespace NoDeskUI
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,17 +264,13 @@ namespace NoDeskUI
         private System.Windows.Forms.Button UMBTN;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private ScottPlot.FormsPlot formsPlotUnresolved;
-        private ScottPlot.FormsPlot formsPlotPastDeadline;
-        private ScottPlot.FormsPlot formsPlotResolved;
+        private ScottPlot.FormsPlot formsPlotDayPie;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private ScottPlot.FormsPlot chartWeek;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
     }
 }
 

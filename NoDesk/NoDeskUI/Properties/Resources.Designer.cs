@@ -63,6 +63,16 @@ namespace NoDeskUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap panel_big_R {
+            get {
+                object obj = ResourceManager.GetObject("panel_big_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel_R {
             get {
                 object obj = ResourceManager.GetObject("panel_R", resourceCulture);
