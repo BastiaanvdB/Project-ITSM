@@ -10,7 +10,7 @@ namespace NoDeskDAL
         private IMongoDatabase db;
         public Base()
         {
-            var client = new MongoClient("mongodb+srv://bastiaan:2404tr2404tr@nodesk.s4ou6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            var client = new MongoClient("mongodb+srv://NoDesk:mjhq0tKtOM8CKlRR@nodesk.s4ou6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             this.db = client.GetDatabase("NoDesk");
         }
 
