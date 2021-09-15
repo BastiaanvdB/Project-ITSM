@@ -63,6 +63,16 @@ namespace NoDeskUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard_2_24 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_2_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel_big_R {
             get {
                 object obj = ResourceManager.GetObject("panel_big_R", resourceCulture);
@@ -76,6 +86,26 @@ namespace NoDeskUI.Properties {
         internal static System.Drawing.Bitmap panel_R {
             get {
                 object obj = ResourceManager.GetObject("panel_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paper_24 {
+            get {
+                object obj = ResourceManager.GetObject("paper_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_5_24 {
+            get {
+                object obj = ResourceManager.GetObject("user_5_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

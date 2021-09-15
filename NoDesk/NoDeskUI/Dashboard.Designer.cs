@@ -92,11 +92,14 @@ namespace NoDeskUI
             this.UMBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UMBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UMBTN.ForeColor = System.Drawing.Color.White;
-            this.UMBTN.Location = new System.Drawing.Point(341, 0);
+            this.UMBTN.Image = global::NoDeskUI.Properties.Resources.user_5_24;
+            this.UMBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UMBTN.Location = new System.Drawing.Point(345, 0);
             this.UMBTN.Name = "UMBTN";
-            this.UMBTN.Size = new System.Drawing.Size(199, 51);
+            this.UMBTN.Size = new System.Drawing.Size(187, 51);
             this.UMBTN.TabIndex = 2;
             this.UMBTN.Text = "User Management";
+            this.UMBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UMBTN.UseVisualStyleBackColor = false;
             // 
             // IMBTN
@@ -106,11 +109,14 @@ namespace NoDeskUI
             this.IMBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IMBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.IMBTN.ForeColor = System.Drawing.Color.White;
-            this.IMBTN.Location = new System.Drawing.Point(142, 0);
+            this.IMBTN.Image = global::NoDeskUI.Properties.Resources.paper_24;
+            this.IMBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IMBTN.Location = new System.Drawing.Point(131, 0);
             this.IMBTN.Name = "IMBTN";
-            this.IMBTN.Size = new System.Drawing.Size(199, 51);
+            this.IMBTN.Size = new System.Drawing.Size(214, 51);
             this.IMBTN.TabIndex = 1;
             this.IMBTN.Text = "Incident Management";
+            this.IMBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.IMBTN.UseVisualStyleBackColor = false;
             // 
             // DashboardBTN
@@ -120,11 +126,14 @@ namespace NoDeskUI
             this.DashboardBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DashboardBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DashboardBTN.ForeColor = System.Drawing.Color.White;
+            this.DashboardBTN.Image = global::NoDeskUI.Properties.Resources.dashboard_2_24;
+            this.DashboardBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardBTN.Location = new System.Drawing.Point(0, 0);
             this.DashboardBTN.Name = "DashboardBTN";
-            this.DashboardBTN.Size = new System.Drawing.Size(142, 51);
+            this.DashboardBTN.Size = new System.Drawing.Size(131, 51);
             this.DashboardBTN.TabIndex = 0;
             this.DashboardBTN.Text = "Dashboard";
+            this.DashboardBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DashboardBTN.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
