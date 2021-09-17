@@ -17,7 +17,7 @@ namespace NoDeskUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NoDesk());
+            Application.Run(new Login());
         }
     }
 }

@@ -11,9 +11,9 @@ using ScottPlot;
 using ScottPlot.Renderable;
 namespace NoDeskUI
 {
-    public partial class NoDesk : Form
+    public partial class Dashboard : Form
     {
-        public NoDesk()
+        public Dashboard()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace NoDeskUI
             // chart 1
             double[] values = { 15, 35, 12 };
             string[] labels = { "Solved", "Unresolved", "Past deadline"};
-            var PlotDayPie = formsPlotDayPie.plt.AddPie(values);
+            var PlotDayPie = formsPlotDayPie.Plot.AddPie(values);
             PlotDayPie.SliceLabels = labels;
             PlotDayPie.ShowLabels = true;
             PlotDayPie.Explode = true;
@@ -56,13 +56,13 @@ namespace NoDeskUI
             chartWeek.ForeColor = Color.Red;
 
             // add the grouped bar plots and show a legend
-            chartWeek.plt.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
-            chartWeek.plt.Legend(location: Alignment.UpperRight);
+            chartWeek.Plot.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
+            chartWeek.Plot.Legend(location: Alignment.UpperRight);
 
 
 
             chartWeek.BackColor = Color.White;
-            chartWeek.plt.SetAxisLimits(yMin: 0);
+            chartWeek.Plot.SetAxisLimits(yMin: 0);
             
             chartWeek.Render();
         }

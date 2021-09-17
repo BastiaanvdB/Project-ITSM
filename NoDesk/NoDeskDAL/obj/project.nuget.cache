@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "57Drap3MyhYmpyCth216k90vkCZY4mU2eTHixkUFw9LxlAKtww5FmClQA6u2qPNu47E1Bju0i0D5VrhwE5pMKw==",
+  "dgSpecHash": "Kz26butj1DDPwZVLpSxdU7nsqkoyWSgOT+a+XQT59/j3gvG6z/7ydomzM0/XlJEokkg/e+m4h1h8EINyWuHN1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj",
+  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",

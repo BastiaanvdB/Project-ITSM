@@ -1,7 +1,7 @@
 ﻿
 namespace NoDeskUI
 {
-    partial class NoDesk
+    partial class Dashboard
     {
         /// <summary>
         ///  Required designer variable.
