@@ -4,6 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>desktop-256.ico</ApplicationIcon>
+    <AssemblyName>NoDesk</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="IncidentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -20,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="IncidentManagement - Copy.resx">
+      <DependentUpon>IncidentManagement.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

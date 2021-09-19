@@ -29,6 +29,7 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.TextboxUsername = new System.Windows.Forms.TextBox();
             this.TextboxPassword = new System.Windows.Forms.TextBox();
             this.BTNLogin = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@ namespace NoDeskUI
             // TextboxUsername
             // 
             this.TextboxUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextboxUsername.Location = new System.Drawing.Point(37, 42);
+            this.TextboxUsername.Location = new System.Drawing.Point(71, 51);
             this.TextboxUsername.Name = "TextboxUsername";
             this.TextboxUsername.Size = new System.Drawing.Size(230, 29);
             this.TextboxUsername.TabIndex = 0;
@@ -47,15 +48,15 @@ namespace NoDeskUI
             // TextboxPassword
             // 
             this.TextboxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextboxPassword.Location = new System.Drawing.Point(33, 108);
+            this.TextboxPassword.Location = new System.Drawing.Point(71, 98);
             this.TextboxPassword.Name = "TextboxPassword";
-            this.TextboxPassword.Size = new System.Drawing.Size(234, 29);
+            this.TextboxPassword.Size = new System.Drawing.Size(230, 29);
             this.TextboxPassword.TabIndex = 1;
             // 
             // BTNLogin
             // 
             this.BTNLogin.BackColor = System.Drawing.Color.White;
-            this.BTNLogin.Location = new System.Drawing.Point(93, 167);
+            this.BTNLogin.Location = new System.Drawing.Point(133, 157);
             this.BTNLogin.Name = "BTNLogin";
             this.BTNLogin.Size = new System.Drawing.Size(107, 47);
             this.BTNLogin.TabIndex = 2;
@@ -82,6 +83,7 @@ namespace NoDeskUI
             this.ClientSize = new System.Drawing.Size(534, 571);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

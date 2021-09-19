@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "NoDeskUI/1.0.0": {
+      "NoDesk/1.0.0": {
         "dependencies": {
           "ScottPlot": "4.1.20",
           "ScottPlot.WinForms": "4.1.20"
         },
         "runtime": {
-          "NoDeskUI.dll": {}
+          "NoDesk.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
@@ -52,7 +52,7 @@
     }
   },
   "libraries": {
-    "NoDeskUI/1.0.0": {
+    "NoDesk/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

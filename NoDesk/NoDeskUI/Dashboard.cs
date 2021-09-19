@@ -16,11 +16,41 @@ namespace NoDeskUI
         public Dashboard()
         {
             InitializeComponent();
+            LoginInitialize();
         }
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
             TestCharts();
+        }
+
+        //tijdelijk 
+        private void LoginInitialize()
+        {
+
+            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
+            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
+
+        }
+
+        private void MenuSwitch(string menuOption)
+        {
+            switch(menuOption)
+            {
+                case "Dashboard":
+
+                    break;
+                case "IncidentManagement":
+                    IncidentManagement incidentManagement = new IncidentManagement(this);
+                    incidentManagement.Show();
+                    this.Hide();
+                    break;
+                case "UserManagement":
+                    UserManagment userManagment = new UserManagment(this);
+                    userManagment.Show();
+                    this.Hide();
+                    break;
+            }
         }
 
 
@@ -67,5 +97,14 @@ namespace NoDeskUI
             chartWeek.Render();
         }
 
+        private void IMBTN_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("IncidentManagement");
+        }
+
+        private void UMBTN_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("UserManagement");
+        }
     }
 }
