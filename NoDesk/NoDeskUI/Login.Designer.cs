@@ -42,18 +42,6 @@ namespace NoDeskUI
             this.panelRegistration = new System.Windows.Forms.Panel();
             this.groupBoxCompany = new System.Windows.Forms.GroupBox();
             this.textBoxCompany = new System.Windows.Forms.TextBox();
-            this.groupBoxAccount = new System.Windows.Forms.GroupBox();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtRegPasswordretry = new System.Windows.Forms.TextBox();
-            this.txtRegPassword = new System.Windows.Forms.TextBox();
-            this.txtRegEmail = new System.Windows.Forms.TextBox();
-            this.txtRegLastname = new System.Windows.Forms.TextBox();
-            this.txtRegFirstname = new System.Windows.Forms.TextBox();
             this.groupBoxKey = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,12 +49,24 @@ namespace NoDeskUI
             this.radioButtonCompany = new System.Windows.Forms.RadioButton();
             this.radioButtonUser = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtRegFirstname = new System.Windows.Forms.TextBox();
+            this.txtRegLastname = new System.Windows.Forms.TextBox();
+            this.txtRegEmail = new System.Windows.Forms.TextBox();
+            this.txtRegPassword = new System.Windows.Forms.TextBox();
+            this.txtRegPasswordretry = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonRegister = new System.Windows.Forms.Button();
+            this.groupBoxAccount = new System.Windows.Forms.GroupBox();
             this.panelLogin.SuspendLayout();
             this.panelRegistration.SuspendLayout();
             this.groupBoxCompany.SuspendLayout();
-            this.groupBoxAccount.SuspendLayout();
             this.groupBoxKey.SuspendLayout();
             this.groupBoxRegRole.SuspendLayout();
+            this.groupBoxAccount.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextboxUsername
@@ -195,126 +195,11 @@ namespace NoDeskUI
             // 
             // textBoxCompany
             // 
+            this.textBoxCompany.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxCompany.Location = new System.Drawing.Point(18, 27);
             this.textBoxCompany.Name = "textBoxCompany";
-            this.textBoxCompany.Size = new System.Drawing.Size(160, 25);
+            this.textBoxCompany.Size = new System.Drawing.Size(160, 27);
             this.textBoxCompany.TabIndex = 4;
-            // 
-            // groupBoxAccount
-            // 
-            this.groupBoxAccount.Controls.Add(this.buttonRegister);
-            this.groupBoxAccount.Controls.Add(this.label6);
-            this.groupBoxAccount.Controls.Add(this.label5);
-            this.groupBoxAccount.Controls.Add(this.label4);
-            this.groupBoxAccount.Controls.Add(this.label3);
-            this.groupBoxAccount.Controls.Add(this.label2);
-            this.groupBoxAccount.Controls.Add(this.txtRegPasswordretry);
-            this.groupBoxAccount.Controls.Add(this.txtRegPassword);
-            this.groupBoxAccount.Controls.Add(this.txtRegEmail);
-            this.groupBoxAccount.Controls.Add(this.txtRegLastname);
-            this.groupBoxAccount.Controls.Add(this.txtRegFirstname);
-            this.groupBoxAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxAccount.ForeColor = System.Drawing.Color.White;
-            this.groupBoxAccount.Location = new System.Drawing.Point(246, 74);
-            this.groupBoxAccount.Name = "groupBoxAccount";
-            this.groupBoxAccount.Size = new System.Drawing.Size(265, 365);
-            this.groupBoxAccount.TabIndex = 11;
-            this.groupBoxAccount.TabStop = false;
-            this.groupBoxAccount.Text = "Account";
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.White;
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRegister.Location = new System.Drawing.Point(17, 292);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(160, 37);
-            this.buttonRegister.TabIndex = 13;
-            this.buttonRegister.Text = "Register";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "E-mail:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Lastname:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Firstname:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Repeat password:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Password:";
-            // 
-            // txtRegPasswordretry
-            // 
-            this.txtRegPasswordretry.Location = new System.Drawing.Point(17, 226);
-            this.txtRegPasswordretry.Name = "txtRegPasswordretry";
-            this.txtRegPasswordretry.PasswordChar = '•';
-            this.txtRegPasswordretry.Size = new System.Drawing.Size(160, 25);
-            this.txtRegPasswordretry.TabIndex = 4;
-            // 
-            // txtRegPassword
-            // 
-            this.txtRegPassword.Location = new System.Drawing.Point(17, 176);
-            this.txtRegPassword.Name = "txtRegPassword";
-            this.txtRegPassword.PasswordChar = '•';
-            this.txtRegPassword.Size = new System.Drawing.Size(160, 25);
-            this.txtRegPassword.TabIndex = 3;
-            // 
-            // txtRegEmail
-            // 
-            this.txtRegEmail.Location = new System.Drawing.Point(17, 112);
-            this.txtRegEmail.Name = "txtRegEmail";
-            this.txtRegEmail.Size = new System.Drawing.Size(182, 25);
-            this.txtRegEmail.TabIndex = 2;
-            // 
-            // txtRegLastname
-            // 
-            this.txtRegLastname.Location = new System.Drawing.Point(141, 53);
-            this.txtRegLastname.Name = "txtRegLastname";
-            this.txtRegLastname.Size = new System.Drawing.Size(100, 25);
-            this.txtRegLastname.TabIndex = 1;
-            // 
-            // txtRegFirstname
-            // 
-            this.txtRegFirstname.Location = new System.Drawing.Point(17, 53);
-            this.txtRegFirstname.Name = "txtRegFirstname";
-            this.txtRegFirstname.Size = new System.Drawing.Size(100, 25);
-            this.txtRegFirstname.TabIndex = 0;
             // 
             // groupBoxKey
             // 
@@ -343,10 +228,10 @@ namespace NoDeskUI
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(7, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 33);
+            this.textBox1.Size = new System.Drawing.Size(187, 29);
             this.textBox1.TabIndex = 11;
             // 
             // groupBoxRegRole
@@ -399,6 +284,127 @@ namespace NoDeskUI
             this.label1.TabIndex = 6;
             this.label1.Text = "Registration";
             // 
+            // txtRegFirstname
+            // 
+            this.txtRegFirstname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegFirstname.Location = new System.Drawing.Point(17, 53);
+            this.txtRegFirstname.Name = "txtRegFirstname";
+            this.txtRegFirstname.Size = new System.Drawing.Size(113, 27);
+            this.txtRegFirstname.TabIndex = 0;
+            // 
+            // txtRegLastname
+            // 
+            this.txtRegLastname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegLastname.Location = new System.Drawing.Point(141, 53);
+            this.txtRegLastname.Name = "txtRegLastname";
+            this.txtRegLastname.Size = new System.Drawing.Size(118, 27);
+            this.txtRegLastname.TabIndex = 1;
+            // 
+            // txtRegEmail
+            // 
+            this.txtRegEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegEmail.Location = new System.Drawing.Point(17, 112);
+            this.txtRegEmail.Name = "txtRegEmail";
+            this.txtRegEmail.Size = new System.Drawing.Size(190, 27);
+            this.txtRegEmail.TabIndex = 2;
+            // 
+            // txtRegPassword
+            // 
+            this.txtRegPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegPassword.Location = new System.Drawing.Point(17, 176);
+            this.txtRegPassword.Name = "txtRegPassword";
+            this.txtRegPassword.PasswordChar = '•';
+            this.txtRegPassword.Size = new System.Drawing.Size(160, 27);
+            this.txtRegPassword.TabIndex = 3;
+            // 
+            // txtRegPasswordretry
+            // 
+            this.txtRegPasswordretry.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRegPasswordretry.Location = new System.Drawing.Point(17, 232);
+            this.txtRegPasswordretry.Name = "txtRegPasswordretry";
+            this.txtRegPasswordretry.PasswordChar = '•';
+            this.txtRegPasswordretry.Size = new System.Drawing.Size(160, 27);
+            this.txtRegPasswordretry.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Password:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Repeat password:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Firstname:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(141, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Lastname:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "E-mail:";
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.White;
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRegister.Location = new System.Drawing.Point(17, 292);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(160, 37);
+            this.buttonRegister.TabIndex = 13;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            // 
+            // groupBoxAccount
+            // 
+            this.groupBoxAccount.Controls.Add(this.buttonRegister);
+            this.groupBoxAccount.Controls.Add(this.label6);
+            this.groupBoxAccount.Controls.Add(this.label5);
+            this.groupBoxAccount.Controls.Add(this.label4);
+            this.groupBoxAccount.Controls.Add(this.label3);
+            this.groupBoxAccount.Controls.Add(this.label2);
+            this.groupBoxAccount.Controls.Add(this.txtRegPasswordretry);
+            this.groupBoxAccount.Controls.Add(this.txtRegPassword);
+            this.groupBoxAccount.Controls.Add(this.txtRegEmail);
+            this.groupBoxAccount.Controls.Add(this.txtRegLastname);
+            this.groupBoxAccount.Controls.Add(this.txtRegFirstname);
+            this.groupBoxAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxAccount.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAccount.Location = new System.Drawing.Point(246, 74);
+            this.groupBoxAccount.Name = "groupBoxAccount";
+            this.groupBoxAccount.Size = new System.Drawing.Size(265, 365);
+            this.groupBoxAccount.TabIndex = 11;
+            this.groupBoxAccount.TabStop = false;
+            this.groupBoxAccount.Text = "Account";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -419,12 +425,12 @@ namespace NoDeskUI
             this.panelRegistration.PerformLayout();
             this.groupBoxCompany.ResumeLayout(false);
             this.groupBoxCompany.PerformLayout();
-            this.groupBoxAccount.ResumeLayout(false);
-            this.groupBoxAccount.PerformLayout();
             this.groupBoxKey.ResumeLayout(false);
             this.groupBoxKey.PerformLayout();
             this.groupBoxRegRole.ResumeLayout(false);
             this.groupBoxRegRole.PerformLayout();
+            this.groupBoxAccount.ResumeLayout(false);
+            this.groupBoxAccount.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -448,19 +454,19 @@ namespace NoDeskUI
         private System.Windows.Forms.GroupBox groupBoxKey;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBoxAccount;
-        private System.Windows.Forms.TextBox txtRegEmail;
-        private System.Windows.Forms.TextBox txtRegLastname;
-        private System.Windows.Forms.TextBox txtRegFirstname;
         private System.Windows.Forms.GroupBox groupBoxCompany;
         private System.Windows.Forms.TextBox textBoxCompany;
-        private System.Windows.Forms.TextBox txtRegPasswordretry;
-        private System.Windows.Forms.TextBox txtRegPassword;
+        private System.Windows.Forms.GroupBox groupBoxAccount;
+        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.TextBox txtRegPasswordretry;
+        private System.Windows.Forms.TextBox txtRegPassword;
+        private System.Windows.Forms.TextBox txtRegEmail;
+        private System.Windows.Forms.TextBox txtRegLastname;
+        private System.Windows.Forms.TextBox txtRegFirstname;
     }
 }
