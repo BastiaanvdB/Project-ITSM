@@ -19,7 +19,13 @@ namespace NoDeskModels
         public string Email { get; set; }
         [BsonElement("Password")]
         public string Password { get; set; }
+        [BsonElement("Company")]
+        public string Company { get; set; }
         [BsonElement("Role")]
         public Roles Role { get; set; }
+        [BsonElement("ActivationCode")]
+        public string ActivationCode { get; set; }
+        [BsonElement("InviteCode")]
+        public string InviteCode { get; set; }
     }
 }

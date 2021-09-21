@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NoDeskModels;
 
-namespace NoDeskModels
+namespace NoDeskLogic
 {
-    public enum Roles
+    public class User_Service
     {
-        user, admin, god
+
+
+
+
+
     }
 }

@@ -33,13 +33,40 @@ namespace NoDeskUI
             this.TextboxUsername = new System.Windows.Forms.TextBox();
             this.TextboxPassword = new System.Windows.Forms.TextBox();
             this.BTNLogin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.linkLabelFP = new System.Windows.Forms.LinkLabel();
+            this.linkLabelR = new System.Windows.Forms.LinkLabel();
             this.labelLogo = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelRegistration = new System.Windows.Forms.Panel();
+            this.groupBoxCompany = new System.Windows.Forms.GroupBox();
+            this.textBoxCompany = new System.Windows.Forms.TextBox();
+            this.groupBoxAccount = new System.Windows.Forms.GroupBox();
+            this.buttonRegister = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRegPasswordretry = new System.Windows.Forms.TextBox();
+            this.txtRegPassword = new System.Windows.Forms.TextBox();
+            this.txtRegEmail = new System.Windows.Forms.TextBox();
+            this.txtRegLastname = new System.Windows.Forms.TextBox();
+            this.txtRegFirstname = new System.Windows.Forms.TextBox();
+            this.groupBoxKey = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBoxRegRole = new System.Windows.Forms.GroupBox();
+            this.radioButtonCompany = new System.Windows.Forms.RadioButton();
+            this.radioButtonUser = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelLogin.SuspendLayout();
+            this.panelRegistration.SuspendLayout();
+            this.groupBoxCompany.SuspendLayout();
+            this.groupBoxAccount.SuspendLayout();
+            this.groupBoxKey.SuspendLayout();
+            this.groupBoxRegRole.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextboxUsername
@@ -70,43 +97,45 @@ namespace NoDeskUI
             this.BTNLogin.UseVisualStyleBackColor = false;
             this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
             // 
-            // panel1
+            // panelLogin
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.panel1.Controls.Add(this.linkLabel2);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.labelLogo);
-            this.panel1.Controls.Add(this.labelPassword);
-            this.panel1.Controls.Add(this.labelUsername);
-            this.panel1.Controls.Add(this.TextboxUsername);
-            this.panel1.Controls.Add(this.TextboxPassword);
-            this.panel1.Controls.Add(this.BTNLogin);
-            this.panel1.Location = new System.Drawing.Point(97, 90);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 364);
-            this.panel1.TabIndex = 3;
+            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.panelLogin.Controls.Add(this.linkLabelFP);
+            this.panelLogin.Controls.Add(this.linkLabelR);
+            this.panelLogin.Controls.Add(this.labelLogo);
+            this.panelLogin.Controls.Add(this.labelPassword);
+            this.panelLogin.Controls.Add(this.labelUsername);
+            this.panelLogin.Controls.Add(this.TextboxUsername);
+            this.panelLogin.Controls.Add(this.TextboxPassword);
+            this.panelLogin.Controls.Add(this.BTNLogin);
+            this.panelLogin.Location = new System.Drawing.Point(97, 90);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(346, 364);
+            this.panelLogin.TabIndex = 3;
             // 
-            // linkLabel2
+            // linkLabelFP
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabel2.Location = new System.Drawing.Point(121, 223);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(100, 15);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Forgot password?";
+            this.linkLabelFP.AutoSize = true;
+            this.linkLabelFP.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.linkLabelFP.Location = new System.Drawing.Point(121, 223);
+            this.linkLabelFP.Name = "linkLabelFP";
+            this.linkLabelFP.Size = new System.Drawing.Size(100, 15);
+            this.linkLabelFP.TabIndex = 7;
+            this.linkLabelFP.TabStop = true;
+            this.linkLabelFP.Text = "Forgot password?";
+            this.linkLabelFP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFP_LinkClicked);
             // 
-            // linkLabel1
+            // linkLabelR
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabel1.Location = new System.Drawing.Point(221, 223);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(70, 15);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Registration";
+            this.linkLabelR.AutoSize = true;
+            this.linkLabelR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.linkLabelR.Location = new System.Drawing.Point(221, 223);
+            this.linkLabelR.Name = "linkLabelR";
+            this.linkLabelR.Size = new System.Drawing.Size(70, 15);
+            this.linkLabelR.TabIndex = 6;
+            this.linkLabelR.TabStop = true;
+            this.linkLabelR.Text = "Registration";
+            this.linkLabelR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelR_LinkClicked);
             // 
             // labelLogo
             // 
@@ -135,9 +164,240 @@ namespace NoDeskUI
             this.labelUsername.ForeColor = System.Drawing.Color.White;
             this.labelUsername.Location = new System.Drawing.Point(61, 113);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(94, 15);
+            this.labelUsername.Size = new System.Drawing.Size(41, 15);
             this.labelUsername.TabIndex = 3;
-            this.labelUsername.Text = "Username/Email";
+            this.labelUsername.Text = "E-mail";
+            // 
+            // panelRegistration
+            // 
+            this.panelRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.panelRegistration.Controls.Add(this.groupBoxCompany);
+            this.panelRegistration.Controls.Add(this.groupBoxAccount);
+            this.panelRegistration.Controls.Add(this.groupBoxKey);
+            this.panelRegistration.Controls.Add(this.groupBoxRegRole);
+            this.panelRegistration.Controls.Add(this.label1);
+            this.panelRegistration.Location = new System.Drawing.Point(-2, 0);
+            this.panelRegistration.Name = "panelRegistration";
+            this.panelRegistration.Size = new System.Drawing.Size(537, 572);
+            this.panelRegistration.TabIndex = 4;
+            // 
+            // groupBoxCompany
+            // 
+            this.groupBoxCompany.Controls.Add(this.textBoxCompany);
+            this.groupBoxCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxCompany.ForeColor = System.Drawing.Color.White;
+            this.groupBoxCompany.Location = new System.Drawing.Point(24, 270);
+            this.groupBoxCompany.Name = "groupBoxCompany";
+            this.groupBoxCompany.Size = new System.Drawing.Size(200, 71);
+            this.groupBoxCompany.TabIndex = 12;
+            this.groupBoxCompany.TabStop = false;
+            this.groupBoxCompany.Text = "Invited by";
+            // 
+            // textBoxCompany
+            // 
+            this.textBoxCompany.Location = new System.Drawing.Point(18, 27);
+            this.textBoxCompany.Name = "textBoxCompany";
+            this.textBoxCompany.Size = new System.Drawing.Size(160, 25);
+            this.textBoxCompany.TabIndex = 4;
+            // 
+            // groupBoxAccount
+            // 
+            this.groupBoxAccount.Controls.Add(this.buttonRegister);
+            this.groupBoxAccount.Controls.Add(this.label6);
+            this.groupBoxAccount.Controls.Add(this.label5);
+            this.groupBoxAccount.Controls.Add(this.label4);
+            this.groupBoxAccount.Controls.Add(this.label3);
+            this.groupBoxAccount.Controls.Add(this.label2);
+            this.groupBoxAccount.Controls.Add(this.txtRegPasswordretry);
+            this.groupBoxAccount.Controls.Add(this.txtRegPassword);
+            this.groupBoxAccount.Controls.Add(this.txtRegEmail);
+            this.groupBoxAccount.Controls.Add(this.txtRegLastname);
+            this.groupBoxAccount.Controls.Add(this.txtRegFirstname);
+            this.groupBoxAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxAccount.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAccount.Location = new System.Drawing.Point(246, 74);
+            this.groupBoxAccount.Name = "groupBoxAccount";
+            this.groupBoxAccount.Size = new System.Drawing.Size(265, 365);
+            this.groupBoxAccount.TabIndex = 11;
+            this.groupBoxAccount.TabStop = false;
+            this.groupBoxAccount.Text = "Account";
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.White;
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRegister.Location = new System.Drawing.Point(17, 292);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(160, 37);
+            this.buttonRegister.TabIndex = 13;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "E-mail:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(141, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Lastname:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Firstname:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Repeat password:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Password:";
+            // 
+            // txtRegPasswordretry
+            // 
+            this.txtRegPasswordretry.Location = new System.Drawing.Point(17, 226);
+            this.txtRegPasswordretry.Name = "txtRegPasswordretry";
+            this.txtRegPasswordretry.PasswordChar = '•';
+            this.txtRegPasswordretry.Size = new System.Drawing.Size(160, 25);
+            this.txtRegPasswordretry.TabIndex = 4;
+            // 
+            // txtRegPassword
+            // 
+            this.txtRegPassword.Location = new System.Drawing.Point(17, 176);
+            this.txtRegPassword.Name = "txtRegPassword";
+            this.txtRegPassword.PasswordChar = '•';
+            this.txtRegPassword.Size = new System.Drawing.Size(160, 25);
+            this.txtRegPassword.TabIndex = 3;
+            // 
+            // txtRegEmail
+            // 
+            this.txtRegEmail.Location = new System.Drawing.Point(17, 112);
+            this.txtRegEmail.Name = "txtRegEmail";
+            this.txtRegEmail.Size = new System.Drawing.Size(182, 25);
+            this.txtRegEmail.TabIndex = 2;
+            // 
+            // txtRegLastname
+            // 
+            this.txtRegLastname.Location = new System.Drawing.Point(141, 53);
+            this.txtRegLastname.Name = "txtRegLastname";
+            this.txtRegLastname.Size = new System.Drawing.Size(100, 25);
+            this.txtRegLastname.TabIndex = 1;
+            // 
+            // txtRegFirstname
+            // 
+            this.txtRegFirstname.Location = new System.Drawing.Point(17, 53);
+            this.txtRegFirstname.Name = "txtRegFirstname";
+            this.txtRegFirstname.Size = new System.Drawing.Size(100, 25);
+            this.txtRegFirstname.TabIndex = 0;
+            // 
+            // groupBoxKey
+            // 
+            this.groupBoxKey.Controls.Add(this.button1);
+            this.groupBoxKey.Controls.Add(this.textBox1);
+            this.groupBoxKey.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxKey.ForeColor = System.Drawing.Color.White;
+            this.groupBoxKey.Location = new System.Drawing.Point(24, 165);
+            this.groupBoxKey.Name = "groupBoxKey";
+            this.groupBoxKey.Size = new System.Drawing.Size(200, 95);
+            this.groupBoxKey.TabIndex = 10;
+            this.groupBoxKey.TabStop = false;
+            this.groupBoxKey.Text = "Enter invitation code ";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(62, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 25);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Enter";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(7, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(187, 33);
+            this.textBox1.TabIndex = 11;
+            // 
+            // groupBoxRegRole
+            // 
+            this.groupBoxRegRole.Controls.Add(this.radioButtonCompany);
+            this.groupBoxRegRole.Controls.Add(this.radioButtonUser);
+            this.groupBoxRegRole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxRegRole.ForeColor = System.Drawing.Color.White;
+            this.groupBoxRegRole.Location = new System.Drawing.Point(24, 74);
+            this.groupBoxRegRole.Name = "groupBoxRegRole";
+            this.groupBoxRegRole.Size = new System.Drawing.Size(104, 85);
+            this.groupBoxRegRole.TabIndex = 9;
+            this.groupBoxRegRole.TabStop = false;
+            this.groupBoxRegRole.Text = "As";
+            // 
+            // radioButtonCompany
+            // 
+            this.radioButtonCompany.AutoSize = true;
+            this.radioButtonCompany.ForeColor = System.Drawing.Color.White;
+            this.radioButtonCompany.Location = new System.Drawing.Point(6, 24);
+            this.radioButtonCompany.Name = "radioButtonCompany";
+            this.radioButtonCompany.Size = new System.Drawing.Size(81, 21);
+            this.radioButtonCompany.TabIndex = 7;
+            this.radioButtonCompany.Text = "Company";
+            this.radioButtonCompany.UseVisualStyleBackColor = true;
+            this.radioButtonCompany.CheckedChanged += new System.EventHandler(this.radioButtonCompany_CheckedChanged);
+            // 
+            // radioButtonUser
+            // 
+            this.radioButtonUser.AutoSize = true;
+            this.radioButtonUser.Checked = true;
+            this.radioButtonUser.ForeColor = System.Drawing.Color.White;
+            this.radioButtonUser.Location = new System.Drawing.Point(6, 53);
+            this.radioButtonUser.Name = "radioButtonUser";
+            this.radioButtonUser.Size = new System.Drawing.Size(53, 21);
+            this.radioButtonUser.TabIndex = 8;
+            this.radioButtonUser.TabStop = true;
+            this.radioButtonUser.Text = "User";
+            this.radioButtonUser.UseVisualStyleBackColor = true;
+            this.radioButtonUser.CheckedChanged += new System.EventHandler(this.radioButtonUser_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(234, 50);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Registration";
             // 
             // Login
             // 
@@ -145,15 +405,26 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(534, 571);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelRegistration);
+            this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoDesk | Login";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            this.panelRegistration.ResumeLayout(false);
+            this.panelRegistration.PerformLayout();
+            this.groupBoxCompany.ResumeLayout(false);
+            this.groupBoxCompany.PerformLayout();
+            this.groupBoxAccount.ResumeLayout(false);
+            this.groupBoxAccount.PerformLayout();
+            this.groupBoxKey.ResumeLayout(false);
+            this.groupBoxKey.PerformLayout();
+            this.groupBoxRegRole.ResumeLayout(false);
+            this.groupBoxRegRole.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -163,11 +434,33 @@ namespace NoDeskUI
         private System.Windows.Forms.TextBox TextboxUsername;
         private System.Windows.Forms.TextBox TextboxPassword;
         private System.Windows.Forms.Button BTNLogin;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelLogo;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelFP;
+        private System.Windows.Forms.LinkLabel linkLabelR;
+        private System.Windows.Forms.Panel panelRegistration;
+        private System.Windows.Forms.GroupBox groupBoxRegRole;
+        private System.Windows.Forms.RadioButton radioButtonCompany;
+        private System.Windows.Forms.RadioButton radioButtonUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBoxKey;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBoxAccount;
+        private System.Windows.Forms.TextBox txtRegEmail;
+        private System.Windows.Forms.TextBox txtRegLastname;
+        private System.Windows.Forms.TextBox txtRegFirstname;
+        private System.Windows.Forms.GroupBox groupBoxCompany;
+        private System.Windows.Forms.TextBox textBoxCompany;
+        private System.Windows.Forms.TextBox txtRegPasswordretry;
+        private System.Windows.Forms.TextBox txtRegPassword;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }
