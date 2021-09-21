@@ -1,24 +1,227 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj": {}
+    "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj": {
+    "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
-        "projectName": "NoDesk",
-        "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
-        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\obj\\",
+        "projectUniqueName": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj",
+        "projectName": "NoDeskDAL",
+        "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj",
+        "packagesPath": "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bas Hulskamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
+                "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj",
+        "projectName": "NoDeskLogic",
+        "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj",
+        "packagesPath": "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bas Hulskamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj": {
+                "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskDAL\\NoDeskDAL.csproj"
+              },
+              "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
+                "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj",
+        "projectName": "NoDeskModels",
+        "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj",
+        "packagesPath": "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bas Hulskamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
+        "projectName": "NoDesk",
+        "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
+        "packagesPath": "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bas Hulskamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -28,13 +231,19 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\basti\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj": {
+                "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj"
+              },
+              "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
+                "projectPath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -74,7 +283,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

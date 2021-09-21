@@ -14,6 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NoDeskLogic\NoDeskLogic.csproj" />
+    <ProjectReference Include="..\NoDeskModels\NoDeskModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>

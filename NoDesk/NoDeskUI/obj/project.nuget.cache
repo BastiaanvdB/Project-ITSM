@@ -1,14 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "SaCQ30DIsDoa2e3QU4xxzv9RUV/j85ZPfUDTUycz2Myw7J5pmSYS+/ihW3LejGMkai862udw29oLG1wby5r2gw==",
+  "dgSpecHash": "0ys/QijQHZtSvrnpivI6BfIWOLo52Na47DxER2Mpbvg4A7wPVDtblni10UIJmKlQAa6UpMgPekqjG+ASrFdC3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
+  "projectFilePath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\NoDeskUI\\NoDeskUI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\scottplot\\4.1.20\\scottplot.4.1.20.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\scottplot.winforms\\4.1.20\\scottplot.winforms.4.1.20.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\mongodb.bson\\2.13.1\\mongodb.bson.2.13.1.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\mongodb.driver\\2.13.1\\mongodb.driver.2.13.1.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\mongodb.driver.core\\2.13.1\\mongodb.driver.core.2.13.1.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\mongodb.libmongocrypt\\1.2.2\\mongodb.libmongocrypt.1.2.2.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\scottplot\\4.1.20\\scottplot.4.1.20.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\scottplot.winforms\\4.1.20\\scottplot.winforms.4.1.20.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -47,3 +47,29 @@ C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement - Copy.resources
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.UserManagment.resources
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.exe
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.deps.json
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.runtimeconfig.json
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.runtimeconfig.dev.json
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ref\NoDesk.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.WinForms.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.AssemblyReference.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Dashboard.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement - Copy.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Login.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Properties.Resources.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.UserManagment.resources
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.GenerateResource.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfoInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfo.cs
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CoreCompileInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CopyComplete
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\ref\NoDesk.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.genruntimeconfig.cache
