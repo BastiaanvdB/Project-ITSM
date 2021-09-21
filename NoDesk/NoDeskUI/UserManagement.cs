@@ -111,11 +111,12 @@ namespace NoDeskUI
 
         private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)
         {
-            Guid Id = txt_UM_AddUser_Id.Text;
+            int Id = int.Parse(txt_UM_AddUser_Id.Text);
             string FirstName = txt_UM_AddUser_FirstName.Text;
             string LastName = txt_UM_AddUser_LastName.Text;
+            string Job = txt_UM_AddUser_Job.Text;
                           
-            _us.AddUser(new User());
+            _us.AddUser(new User(Id, FirstName, LastName, Job));
         }
     }
 }
