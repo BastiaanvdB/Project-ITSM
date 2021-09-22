@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace NoDeskModels
 {
-    public class ActivationKey
+    public class InvitationKey
     {
         [BsonId]
         public Guid Key { get; set; }
-        [BsonElement("InvitationKeys")]
-        public InvitationKey[] InvitationKeys { get; set; }
+        public Guid CompanyId { get; set; }
     }
 }

@@ -11,5 +11,11 @@ namespace NoDeskModels
         public string Subject { get; set; }
         [BsonElement("Text")]
         public string Text { get; set; }
+        [BsonElement("TicketCreatedBy")]
+        public User Creator { get; set; }
+        [BsonElement("TicketCreatedAt")]
+        public DateTime CreatedAt { get; set; }
+        [BsonElement("TicketClosedAt")]
+        public DateTime ClosedAt { get; set; }
     }
 }
