@@ -10,17 +10,20 @@ namespace NoDeskModels
 {
     public class User
     {
-        public User(int Id, string FirstName, string LastName, string Job)
+        public User(int Id, string FirstName, string LastName, string Job, string Department)
         {
             this.Id = Id;
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Job = Job;
+            this.Department = Department;
         }
        
         public int Id { get; set; }     
         public string FirstName { get; set; }       
         public string LastName { get; set; }       
-        public string Job { get; set; }     
+        public string Job { get; set; }
+        public string Department { get; set; }
+
     }
 }
