@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HVZWznJMK4kqowO8+5VLa3RzpyPlAYlqzqwe45mOloEfHnJCiP6jjHyVBbewrysbPNrdVTznPqFKSGS+IlX1sg==",
+  "dgSpecHash": "9yTZPDTWu4/Zzwg3UIxa1sA2FjPjsk7Y/058SOJJb68er+A1cSS3oOHbD9+cZg3cZGu97hrqT/VqeXz/fu6XLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj",
+  "projectFilePath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

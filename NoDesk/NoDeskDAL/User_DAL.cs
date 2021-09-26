@@ -29,7 +29,7 @@ namespace NoDeskDAL
                 .Set(P => P.Password, user.Password)
                 .Set(P => P.Company, user.Company)
                 .Set(P => P.Role, user.Role)
-                .Set(P => P.InvitationKey, user.InvitationKey);
+                .Set(P => P.ActivationKey, user.ActivationKey);
             UpdateRecordById("Users", user.Id, update);
         }
 

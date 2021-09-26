@@ -15,6 +15,6 @@ namespace NoDeskModels
         [BsonElement("CompanyName")]
         public string CompanyName { get; set; }
         [BsonElement("ActivationKey")]
-        public ActivationKey ActivationKey { get; set; }
+        public string ActivationKey { get; set; }
     }
 }

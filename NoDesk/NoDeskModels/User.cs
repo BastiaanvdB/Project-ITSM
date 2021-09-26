@@ -24,7 +24,7 @@ namespace NoDeskModels
         public Company Company { get; set; }
         [BsonElement("Role")]
         public Roles Role { get; set; }
-        [BsonElement("Product Key")]
-        public string Productkey { get; set; }
+        [BsonElement("ActivationKey")]
+        public string ActivationKey { get; set; }
     }
 }
