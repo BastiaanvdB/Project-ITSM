@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace NoDeskModels
     public class InvitationKey
     {
         [BsonId]
-        public Guid Key { get; set; }
-        public Guid CompanyId { get; set; }
+        public ObjectId Key { get; set; }
+        public ObjectId ActivationKey { get; set; }
+        public ObjectId CompanyId { get; set; }
+        public Boolean UsedStatus { get; set; }
     }
 }

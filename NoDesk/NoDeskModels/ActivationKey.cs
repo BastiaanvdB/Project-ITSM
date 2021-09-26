@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace NoDeskModels
     public class ActivationKey
     {
         [BsonId]
-        public Guid Key { get; set; }
-        [BsonElement("InvitationKeys")]
-        public InvitationKey[] InvitationKeys { get; set; }
+        public ObjectId Key { get; set; }
+        [BsonElement("UsedStatus")]
+        public Boolean UsedStatus { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace NoDeskModels
     public class User
     {
         [BsonId]
-        public Guid Id { get; set; }
+        public ObjectId Id { get; set; }
         [BsonElement("Firstname")]
         public string Firstname { get; set; }
         [BsonElement("Lastname")]
