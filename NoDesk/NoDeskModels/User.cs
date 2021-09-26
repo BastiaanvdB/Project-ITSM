@@ -25,6 +25,6 @@ namespace NoDeskModels
         [BsonElement("Role")]
         public Roles Role { get; set; }
         [BsonElement("InvitationKey")]
-        public InvitationKey InvitationKey { get; set; }
+        public string productkey { get; set; }
     }
 }

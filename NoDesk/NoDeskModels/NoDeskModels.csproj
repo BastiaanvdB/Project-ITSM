@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.13.1" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

@@ -16,14 +16,14 @@ namespace Test_Terminal
         {
             // test
 
-            Company company = new Company
-            {
-                CompanyName = "Garden Group",
-                ActivationKey = new ActivationKey { Key = new ObjectId("614e383d3d17e65ed26ba1ad"), UsedStatus = false}
-            };
+            //Company company = new Company
+            //{
+            //    CompanyName = "Garden Group",
+            //    ActivationKey = new ActivationKey { Key = new ObjectId("614e383d3d17e65ed26ba1ad"), UsedStatus = false}
+            //};
 
-           // BsonDocument tes = new BsonDocument { { "categories", new BsonElement {} },
-             //                                           { "standards", new BsonArray { } }  };
+            // BsonDocument tes = new BsonDocument { { "categories", new BsonElement {} },
+            //                                           { "standards", new BsonArray { } }  };
 
 
             //Company company = new Company 
@@ -31,15 +31,6 @@ namespace Test_Terminal
             //    CompanyName = "Garden Group"
 
             //};
-
-
-
-
-
-
-
-
-
 
             //User user = new User
             //{
@@ -51,16 +42,6 @@ namespace Test_Terminal
             //    Role = Roles.god,
             //};
 
-
-
-
-
-
-
-
-
-
-
             //var recs = ticket_Service.GetTickets();
 
             //foreach (var rec in recs)
@@ -68,6 +49,17 @@ namespace Test_Terminal
             //    Console.WriteLine($"{rec.Id} {rec.Subject} {rec.Text}");
             //}
 
+            Encryption test = new Encryption();
+
+            string encrypt = test.Encrypt("Garden Group:NoDesk2021BBJL");
+
+            Console.WriteLine(encrypt);
+
+            Console.ReadKey();
+            Console.WriteLine();
+
+            string decrypt = test.Decrypt(encrypt);
+            Console.WriteLine(decrypt);
             Console.ReadKey();
         }
     }

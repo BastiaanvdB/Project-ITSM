@@ -189,6 +189,14 @@
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[2.13.1, )"
+            },
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
