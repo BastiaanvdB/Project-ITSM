@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NoDeskModels;
 using MongoDB.Driver;
+using MongoDB.Bson;
+
 namespace NoDeskDAL
 {
     public class Company_DAL : Base
@@ -17,6 +19,36 @@ namespace NoDeskDAL
         public List<Company> GetCompanies()
         {
             return LoadRecords<Company>("Companies");
+        }
+
+        public Company GetCompanyById(ObjectId id)
+        {
+            return LoadRecordById<Company>("Companies", id);
+        }
+
+        public Company GetCompanyByActivationKey(string key)
+        {
+            return LoadRecordByField<Company>("Companies", "ActivationKey", key);
+        }
+
+        public bool CheckActivationKeyIfUsed(string key)
+        {
+            try
+            {
+                Company company = LoadRecordByField<Company>("Companies", "ActivationKey", key);
+                if (company.ActivationKey == key)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void UpdateCompany(Company company)

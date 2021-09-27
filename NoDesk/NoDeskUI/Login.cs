@@ -8,15 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoDeskModels;
+using NoDeskLogic;
+using MongoDB.Bson;
 
 namespace NoDeskUI
 {
     public partial class Login : Form
     {
+        private Company_Service _company_Service;
+        private User_Service _user_Service;
+        private Encryption _encryption;
+        KeyCheck _activationCheck;
         public Login()
         {
             InitializeComponent();
             LoginFormStart();
+            _company_Service = new Company_Service();
+            _user_Service = new User_Service();
+            _encryption = new Encryption();
+            _activationCheck = new KeyCheck();
         }
 
         // login section
@@ -79,66 +89,197 @@ namespace NoDeskUI
         {
             if (textBoxKey.Text.Length > 0)
             {
-                Encryption encryption = new Encryption();
-                KeyCheck activationCheck = new KeyCheck();
-                string key = "";
-                string[] keys = new string[2];
                 bool keyCheck = false;
 
                 if (radioButtonCompany.Checked == true)
                 {
                     try
                     {
-                        key = encryption.Decrypt(textBoxKey.Text);
-                        keyCheck = activationCheck.CheckActivationKey(key);
+                        keyCheck = _activationCheck.EnterActivationKey(textBoxKey.Text);
                     }
                     catch (Exception ex)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(ex.Message, "Activation key issue", buttons, MessageBoxIcon.Warning);
                     }
-                    if (keyCheck == true)
+                    if ((_company_Service.CheckActivationKeyIfUsed(textBoxKey.Text) == false) && (keyCheck == true))
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show("Activation key was accepted", "Correct activation key", buttons, MessageBoxIcon.Information);
-
-                        textBoxCompany.Text = keys[0];
+                        textBoxCompany.Text = _activationCheck.CompanyName;
                         textBoxKey.Enabled = false;
                         buttonEnterKey.Enabled = false;
+                        buttonRegister.Enabled = true;
                         SetTextboxes(true);
                     }
+                    else
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show("Please enter a valid or unused key", "Key issue", buttons, MessageBoxIcon.Warning);
+                    }
                 }
-
                 else
                 {
                     try
                     {
-                        key = encryption.Decrypt(textBoxKey.Text);
-                        keyCheck = activationCheck.CheckInviteKey(key);
+                        keyCheck = _activationCheck.EnterInviteKey(textBoxKey.Text);
                     }
                     catch (Exception ex)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(ex.Message, "Invitation key issue", buttons, MessageBoxIcon.Warning);
                     }
-
                     if (keyCheck == true)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show("Invitation key was accepted", "Correct invitation key", buttons, MessageBoxIcon.Information);
-
-                        textBoxCompany.Text = keys[0];
+                        Company company = _company_Service.GetCompanyById(new ObjectId(_activationCheck.CompanyID));
+                        textBoxCompany.Text = company.CompanyName;
                         textBoxKey.Enabled = false;
                         buttonEnterKey.Enabled = false;
+                        buttonRegister.Enabled = true;
                         SetTextboxes(true);
                     }
                 }
-            
             }
             else
             {
-                // voeg popup toe met error 
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Please enter a key", "No key entered", buttons, MessageBoxIcon.Warning);
             }
+        }
+
+        private void CreateCompany()
+        {
+            Company company = new Company
+            {
+                CompanyName = textBoxCompany.Text,
+                ActivationKey = textBoxKey.Text
+            };
+            InsertCompany(company);
+        }
+
+        private void InsertCompany(Company company)
+        {
+            try
+            {
+                _company_Service.InsertCompany(company);
+            }
+            catch (Exception)
+            {
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Registration failure", "The registration failed, try again later..", button, MessageBoxIcon.Error);
+            }
+        }
+
+        private Company GetCompanyById(string id)
+        {
+            return _company_Service.GetCompanyById(new ObjectId(id));
+        }
+
+        private Company GetCompanyByActivationKey()
+        {
+            return _company_Service.GetCompanyByActivationKey(textBoxKey.Text);
+        }
+
+        private void CreateAdmin()
+        {
+            CreateCompany();
+
+            if ((txtRegEmail.Text.Contains('@') == true) && ((txtRegEmail.Text.Contains('.'))))
+            {
+                if ((txtRegFirstname.Text.Length > 0) && (txtRegLastname.Text.Length > 0) && (txtRegEmail.Text.Length > 0) && (txtRegPassword.Text.Length > 0) && (txtRegPasswordretry.Text.Length > 0))
+                {
+                    if (txtRegPassword.Text == txtRegPasswordretry.Text)
+                    {
+                        User admin = new User
+                        {
+                            Firstname = txtRegFirstname.Text,
+                            Lastname = txtRegLastname.Text,
+                            Email = txtRegEmail.Text,
+                            Password = _encryption.Encrypt(txtRegPassword.Text),
+                            Company = GetCompanyByActivationKey(),
+                            Role = Roles.admin,
+                            ActivationKey = textBoxKey.Text
+                        };
+                        InsertUser(admin);
+                    }
+                    else
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show("Registration password issue", "Make sure that both passwords are the same!", buttons, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show("Registration password issue", "Make sure that all boxes are filled!", buttons, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Registration password issue", "Enter a valid email address!", buttons, MessageBoxIcon.Warning);
+            }
+        }
+        
+        private void CreateUser()
+        {
+            if ((txtRegEmail.Text.Contains('@') == true) && ((txtRegEmail.Text.Contains('.') == true)))
+            {
+                if ((txtRegFirstname.Text.Length > 0) && (txtRegLastname.Text.Length > 0) && (txtRegEmail.Text.Length > 0) && (txtRegPassword.Text.Length > 0) && (txtRegPasswordretry.Text.Length > 0))
+                {
+                    if (txtRegPassword.Text == txtRegPasswordretry.Text)
+                    {
+                        User user = new User
+                        {
+                            Firstname = txtRegFirstname.Text,
+                            Lastname = txtRegLastname.Text,
+                            Email = txtRegEmail.Text,
+                            Password = _encryption.Encrypt(txtRegPassword.Text),
+                            Company = GetCompanyById(_activationCheck.CompanyID),
+                            Role = Roles.user,
+                            ActivationKey = textBoxKey.Text
+                        };
+                        InsertUser(user);
+                    }
+                    else
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show("Registration password issue", "Make sure that both passwords are the same!", buttons, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show("Registration password issue", "Make sure that all boxes are filled!", buttons, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Registration password issue", "Enter a valid email address!", buttons, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void InsertUser(User user)
+        {
+            try
+            {
+                _user_Service.InsertUser(user);
+            }
+            catch (Exception)
+            {
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Registration failure", "The registration failed, try again later..", button, MessageBoxIcon.Error);
+            }
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show("Registration successful", "The account is created successful! You can proceed to login", buttons, MessageBoxIcon.Information);
+            TextboxUsername.Text = txtRegEmail.Text;
+            TextboxPassword.Clear();
+            ClearTextboxes();
+            panelRegistration.Hide();
+            panelLogin.Show();
         }
 
         private void SetFormDefault()
@@ -149,7 +290,6 @@ namespace NoDeskUI
             textBoxKey.Enabled = true;
             buttonEnterKey.Enabled = true;
         }
-
 
         private void ClearTextboxes()
         {
@@ -186,6 +326,18 @@ namespace NoDeskUI
         {
             RegistrationSetting("user");
             SetFormDefault();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            if(radioButtonCompany.Checked is true)
+            {
+                CreateAdmin();
+            }
+            else
+            {
+                CreateUser();
+            }
         }
 
         /// Forgot Password section

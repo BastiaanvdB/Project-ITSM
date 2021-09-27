@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using NoDeskDAL;
 using NoDeskModels;
 
@@ -25,6 +26,21 @@ namespace NoDeskLogic
         public List<Company> GetCompanies()
         {
             return _Company_DAL.GetCompanies();
+        }
+
+        public Company GetCompanyById(ObjectId key)
+        {
+            return _Company_DAL.GetCompanyById(key);
+        }
+
+        public Company GetCompanyByActivationKey(string key)
+        {
+            return _Company_DAL.GetCompanyByActivationKey(key);
+        }
+
+        public bool CheckActivationKeyIfUsed(string key)
+        {
+            return _Company_DAL.CheckActivationKeyIfUsed(key);
         }
 
         public void UpdateCompany(Company company)

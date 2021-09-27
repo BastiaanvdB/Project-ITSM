@@ -32,7 +32,7 @@ namespace NoDeskDAL
                 .Set(P => P.ActivationKey, user.ActivationKey);
             UpdateRecordById("Users", user.Id, update);
         }
-
+      
         public void DeleteUserById(User user)
         {
             DeleteRecordById<User>("Users", user.Id);

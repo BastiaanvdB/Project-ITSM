@@ -29,10 +29,18 @@ namespace NoDeskDAL
         }
 
         // Get specific record by id
-        protected T LoadRecordById<T>(string table, Guid id)
+        protected T LoadRecordById<T>(string table, ObjectId id)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);
+            return collection.Find(filter).First();
+        }
+
+        // get specific record by field
+        protected T LoadRecordByField<T>(string table, string field, string data)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(field, data);
             return collection.Find(filter).First();
         }
 

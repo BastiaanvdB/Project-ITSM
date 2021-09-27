@@ -8,17 +8,39 @@ namespace NoDeskModels
 {
     public class KeyCheck
     {
+        private Encryption _encryption;
         private static readonly string secretKeyProduct = "NoDesk2021BBJL";
         private static readonly string secretKeyInvite = "&NoDesk2021BBJL";
+        public string CompanyName { get; set; }
+        public string CompanyID { get; set; }
 
+        public KeyCheck()
+        {
+            _encryption = new Encryption();
+        }
 
+        public bool EnterActivationKey(string key)
+        {
+            key = DecryptKey(key);
+            return CheckActivationKey(key);
+        }
+
+        public bool EnterInviteKey(string key)
+        {
+            key = DecryptKey(key);
+            return CheckInviteKey(key);
+        }
+        private string DecryptKey(string key)
+        {
+            return _encryption.Decrypt(key);
+        }
 
         private string[] SplitKey(string key)
         {
             return key.Split(':', 2);
         }
 
-        public bool CheckActivationKey(string key)
+        private bool CheckActivationKey(string key)
         {
             string[] keys = new string[2];
             try
@@ -26,11 +48,12 @@ namespace NoDeskModels
                 keys = SplitKey(key);
                 if (keys[1] == secretKeyProduct)
                 {
+                    CompanyName = keys[0];
                     return true;
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Enter valid invite key!");
                 }
             }
             catch (Exception)
@@ -39,7 +62,7 @@ namespace NoDeskModels
             }
         }
 
-        public bool CheckInviteKey(string key)
+        private bool CheckInviteKey(string key)
         {
             string[] keys = new string[2];
             try
@@ -47,11 +70,12 @@ namespace NoDeskModels
                 keys = SplitKey(key);
                 if (keys[1] == secretKeyInvite)
                 {
+                    CompanyID = keys[0];
                     return true;
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Enter valid invite key!");
                 }
             }
             catch (Exception)

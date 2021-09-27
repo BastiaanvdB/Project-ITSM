@@ -51,7 +51,7 @@ namespace Test_Terminal
 
             Encryption test = new Encryption();
 
-            string encrypt = test.Encrypt("Garden Group:NoDesk2021BBJL");
+            string encrypt = test.Encrypt("ZoetBV:NoDesk2021BBJL");
 
             Console.WriteLine(encrypt);
 
@@ -60,6 +60,9 @@ namespace Test_Terminal
 
             string decrypt = test.Decrypt(encrypt);
             Console.WriteLine(decrypt);
+
+
+
             Console.ReadKey();
         }
     }
