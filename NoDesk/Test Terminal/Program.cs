@@ -51,7 +51,7 @@ namespace Test_Terminal
 
             Encryption test = new Encryption();
 
-            string encrypt = test.Encrypt("ZoetBV:NoDesk2021BBJL");
+            string encrypt = test.Encrypt("test:NoDesk2021BBJL");
 
             Console.WriteLine(encrypt);
 

@@ -96,27 +96,28 @@ namespace NoDeskUI
                     try
                     {
                         keyCheck = _activationCheck.EnterActivationKey(textBoxKey.Text);
+                        if ((_company_Service.CheckActivationKeyIfUsed(textBoxKey.Text) == false) && (keyCheck == true))
+                        {
+                            MessageBoxButtons buttons = MessageBoxButtons.OK;
+                            MessageBox.Show("Activation key was accepted", "Correct activation key", buttons, MessageBoxIcon.Information);
+                            textBoxCompany.Text = _activationCheck.CompanyName;
+                            textBoxKey.Enabled = false;
+                            buttonEnterKey.Enabled = false;
+                            buttonRegister.Enabled = true;
+                            SetTextboxes(true);
+                        }
+                        else
+                        {
+                            MessageBoxButtons buttons = MessageBoxButtons.OK;
+                            MessageBox.Show("Please enter a valid or unused key", "Key issue", buttons, MessageBoxIcon.Warning);
+                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(ex.Message, "Activation key issue", buttons, MessageBoxIcon.Warning);
                     }
-                    if ((_company_Service.CheckActivationKeyIfUsed(textBoxKey.Text) == false) && (keyCheck == true))
-                    {
-                        MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Activation key was accepted", "Correct activation key", buttons, MessageBoxIcon.Information);
-                        textBoxCompany.Text = _activationCheck.CompanyName;
-                        textBoxKey.Enabled = false;
-                        buttonEnterKey.Enabled = false;
-                        buttonRegister.Enabled = true;
-                        SetTextboxes(true);
-                    }
-                    else
-                    {
-                        MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Please enter a valid or unused key", "Key issue", buttons, MessageBoxIcon.Warning);
-                    }
+                    
                 }
                 else
                 {
@@ -168,7 +169,7 @@ namespace NoDeskUI
             catch (Exception)
             {
                 MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Registration failure", "The registration failed, try again later..", button, MessageBoxIcon.Error);
+                MessageBox.Show("The registration failed, try again later..", "Registration failure", button, MessageBoxIcon.Error);
             }
         }
 
@@ -207,19 +208,19 @@ namespace NoDeskUI
                     else
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Registration password issue", "Make sure that both passwords are the same!", buttons, MessageBoxIcon.Warning);
+                        MessageBox.Show("Make sure that both passwords are the same!", "Registration password issue", buttons, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show("Registration password issue", "Make sure that all boxes are filled!", buttons, MessageBoxIcon.Warning);
+                    MessageBox.Show("Make sure that all boxes are filled!", "Registration issue", buttons, MessageBoxIcon.Warning);
                 }
             }
             else
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show("Registration password issue", "Enter a valid email address!", buttons, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter a valid email address!", "Registration issue", buttons, MessageBoxIcon.Warning);
             }
         }
         
@@ -246,19 +247,19 @@ namespace NoDeskUI
                     else
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Registration password issue", "Make sure that both passwords are the same!", buttons, MessageBoxIcon.Warning);
+                        MessageBox.Show("Make sure that both passwords are the same!", "Registration password issue", buttons, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show("Registration password issue", "Make sure that all boxes are filled!", buttons, MessageBoxIcon.Warning);
+                    MessageBox.Show("Make sure that all boxes are filled!", "Registration password issue", buttons, MessageBoxIcon.Warning);
                 }
             }
             else
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show("Registration password issue", "Enter a valid email address!", buttons, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter a valid email address!", "Registration password issue", buttons, MessageBoxIcon.Warning);
             }
         }
 
@@ -271,10 +272,10 @@ namespace NoDeskUI
             catch (Exception)
             {
                 MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Registration failure", "The registration failed, try again later..", button, MessageBoxIcon.Error);
+                MessageBox.Show("The registration failed, try again later..", "Registration failure", button, MessageBoxIcon.Error);
             }
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            MessageBox.Show("Registration successful", "The account is created successful! You can proceed to login", buttons, MessageBoxIcon.Information);
+            MessageBox.Show("The account is created successful! You can proceed to login", "Registration successful", buttons, MessageBoxIcon.Information);
             TextboxUsername.Text = txtRegEmail.Text;
             TextboxPassword.Clear();
             ClearTextboxes();
