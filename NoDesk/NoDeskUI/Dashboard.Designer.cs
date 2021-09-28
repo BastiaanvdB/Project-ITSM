@@ -35,6 +35,8 @@ namespace NoDeskUI
             this.LabelCurrentUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.buttonKeyManagement = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
@@ -103,6 +105,8 @@ namespace NoDeskUI
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
+            this.MenuPanel.Controls.Add(this.buttonKeyManagement);
+            this.MenuPanel.Controls.Add(this.button1);
             this.MenuPanel.Controls.Add(this.buttonLogout);
             this.MenuPanel.Controls.Add(this.UMBTN);
             this.MenuPanel.Controls.Add(this.IMBTN);
@@ -113,6 +117,40 @@ namespace NoDeskUI
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1036, 41);
             this.MenuPanel.TabIndex = 0;
+            // 
+            // buttonKeyManagement
+            // 
+            this.buttonKeyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonKeyManagement.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonKeyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKeyManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonKeyManagement.ForeColor = System.Drawing.Color.White;
+            this.buttonKeyManagement.Image = global::NoDeskUI.Properties.Resources.user_5_24;
+            this.buttonKeyManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKeyManagement.Location = new System.Drawing.Point(679, 0);
+            this.buttonKeyManagement.Name = "buttonKeyManagement";
+            this.buttonKeyManagement.Size = new System.Drawing.Size(183, 41);
+            this.buttonKeyManagement.TabIndex = 15;
+            this.buttonKeyManagement.Text = "Key Management";
+            this.buttonKeyManagement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonKeyManagement.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::NoDeskUI.Properties.Resources.user_5_24;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(532, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 41);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Admin Panel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // buttonLogout
             // 
@@ -328,6 +366,8 @@ namespace NoDeskUI
         private System.Windows.Forms.Label LabelCurrentUser;
         private System.Windows.Forms.Label LabelLicense;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonKeyManagement;
+        private System.Windows.Forms.Button button1;
     }
 }
 

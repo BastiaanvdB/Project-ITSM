@@ -40,6 +40,7 @@ namespace NoDeskUI
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.panelRegistration = new System.Windows.Forms.Panel();
+            this.buttonReturnLogin = new System.Windows.Forms.Button();
             this.groupBoxCompany = new System.Windows.Forms.GroupBox();
             this.textBoxCompany = new System.Windows.Forms.TextBox();
             this.groupBoxAccount = new System.Windows.Forms.GroupBox();
@@ -61,7 +62,6 @@ namespace NoDeskUI
             this.radioButtonCompany = new System.Windows.Forms.RadioButton();
             this.radioButtonUser = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonReturnLogin = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelRegistration.SuspendLayout();
             this.groupBoxCompany.SuspendLayout();
@@ -182,6 +182,19 @@ namespace NoDeskUI
             this.panelRegistration.Name = "panelRegistration";
             this.panelRegistration.Size = new System.Drawing.Size(537, 572);
             this.panelRegistration.TabIndex = 4;
+            // 
+            // buttonReturnLogin
+            // 
+            this.buttonReturnLogin.BackColor = System.Drawing.Color.White;
+            this.buttonReturnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonReturnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonReturnLogin.Location = new System.Drawing.Point(61, 366);
+            this.buttonReturnLogin.Name = "buttonReturnLogin";
+            this.buttonReturnLogin.Size = new System.Drawing.Size(127, 37);
+            this.buttonReturnLogin.TabIndex = 14;
+            this.buttonReturnLogin.Text = "Return to login";
+            this.buttonReturnLogin.UseVisualStyleBackColor = false;
+            this.buttonReturnLogin.Click += new System.EventHandler(this.buttonReturnLogin_Click);
             // 
             // groupBoxCompany
             // 
@@ -410,19 +423,6 @@ namespace NoDeskUI
             this.label1.Size = new System.Drawing.Size(234, 50);
             this.label1.TabIndex = 6;
             this.label1.Text = "Registration";
-            // 
-            // buttonReturnLogin
-            // 
-            this.buttonReturnLogin.BackColor = System.Drawing.Color.White;
-            this.buttonReturnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonReturnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonReturnLogin.Location = new System.Drawing.Point(61, 366);
-            this.buttonReturnLogin.Name = "buttonReturnLogin";
-            this.buttonReturnLogin.Size = new System.Drawing.Size(127, 37);
-            this.buttonReturnLogin.TabIndex = 14;
-            this.buttonReturnLogin.Text = "Return to login";
-            this.buttonReturnLogin.UseVisualStyleBackColor = false;
-            this.buttonReturnLogin.Click += new System.EventHandler(this.buttonReturnLogin_Click);
             // 
             // Login
             // 

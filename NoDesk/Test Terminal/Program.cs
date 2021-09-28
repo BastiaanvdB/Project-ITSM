@@ -16,7 +16,7 @@ namespace Test_Terminal
         {
             Encryption test = new Encryption();
 
-            string encrypt = test.Encrypt("InhollandBV:NoDesk2021BBJL");
+            string encrypt = test.Encrypt("NoDesk:NoDesk2021BBJL");
 
             Console.WriteLine(encrypt);
 

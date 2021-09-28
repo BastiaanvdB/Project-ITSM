@@ -4,8 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>desktop-256.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\desktop-256.ico</ApplicationIcon>
     <AssemblyName>NoDesk</AssemblyName>
+    <Win32Resource />
+    <Authors>Bastiaan, Bas, Jesse, Laurens</Authors>
+    <Company>NoDesk</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
