@@ -125,7 +125,7 @@ namespace NoDeskUI
             this.buttonKeyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKeyManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonKeyManagement.ForeColor = System.Drawing.Color.White;
-            this.buttonKeyManagement.Image = global::NoDeskUI.Properties.Resources.user_5_24;
+            this.buttonKeyManagement.Image = global::NoDeskUI.Properties.Resources.key_6_24;
             this.buttonKeyManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonKeyManagement.Location = new System.Drawing.Point(679, 0);
             this.buttonKeyManagement.Name = "buttonKeyManagement";
@@ -142,7 +142,7 @@ namespace NoDeskUI
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::NoDeskUI.Properties.Resources.user_5_24;
+            this.button1.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(532, 0);
             this.button1.Name = "button1";
