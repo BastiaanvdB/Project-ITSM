@@ -29,7 +29,7 @@ namespace NoDeskUI
             _activationCheck = new KeyCheck();
         }
 
-        // login section
+        // loginpanel section
         private void LoginFormStart()
         {
             panelLogin.Show();
@@ -46,7 +46,7 @@ namespace NoDeskUI
                     SetFormDefault();
                     break;
                 case "forgotPassword":
-
+                    // password reset gedeelte moet nog gebeuren!
                     break;
             }
         }
@@ -65,13 +65,43 @@ namespace NoDeskUI
                     break;
             }
         }
+        
+        private void LoginUser()
+        {
+            if((TextboxUsername.Text.Length > 0)&&(TextboxPassword.Text.Length > 0))
+            {
+                User user = _user_Service.CheckUserLogin(new LoginAttempt {Email = TextboxUsername.Text , Password = TextboxPassword.Text});
 
+                if (user != null)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show($"Welcome {user.Firstname}", "Login successful", buttons, MessageBoxIcon.Information);
+                    Dashboard dashboard = new Dashboard(user);
+                    this.Hide();
+                    dashboard.Show();
+                }
+                else
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show("Password or email was incorrect!", "Login issue", buttons, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Please enter a email and password", "Login issue", buttons, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool CheckLoginCredentials()
+        {
+            return false;
+        }
+
+        // loginpanel buttons
         private void BTNLogin_Click(object sender, EventArgs e)
         {
-            // tijdelijk
-            Dashboard dashboard = new Dashboard();
-            this.Hide();
-            dashboard.Show();
+            LoginUser();
         }
 
         private void linkLabelFP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,7 +114,7 @@ namespace NoDeskUI
             LoginMenu("registration");
         }
 
-        /// Registration section
+        /// Registrationpanel section
         private void RegistrationKeyCheck()
         {
             if (textBoxKey.Text.Length > 0)
@@ -317,6 +347,7 @@ namespace NoDeskUI
             RegistrationKeyCheck();
         }
 
+        // registration panel buttons
         private void radioButtonCompany_CheckedChanged(object sender, EventArgs e)
         {
             RegistrationSetting("admin");
@@ -339,6 +370,13 @@ namespace NoDeskUI
             {
                 CreateUser();
             }
+        }
+
+        private void buttonReturnLogin_Click(object sender, EventArgs e)
+        {
+            SetFormDefault();
+            panelRegistration.Hide();
+            panelLogin.Show();
         }
 
         /// Forgot Password section

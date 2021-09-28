@@ -43,7 +43,7 @@ namespace NoDeskDAL
             var filter = Builders<T>.Filter.Eq(field, data);
             return collection.Find(filter).First();
         }
-
+       
         // Update specific record by id
         protected void UpdateRecordById<T>(string table, ObjectId id, UpdateDefinition<T> Record)
         {

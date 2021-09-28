@@ -14,6 +14,8 @@ namespace NoDeskModels
         public string Text { get; set; }
         [BsonElement("TicketCreatedBy")]
         public User Creator { get; set; }
+        [BsonElement("TicketStatus")]
+        public TicketStatus Status { get; set; }
         [BsonElement("TicketCreatedAt")]
         public DateTime CreatedAt { get; set; }
         [BsonElement("TicketClosedAt")]

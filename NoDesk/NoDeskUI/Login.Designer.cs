@@ -61,6 +61,7 @@ namespace NoDeskUI
             this.radioButtonCompany = new System.Windows.Forms.RadioButton();
             this.radioButtonUser = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonReturnLogin = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelRegistration.SuspendLayout();
             this.groupBoxCompany.SuspendLayout();
@@ -171,6 +172,7 @@ namespace NoDeskUI
             // panelRegistration
             // 
             this.panelRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.panelRegistration.Controls.Add(this.buttonReturnLogin);
             this.panelRegistration.Controls.Add(this.groupBoxCompany);
             this.panelRegistration.Controls.Add(this.groupBoxAccount);
             this.panelRegistration.Controls.Add(this.groupBoxKey);
@@ -409,6 +411,19 @@ namespace NoDeskUI
             this.label1.TabIndex = 6;
             this.label1.Text = "Registration";
             // 
+            // buttonReturnLogin
+            // 
+            this.buttonReturnLogin.BackColor = System.Drawing.Color.White;
+            this.buttonReturnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonReturnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonReturnLogin.Location = new System.Drawing.Point(61, 366);
+            this.buttonReturnLogin.Name = "buttonReturnLogin";
+            this.buttonReturnLogin.Size = new System.Drawing.Size(127, 37);
+            this.buttonReturnLogin.TabIndex = 14;
+            this.buttonReturnLogin.Text = "Return to login";
+            this.buttonReturnLogin.UseVisualStyleBackColor = false;
+            this.buttonReturnLogin.Click += new System.EventHandler(this.buttonReturnLogin_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -472,5 +487,6 @@ namespace NoDeskUI
         private System.Windows.Forms.TextBox txtRegEmail;
         private System.Windows.Forms.TextBox txtRegLastname;
         private System.Windows.Forms.TextBox txtRegFirstname;
+        private System.Windows.Forms.Button buttonReturnLogin;
     }
 }

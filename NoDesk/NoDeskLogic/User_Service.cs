@@ -25,6 +25,11 @@ namespace NoDeskLogic
             return _User_DAL.GetUsers();
         }
 
+        public User CheckUserLogin(LoginAttempt login)
+        {
+            return _User_DAL.CheckUserLogin(login);
+        }
+
         public void UpdateUser(User user)
         {
             _User_DAL.UpdateUser(user);

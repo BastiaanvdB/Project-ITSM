@@ -32,7 +32,28 @@ namespace NoDeskDAL
                 .Set(P => P.ActivationKey, user.ActivationKey);
             UpdateRecordById("Users", user.Id, update);
         }
-      
+        public User CheckUserLogin(LoginAttempt login)
+        {
+            Encryption encryption = new Encryption();
+            User user;
+            try
+            {
+                user = LoadRecordByField<User>("Users", "Email", login.Email);
+                if (encryption.Decrypt(user.Password) == login.Password)
+                {
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public void DeleteUserById(User user)
         {
             DeleteRecordById<User>("Users", user.Id);

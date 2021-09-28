@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScottPlot;
 using ScottPlot.Renderable;
+using NoDeskModels;
 namespace NoDeskUI
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        private User _CurrentUser;
+        
+        public Dashboard(User user)
         {
             InitializeComponent();
+            _CurrentUser = user;
             LoginInitialize();
         }
 
@@ -28,8 +32,8 @@ namespace NoDeskUI
         private void LoginInitialize()
         {
 
-            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
-            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
+            LabelCurrentUser.Text = $"Current user: {_CurrentUser.Firstname} {_CurrentUser.Lastname}";
+            LabelLicense.Text = $"Licensed to: {_CurrentUser.Company.CompanyName}";
 
         }
 
