@@ -27,7 +27,6 @@ namespace NoDeskLogic
             _Ticket_DAL.UpdateTicket(ticket);
         }
 
-        // nog doen
         public void DeleteTicket(Ticket ticket)
         {
             _Ticket_DAL.DeleteTicketById(ticket);
