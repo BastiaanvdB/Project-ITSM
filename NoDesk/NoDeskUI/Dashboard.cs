@@ -15,11 +15,13 @@ namespace NoDeskUI
     public partial class Dashboard : Form
     {
         private User _CurrentUser;
-        
-        public Dashboard(User user)
+        private Login _login;
+
+        public Dashboard(User user, Login login)
         {
             InitializeComponent();
             _CurrentUser = user;
+            _login = login;
             LoginInitialize();
         }
 
@@ -53,6 +55,10 @@ namespace NoDeskUI
                     UserManagment userManagment = new UserManagment(this);
                     userManagment.Show();
                     this.Hide();
+                    break;
+                case "Logout":
+                    this.Hide();
+                    _login.Show();
                     break;
             }
         }
@@ -109,6 +115,11 @@ namespace NoDeskUI
         private void UMBTN_Click(object sender, EventArgs e)
         {
             MenuSwitch("UserManagement");
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("Logout");
         }
     }
 }

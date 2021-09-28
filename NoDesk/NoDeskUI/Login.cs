@@ -76,9 +76,10 @@ namespace NoDeskUI
                 {
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show($"Welcome {user.Firstname}", "Login successful", buttons, MessageBoxIcon.Information);
-                    Dashboard dashboard = new Dashboard(user);
+                    Dashboard dashboard = new Dashboard(user, this);
                     this.Hide();
                     dashboard.Show();
+                    TextboxPassword.Clear();
                 }
                 else
                 {
