@@ -70,3 +70,52 @@ C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskLogic.pdb
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskModels.pdb
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskDAL.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Dashboard.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement - Copy.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.IncidentManagement.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Login.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.Properties.Resources.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.UserManagment.resources
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.GenerateResource.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfo.cs
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\ref\NoDesk.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.exe
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.deps.json
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.runtimeconfig.json
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.runtimeconfig.dev.json
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ref\NoDesk.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDesk.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\DnsClient.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\MongoDB.Bson.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\MongoDB.Driver.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\MongoDB.Driver.Core.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\MongoDB.Libmongocrypt.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\Nancy.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\ScottPlot.WinForms.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\SharpCompress.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\win\native\libzstd.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\win\native\snappy32.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\win\native\snappy64.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\linux\native\libmongocrypt.so
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\runtimes\win\native\mongocrypt.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskLogic.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskModels.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskLogic.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskModels.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\bin\Debug\net5.0-windows\NoDeskDAL.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CopyComplete
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.genruntimeconfig.cache

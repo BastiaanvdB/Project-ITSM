@@ -32,3 +32,20 @@ C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskLogic\obj\Debug\ne
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskLogic\obj\Debug\net5.0\ref\NoDeskLogic.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskLogic.deps.json
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskLogic.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\ref\NoDeskLogic.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskLogic.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskModels.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskDAL.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\bin\Debug\net5.0\NoDeskModels.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.AssemblyInfo.cs
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.csproj.CopyComplete
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\ref\NoDeskLogic.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskLogic\obj\Debug\net5.0\NoDeskLogic.pdb

@@ -79,13 +79,13 @@ namespace NoDeskUI
 
             foreach (var user in users)
             {
-                ListViewItem User = new ListViewItem(user.Id.ToString());
+                //ListViewItem User = new ListViewItem(user.Id.ToString());
 
-                User.SubItems.Add(user.FirstName);
-                User.SubItems.Add(user.LastName.ToString());
-                User.SubItems.Add(user.Job);
+                //User.SubItems.Add(user.FirstName);
+                //User.SubItems.Add(user.LastName.ToString());
+                //User.SubItems.Add(user.Job);
 
-                lst_UM_Users.Items.Add(User);
+                //lst_UM_Users.Items.Add(User);
             }
         }
 
@@ -111,11 +111,11 @@ namespace NoDeskUI
 
         private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)
         {
-            Guid Id = txt_UM_AddUser_Id.Text;
-            string FirstName = txt_UM_AddUser_FirstName.Text;
-            string LastName = txt_UM_AddUser_LastName.Text;
+            //Guid Id = txt_UM_AddUser_Id.Text;
+            //string FirstName = txt_UM_AddUser_FirstName.Text;
+            //string LastName = txt_UM_AddUser_LastName.Text;
                           
-            _us.AddUser(new User());
+            //_us.AddUser(new User());
         }
     }
 }
