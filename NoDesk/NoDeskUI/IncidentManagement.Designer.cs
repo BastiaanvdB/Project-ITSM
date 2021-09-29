@@ -35,6 +35,7 @@ namespace NoDeskUI
             this.LabelCurrentUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonKeyManagement = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
@@ -55,9 +56,26 @@ namespace NoDeskUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BTN_Transfer = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
+            this.PNL_CreateTicket = new System.Windows.Forms.Panel();
+            this.LBL_CreateTicket = new System.Windows.Forms.Label();
+            this.LBL_Date = new System.Windows.Forms.Label();
+            this.LBL_Description = new System.Windows.Forms.Label();
+            this.LBL_Deadline = new System.Windows.Forms.Label();
+            this.LBL_Priority = new System.Windows.Forms.Label();
+            this.LBL_ReportedBy = new System.Windows.Forms.Label();
+            this.LBL_Type = new System.Windows.Forms.Label();
+            this.LBL_Subject = new System.Windows.Forms.Label();
+            this.TXTBOX_Date = new System.Windows.Forms.TextBox();
+            this.TXTBOX_Subject = new System.Windows.Forms.TextBox();
+            this.TXTBOX_Description = new System.Windows.Forms.TextBox();
+            this.ComboBox_Type = new System.Windows.Forms.ComboBox();
+            this.ComboBox_ReportedBy = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Priority = new System.Windows.Forms.ComboBox();
+            this.Combobox_Deadline = new System.Windows.Forms.ComboBox();
+            this.BTN_ConfirmTicket = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
+            this.PNL_CreateTicket.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -121,6 +139,19 @@ namespace NoDeskUI
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1036, 41);
             this.MenuPanel.TabIndex = 0;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.White;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogout.Location = new System.Drawing.Point(956, 9);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(77, 25);
+            this.buttonLogout.TabIndex = 17;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonKeyManagement
             // 
@@ -344,18 +375,178 @@ namespace NoDeskUI
             this.BTN_Transfer.Text = "Transfer Ticket";
             this.BTN_Transfer.UseVisualStyleBackColor = false;
             // 
-            // buttonLogout
+            // PNL_CreateTicket
             // 
-            this.buttonLogout.BackColor = System.Drawing.Color.White;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLogout.Location = new System.Drawing.Point(956, 9);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(77, 25);
-            this.buttonLogout.TabIndex = 17;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = false;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.PNL_CreateTicket.Controls.Add(this.BTN_ConfirmTicket);
+            this.PNL_CreateTicket.Controls.Add(this.Combobox_Deadline);
+            this.PNL_CreateTicket.Controls.Add(this.ComboBox_Priority);
+            this.PNL_CreateTicket.Controls.Add(this.ComboBox_ReportedBy);
+            this.PNL_CreateTicket.Controls.Add(this.ComboBox_Type);
+            this.PNL_CreateTicket.Controls.Add(this.TXTBOX_Description);
+            this.PNL_CreateTicket.Controls.Add(this.TXTBOX_Subject);
+            this.PNL_CreateTicket.Controls.Add(this.TXTBOX_Date);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Subject);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Type);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_ReportedBy);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Priority);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_Date);
+            this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(184, 142);
+            this.PNL_CreateTicket.Name = "PNL_CreateTicket";
+            this.PNL_CreateTicket.Size = new System.Drawing.Size(515, 610);
+            this.PNL_CreateTicket.TabIndex = 12;
+            // 
+            // LBL_CreateTicket
+            // 
+            this.LBL_CreateTicket.AutoSize = true;
+            this.LBL_CreateTicket.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_CreateTicket.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_CreateTicket.Location = new System.Drawing.Point(84, 37);
+            this.LBL_CreateTicket.Name = "LBL_CreateTicket";
+            this.LBL_CreateTicket.Size = new System.Drawing.Size(311, 32);
+            this.LBL_CreateTicket.TabIndex = 0;
+            this.LBL_CreateTicket.Text = "Create new incident ticket";
+            // 
+            // LBL_Date
+            // 
+            this.LBL_Date.AutoSize = true;
+            this.LBL_Date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Date.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Date.Location = new System.Drawing.Point(41, 106);
+            this.LBL_Date.Name = "LBL_Date";
+            this.LBL_Date.Size = new System.Drawing.Size(80, 15);
+            this.LBL_Date.TabIndex = 1;
+            this.LBL_Date.Text = "Date reported";
+            // 
+            // LBL_Description
+            // 
+            this.LBL_Description.AutoSize = true;
+            this.LBL_Description.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Description.Location = new System.Drawing.Point(41, 336);
+            this.LBL_Description.Name = "LBL_Description";
+            this.LBL_Description.Size = new System.Drawing.Size(68, 15);
+            this.LBL_Description.TabIndex = 2;
+            this.LBL_Description.Text = "Description";
+            // 
+            // LBL_Deadline
+            // 
+            this.LBL_Deadline.AutoSize = true;
+            this.LBL_Deadline.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Deadline.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Deadline.Location = new System.Drawing.Point(41, 301);
+            this.LBL_Deadline.Name = "LBL_Deadline";
+            this.LBL_Deadline.Size = new System.Drawing.Size(54, 15);
+            this.LBL_Deadline.TabIndex = 3;
+            this.LBL_Deadline.Text = "Deadline";
+            // 
+            // LBL_Priority
+            // 
+            this.LBL_Priority.AutoSize = true;
+            this.LBL_Priority.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Priority.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Priority.Location = new System.Drawing.Point(41, 265);
+            this.LBL_Priority.Name = "LBL_Priority";
+            this.LBL_Priority.Size = new System.Drawing.Size(45, 15);
+            this.LBL_Priority.TabIndex = 4;
+            this.LBL_Priority.Text = "Priority";
+            // 
+            // LBL_ReportedBy
+            // 
+            this.LBL_ReportedBy.AutoSize = true;
+            this.LBL_ReportedBy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_ReportedBy.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_ReportedBy.Location = new System.Drawing.Point(41, 225);
+            this.LBL_ReportedBy.Name = "LBL_ReportedBy";
+            this.LBL_ReportedBy.Size = new System.Drawing.Size(96, 15);
+            this.LBL_ReportedBy.TabIndex = 5;
+            this.LBL_ReportedBy.Text = "Reported by user";
+            // 
+            // LBL_Type
+            // 
+            this.LBL_Type.AutoSize = true;
+            this.LBL_Type.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Type.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Type.Location = new System.Drawing.Point(41, 184);
+            this.LBL_Type.Name = "LBL_Type";
+            this.LBL_Type.Size = new System.Drawing.Size(92, 15);
+            this.LBL_Type.TabIndex = 6;
+            this.LBL_Type.Text = "Type of incident";
+            // 
+            // LBL_Subject
+            // 
+            this.LBL_Subject.AutoSize = true;
+            this.LBL_Subject.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_Subject.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LBL_Subject.Location = new System.Drawing.Point(41, 147);
+            this.LBL_Subject.Name = "LBL_Subject";
+            this.LBL_Subject.Size = new System.Drawing.Size(107, 15);
+            this.LBL_Subject.TabIndex = 7;
+            this.LBL_Subject.Text = "Subject of incident";
+            // 
+            // TXTBOX_Date
+            // 
+            this.TXTBOX_Date.Location = new System.Drawing.Point(196, 103);
+            this.TXTBOX_Date.Name = "TXTBOX_Date";
+            this.TXTBOX_Date.Size = new System.Drawing.Size(231, 23);
+            this.TXTBOX_Date.TabIndex = 8;
+            // 
+            // TXTBOX_Subject
+            // 
+            this.TXTBOX_Subject.Location = new System.Drawing.Point(196, 144);
+            this.TXTBOX_Subject.Name = "TXTBOX_Subject";
+            this.TXTBOX_Subject.Size = new System.Drawing.Size(231, 23);
+            this.TXTBOX_Subject.TabIndex = 9;
+            // 
+            // TXTBOX_Description
+            // 
+            this.TXTBOX_Description.Location = new System.Drawing.Point(196, 333);
+            this.TXTBOX_Description.Name = "TXTBOX_Description";
+            this.TXTBOX_Description.Size = new System.Drawing.Size(231, 23);
+            this.TXTBOX_Description.TabIndex = 10;
+            // 
+            // ComboBox_Type
+            // 
+            this.ComboBox_Type.FormattingEnabled = true;
+            this.ComboBox_Type.Location = new System.Drawing.Point(196, 182);
+            this.ComboBox_Type.Name = "ComboBox_Type";
+            this.ComboBox_Type.Size = new System.Drawing.Size(231, 23);
+            this.ComboBox_Type.TabIndex = 11;
+            // 
+            // ComboBox_ReportedBy
+            // 
+            this.ComboBox_ReportedBy.FormattingEnabled = true;
+            this.ComboBox_ReportedBy.Location = new System.Drawing.Point(196, 222);
+            this.ComboBox_ReportedBy.Name = "ComboBox_ReportedBy";
+            this.ComboBox_ReportedBy.Size = new System.Drawing.Size(231, 23);
+            this.ComboBox_ReportedBy.TabIndex = 12;
+            // 
+            // ComboBox_Priority
+            // 
+            this.ComboBox_Priority.FormattingEnabled = true;
+            this.ComboBox_Priority.Location = new System.Drawing.Point(196, 262);
+            this.ComboBox_Priority.Name = "ComboBox_Priority";
+            this.ComboBox_Priority.Size = new System.Drawing.Size(231, 23);
+            this.ComboBox_Priority.TabIndex = 13;
+            // 
+            // Combobox_Deadline
+            // 
+            this.Combobox_Deadline.FormattingEnabled = true;
+            this.Combobox_Deadline.Location = new System.Drawing.Point(196, 298);
+            this.Combobox_Deadline.Name = "Combobox_Deadline";
+            this.Combobox_Deadline.Size = new System.Drawing.Size(231, 23);
+            this.Combobox_Deadline.TabIndex = 14;
+            // 
+            // BTN_ConfirmTicket
+            // 
+            this.BTN_ConfirmTicket.Location = new System.Drawing.Point(119, 381);
+            this.BTN_ConfirmTicket.Name = "BTN_ConfirmTicket";
+            this.BTN_ConfirmTicket.Size = new System.Drawing.Size(253, 28);
+            this.BTN_ConfirmTicket.TabIndex = 15;
+            this.BTN_ConfirmTicket.Text = "Create Incident Ticket";
+            this.BTN_ConfirmTicket.UseVisualStyleBackColor = true;
             // 
             // IncidentManagement
             // 
@@ -363,6 +554,7 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
+            this.Controls.Add(this.PNL_CreateTicket);
             this.Controls.Add(this.BTN_Transfer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -382,6 +574,8 @@ namespace NoDeskUI
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
+            this.PNL_CreateTicket.ResumeLayout(false);
+            this.PNL_CreateTicket.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,6 +609,23 @@ namespace NoDeskUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonKeyManagement;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Panel PNL_CreateTicket;
+        private System.Windows.Forms.Button BTN_ConfirmTicket;
+        private System.Windows.Forms.ComboBox Combobox_Deadline;
+        private System.Windows.Forms.ComboBox ComboBox_Priority;
+        private System.Windows.Forms.ComboBox ComboBox_ReportedBy;
+        private System.Windows.Forms.ComboBox ComboBox_Type;
+        private System.Windows.Forms.TextBox TXTBOX_Description;
+        private System.Windows.Forms.TextBox TXTBOX_Subject;
+        private System.Windows.Forms.TextBox TXTBOX_Date;
+        private System.Windows.Forms.Label LBL_Subject;
+        private System.Windows.Forms.Label LBL_Type;
+        private System.Windows.Forms.Label LBL_ReportedBy;
+        private System.Windows.Forms.Label LBL_Priority;
+        private System.Windows.Forms.Label LBL_Deadline;
+        private System.Windows.Forms.Label LBL_Description;
+        private System.Windows.Forms.Label LBL_Date;
+        private System.Windows.Forms.Label LBL_CreateTicket;
     }
 }
 
