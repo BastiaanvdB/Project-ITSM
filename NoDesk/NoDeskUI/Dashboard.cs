@@ -37,6 +37,23 @@ namespace NoDeskUI
             LabelCurrentUser.Text = $"Current user: {_CurrentUser.Firstname} {_CurrentUser.Lastname}";
             LabelLicense.Text = $"Licensed to: {_CurrentUser.Company.CompanyName}";
 
+            switch(_CurrentUser.Role)
+            {
+                case Roles.user:
+                    APBTN.Hide();
+                    KMBTN.Hide();
+                    break;
+                case Roles.admin:
+                    APBTN.Show();
+                    KMBTN.Hide();
+                    break;
+                case Roles.god:
+                    UMBTN.Hide();
+                    IMBTN.Hide();
+                    APBTN.Show();
+                    KMBTN.Show();
+                    break;
+            }
         }
 
         private void MenuSwitch(string menuOption)
