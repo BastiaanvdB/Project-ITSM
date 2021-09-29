@@ -18,11 +18,13 @@ namespace NoDeskUI
     {
         private Dashboard _dashboard;
         private User_Service _us;
-        
-
-        public UserManagment(Dashboard dashboard)
+        private Login _login;
+        private User _currentUser;
+        public UserManagment(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
+            _login = login;
+            _currentUser = user;
             _us = new User_Service();
             InitializeComponent();
             LoginInitialize();
@@ -33,13 +35,10 @@ namespace NoDeskUI
             FillListView();
         }
 
-        //tijdelijk 
         private void LoginInitialize()
         {
-
-            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
-            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
-
+            LabelCurrentUser.Text = $"Current user: {_currentUser.Firstname} {_currentUser.Lastname}";
+            LabelLicense.Text = $"Licensed to: {_currentUser.Company.CompanyName}";
         }
 
         private void MenuSwitch(string menuOption)
@@ -51,12 +50,13 @@ namespace NoDeskUI
                     this.Hide();
                     break;
                 case "IncidentManagement":
-                    IncidentManagement incidentManagement = new IncidentManagement(_dashboard);
+                    IncidentManagement incidentManagement = new IncidentManagement(_dashboard, _login, _currentUser);
                     incidentManagement.Show();
                     this.Hide();
                     break;
-                case "UserManagement":
-
+                case "Logout":
+                    this.Hide();
+                    _login.Show();
                     break;
             }
         }
@@ -116,6 +116,11 @@ namespace NoDeskUI
             //string LastName = txt_UM_AddUser_LastName.Text;
                           
             //_us.AddUser(new User());
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("Logout");
         }
     }
 }

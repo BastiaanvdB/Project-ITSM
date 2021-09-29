@@ -47,12 +47,12 @@ namespace NoDeskUI
 
                     break;
                 case "IncidentManagement":
-                    IncidentManagement incidentManagement = new IncidentManagement(this);
+                    IncidentManagement incidentManagement = new IncidentManagement(this, _login, _CurrentUser);
                     incidentManagement.Show();
                     this.Hide();
                     break;
                 case "UserManagement":
-                    UserManagment userManagment = new UserManagment(this);
+                    UserManagment userManagment = new UserManagment(this, _login, _CurrentUser);
                     userManagment.Show();
                     this.Hide();
                     break;

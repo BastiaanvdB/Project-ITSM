@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScottPlot;
 using ScottPlot.Renderable;
+using NoDeskModels;
 namespace NoDeskUI
 {
     public partial class IncidentManagement : Form
     {
         private Dashboard _dashboard;
-
-        public IncidentManagement(Dashboard dashboard)
+        private Login _login;
+        private User _currentUser;
+        public IncidentManagement(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
+            _login = login;
+            _currentUser = user;
             InitializeComponent();
             LoginInitialize();
         }
@@ -27,13 +31,11 @@ namespace NoDeskUI
             
         }
 
-        //tijdelijk 
         private void LoginInitialize()
         {
 
-            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
-            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
-
+            LabelCurrentUser.Text = $"Current user: {_currentUser.Firstname} {_currentUser.Lastname}";
+            LabelLicense.Text = $"Licensed to: {_currentUser.Company.CompanyName}";
         }
 
         private void MenuSwitch(string menuOption)
@@ -44,13 +46,14 @@ namespace NoDeskUI
                     _dashboard.Show();
                     this.Hide();
                     break;
-                case "IncidentManagement":
-
-                    break;
                 case "UserManagement":
-                    UserManagment userManagment = new UserManagment(_dashboard);
+                    UserManagment userManagment = new UserManagment(_dashboard, _login, _currentUser);
                     userManagment.Show();
                     this.Hide();
+                    break;
+                case "Logout":
+                    this.Hide();
+                    _login.Show();
                     break;
             }
         }
@@ -68,6 +71,11 @@ namespace NoDeskUI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("Logout");
         }
     }
 }
