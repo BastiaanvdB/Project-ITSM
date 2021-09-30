@@ -26,6 +26,7 @@ namespace NoDeskUI
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
+            pnl_UpdateUser.Hide();
             FillListView();
         }
 
@@ -92,12 +93,43 @@ namespace NoDeskUI
 
         private void btn_UM_EditUser_Click(object sender, EventArgs e)
         {
+            pnl_UpdateUser.Show();
+        }
 
+        private void btn_UpdateUserConfirm_Click(object sender, EventArgs e)
+        {
+            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            User user = _us.GetUserById(Id);
+            string NewEmail = txt_NewEmailInput.Text;
+            
+            
+            DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
+            if (msbResult == DialogResult.Yes)
+            {
+                user.Email = NewEmail;
+                _us.UpdateUser(user);
+                MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
+                txt_NewEmailInput.Clear();
+                pnl_UpdateUser.Hide();
+            }
         }
 
         private void btn_UM_DeleteUser_Click(object sender, EventArgs e)
         {
+            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            User user = _us.GetUserById(Id);
+            DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
+            if (msbResult == DialogResult.Yes)
+            {
+                _us.DeleteUserById(user);
+                MessageBox.Show("User succesfully deleted!", "Delete Confirmed", MessageBoxButtons.OK);
+            }
+        }
 
+        private void btn_CancelUpdateUser_Click(object sender, EventArgs e)
+        {
+            txt_NewEmailInput.Clear();
+            pnl_UpdateUser.Hide();
         }
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
@@ -109,5 +141,7 @@ namespace NoDeskUI
         {
             MenuSwitch("Logout");
         }
+
+        
     }
 }

@@ -46,5 +46,10 @@ namespace NoDeskLogic
         {
             _User_DAL.DeleteUserById(user);
         }
+
+        public User GetUserById(ObjectId Id)
+        {
+            return _User_DAL.GetUserById(Id);
+        }
     }
 }

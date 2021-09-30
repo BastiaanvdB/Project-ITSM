@@ -51,8 +51,15 @@ namespace NoDeskUI
             this.btn_UM_EditUser = new System.Windows.Forms.Button();
             this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
             this.btn_UM_Refresh = new System.Windows.Forms.Button();
+            this.pnl_UpdateUser = new System.Windows.Forms.Panel();
+            this.btn_UpdateUserConfirm = new System.Windows.Forms.Button();
+            this.txt_NewEmailInput = new System.Windows.Forms.TextBox();
+            this.lbl_UpdateUserEmail = new System.Windows.Forms.Label();
+            this.lbl_UpdateUserTitle = new System.Windows.Forms.Label();
+            this.btn_CancelUpdateUser = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
+            this.pnl_UpdateUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -299,7 +306,7 @@ namespace NoDeskUI
             // 
             // btn_UM_Refresh
             // 
-            this.btn_UM_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_UM_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.btn_UM_Refresh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_UM_Refresh.Location = new System.Drawing.Point(410, 154);
@@ -310,12 +317,83 @@ namespace NoDeskUI
             this.btn_UM_Refresh.UseVisualStyleBackColor = false;
             this.btn_UM_Refresh.Click += new System.EventHandler(this.btn_UM_Refresh_Click);
             // 
+            // pnl_UpdateUser
+            // 
+            this.pnl_UpdateUser.BackColor = System.Drawing.Color.Silver;
+            this.pnl_UpdateUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_UpdateUser.Controls.Add(this.btn_CancelUpdateUser);
+            this.pnl_UpdateUser.Controls.Add(this.btn_UpdateUserConfirm);
+            this.pnl_UpdateUser.Controls.Add(this.txt_NewEmailInput);
+            this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserEmail);
+            this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserTitle);
+            this.pnl_UpdateUser.Location = new System.Drawing.Point(366, 261);
+            this.pnl_UpdateUser.Name = "pnl_UpdateUser";
+            this.pnl_UpdateUser.Size = new System.Drawing.Size(338, 148);
+            this.pnl_UpdateUser.TabIndex = 7;
+            // 
+            // btn_UpdateUserConfirm
+            // 
+            this.btn_UpdateUserConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.btn_UpdateUserConfirm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_UpdateUserConfirm.ForeColor = System.Drawing.Color.White;
+            this.btn_UpdateUserConfirm.Location = new System.Drawing.Point(230, 103);
+            this.btn_UpdateUserConfirm.Name = "btn_UpdateUserConfirm";
+            this.btn_UpdateUserConfirm.Size = new System.Drawing.Size(103, 40);
+            this.btn_UpdateUserConfirm.TabIndex = 3;
+            this.btn_UpdateUserConfirm.Text = "Confirm";
+            this.btn_UpdateUserConfirm.UseVisualStyleBackColor = false;
+            this.btn_UpdateUserConfirm.Click += new System.EventHandler(this.btn_UpdateUserConfirm_Click);
+            // 
+            // txt_NewEmailInput
+            // 
+            this.txt_NewEmailInput.ForeColor = System.Drawing.Color.Black;
+            this.txt_NewEmailInput.Location = new System.Drawing.Point(109, 70);
+            this.txt_NewEmailInput.Name = "txt_NewEmailInput";
+            this.txt_NewEmailInput.Size = new System.Drawing.Size(138, 23);
+            this.txt_NewEmailInput.TabIndex = 2;
+            // 
+            // lbl_UpdateUserEmail
+            // 
+            this.lbl_UpdateUserEmail.AutoSize = true;
+            this.lbl_UpdateUserEmail.BackColor = System.Drawing.Color.White;
+            this.lbl_UpdateUserEmail.Location = new System.Drawing.Point(13, 73);
+            this.lbl_UpdateUserEmail.Name = "lbl_UpdateUserEmail";
+            this.lbl_UpdateUserEmail.Size = new System.Drawing.Size(69, 15);
+            this.lbl_UpdateUserEmail.TabIndex = 1;
+            this.lbl_UpdateUserEmail.Text = "New Email: ";
+            // 
+            // lbl_UpdateUserTitle
+            // 
+            this.lbl_UpdateUserTitle.AutoSize = true;
+            this.lbl_UpdateUserTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.lbl_UpdateUserTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_UpdateUserTitle.ForeColor = System.Drawing.Color.White;
+            this.lbl_UpdateUserTitle.Location = new System.Drawing.Point(13, 20);
+            this.lbl_UpdateUserTitle.Name = "lbl_UpdateUserTitle";
+            this.lbl_UpdateUserTitle.Size = new System.Drawing.Size(122, 25);
+            this.lbl_UpdateUserTitle.TabIndex = 0;
+            this.lbl_UpdateUserTitle.Text = "Update User";
+            // 
+            // btn_CancelUpdateUser
+            // 
+            this.btn_CancelUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_CancelUpdateUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_CancelUpdateUser.ForeColor = System.Drawing.Color.White;
+            this.btn_CancelUpdateUser.Location = new System.Drawing.Point(13, 114);
+            this.btn_CancelUpdateUser.Name = "btn_CancelUpdateUser";
+            this.btn_CancelUpdateUser.Size = new System.Drawing.Size(78, 29);
+            this.btn_CancelUpdateUser.TabIndex = 4;
+            this.btn_CancelUpdateUser.Text = "Cancel";
+            this.btn_CancelUpdateUser.UseVisualStyleBackColor = false;
+            this.btn_CancelUpdateUser.Click += new System.EventHandler(this.btn_CancelUpdateUser_Click);
+            // 
             // UserManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
+            this.Controls.Add(this.pnl_UpdateUser);
             this.Controls.Add(this.btn_UM_Refresh);
             this.Controls.Add(this.btn_UM_DeleteUser);
             this.Controls.Add(this.btn_UM_EditUser);
@@ -330,6 +408,8 @@ namespace NoDeskUI
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
+            this.pnl_UpdateUser.ResumeLayout(false);
+            this.pnl_UpdateUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,6 +438,12 @@ namespace NoDeskUI
         private System.Windows.Forms.ColumnHeader col_LastName;
         private System.Windows.Forms.ColumnHeader col_Email;
         private System.Windows.Forms.ColumnHeader col_Company;
+        private System.Windows.Forms.Panel pnl_UpdateUser;
+        private System.Windows.Forms.Button btn_UpdateUserConfirm;
+        private System.Windows.Forms.TextBox txt_NewEmailInput;
+        private System.Windows.Forms.Label lbl_UpdateUserEmail;
+        private System.Windows.Forms.Label lbl_UpdateUserTitle;
+        private System.Windows.Forms.Button btn_CancelUpdateUser;
     }
 }
 

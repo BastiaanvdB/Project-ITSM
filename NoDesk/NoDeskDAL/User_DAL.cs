@@ -27,7 +27,7 @@ namespace NoDeskDAL
         }
 
         public void UpdateUser(User user)
-        {
+        {          
             var update = Builders<User>.Update
                 .Set(P => P.Firstname, user.Firstname)
                 .Set(P => P.Lastname, user.Lastname)
@@ -63,6 +63,11 @@ namespace NoDeskDAL
         public void DeleteUserById(User user)
         {
             DeleteRecordById<User>("Users", user.Id);
+        }
+
+        public User GetUserById(ObjectId Id)
+        {
+            return LoadRecordById<User>("Users", Id);
         }
     }
 }
