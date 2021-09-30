@@ -22,9 +22,14 @@ namespace NoDeskLogic
             _User_DAL.InsertUser(user);
         }
 
-        public List<BsonDocument> GetUsers()
+        public List<User> GetUsers()
         {
             return _User_DAL.DB_GetUsers();
+        }
+
+        public List<BsonDocument> GetUsersNoMap()
+        {
+            return _User_DAL.DB_GetUsersNoMap();
         }
 
         public User CheckUserLogin(LoginAttempt login)

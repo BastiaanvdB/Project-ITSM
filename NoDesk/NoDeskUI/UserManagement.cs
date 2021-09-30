@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using NoDeskLogic;
 using NoDeskModels;
 using System;
@@ -66,40 +67,27 @@ namespace NoDeskUI
 
         private void FillListView()
         {
-            List<BsonDocument> users = _us.GetUsers();
 
-            List<User> UserList = new List<User>();
-
-            //Fill the UserList with User objects containing only the desired information from the BsonDocuments from the DB
-            foreach (var rec in users)
-            {
-                User user = new User();
-                user.Id = (ObjectId)rec.GetValue("_id");
-                user.Firstname = (string)rec.GetValue("Firstname");
-                user.Lastname = (string)rec.GetValue("Lastname");
-                user.Email = (string)rec.GetValue("Email");
-                
-                UserList.Add(user);
-            }
-
+            List<User> UserList = _us.GetUsers();        
 
             lst_UM_Users.Items.Clear();
 
             foreach (var user in UserList)
             {
-                ListViewItem User = new ListViewItem(user.Id.ToString());
+                //Makes sure the person who is logged in only sees users from their company
+                if (user.Company.CompanyName == _currentUser.Company.CompanyName)
+                {
+                    ListViewItem User = new ListViewItem(user.Id.ToString());
 
-                User.SubItems.Add(user.Firstname);
-                User.SubItems.Add(user.Lastname);
-                User.SubItems.Add(user.Email);
+                    User.SubItems.Add(user.Firstname);
+                    User.SubItems.Add(user.Lastname);
+                    User.SubItems.Add(user.Email);
+                    User.SubItems.Add(user.Company.CompanyName);
 
-                lst_UM_Users.Items.Add(User);
+                    lst_UM_Users.Items.Add(User);
+                }
+                
             }
-        }
-
-        private void btn_UM_AddUser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_UM_EditUser_Click(object sender, EventArgs e)
@@ -115,16 +103,7 @@ namespace NoDeskUI
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
             FillListView();
-        }
-
-        private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)
-        {
-            //Guid Id = txt_UM_AddUser_Id.Text;
-            //string FirstName = txt_UM_AddUser_FirstName.Text;
-            //string LastName = txt_UM_AddUser_LastName.Text;
-                          
-            //_us.AddUser(new User());
-        }
+        }      
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {

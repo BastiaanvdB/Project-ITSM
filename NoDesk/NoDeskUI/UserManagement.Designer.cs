@@ -42,15 +42,15 @@ namespace NoDeskUI
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
             this.lst_UM_Users = new System.Windows.Forms.ListView();
-            this.lbl_UM_title = new System.Windows.Forms.Label();
-            this.btn_UM_EditUser = new System.Windows.Forms.Button();
-            this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
-            this.btn_UM_Refresh = new System.Windows.Forms.Button();
             this.col_ID = new System.Windows.Forms.ColumnHeader();
             this.col_FirstName = new System.Windows.Forms.ColumnHeader();
             this.col_LastName = new System.Windows.Forms.ColumnHeader();
             this.col_Email = new System.Windows.Forms.ColumnHeader();
             this.col_Company = new System.Windows.Forms.ColumnHeader();
+            this.lbl_UM_title = new System.Windows.Forms.Label();
+            this.btn_UM_EditUser = new System.Windows.Forms.Button();
+            this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
+            this.btn_UM_Refresh = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -234,6 +234,31 @@ namespace NoDeskUI
             this.lst_UM_Users.UseCompatibleStateImageBehavior = false;
             this.lst_UM_Users.View = System.Windows.Forms.View.Details;
             // 
+            // col_ID
+            // 
+            this.col_ID.Text = "ID";
+            this.col_ID.Width = 160;
+            // 
+            // col_FirstName
+            // 
+            this.col_FirstName.Text = "Firstname";
+            this.col_FirstName.Width = 80;
+            // 
+            // col_LastName
+            // 
+            this.col_LastName.Text = "Lastname";
+            this.col_LastName.Width = 80;
+            // 
+            // col_Email
+            // 
+            this.col_Email.Text = "E-Mail Address";
+            this.col_Email.Width = 170;
+            // 
+            // col_Company
+            // 
+            this.col_Company.Text = "Company";
+            this.col_Company.Width = 80;
+            // 
             // lbl_UM_title
             // 
             this.lbl_UM_title.AutoSize = true;
@@ -284,31 +309,6 @@ namespace NoDeskUI
             this.btn_UM_Refresh.Text = "Refresh";
             this.btn_UM_Refresh.UseVisualStyleBackColor = false;
             this.btn_UM_Refresh.Click += new System.EventHandler(this.btn_UM_Refresh_Click);
-            // 
-            // col_ID
-            // 
-            this.col_ID.Text = "ID";
-            this.col_ID.Width = 160;
-            // 
-            // col_FirstName
-            // 
-            this.col_FirstName.Text = "Firstname";
-            this.col_FirstName.Width = 80;
-            // 
-            // col_LastName
-            // 
-            this.col_LastName.Text = "Lastname";
-            this.col_LastName.Width = 80;
-            // 
-            // col_Email
-            // 
-            this.col_Email.Text = "E-Mail Address";
-            this.col_Email.Width = 160;
-            // 
-            // col_Company
-            // 
-            this.col_Company.Text = "Company";
-            this.col_Company.Width = 80;
             // 
             // UserManagment
             // 

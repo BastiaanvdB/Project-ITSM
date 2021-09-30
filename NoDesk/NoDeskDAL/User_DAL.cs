@@ -16,7 +16,12 @@ namespace NoDeskDAL
             InsertRecord("Users", user);
         }
 
-        public List<BsonDocument> DB_GetUsers()
+        public List<User> DB_GetUsers()
+        {
+            return LoadRecords<User>("Users");
+        }
+
+        public List<BsonDocument> DB_GetUsersNoMap()
         {
             return LoadRecordsNoMap("Users");
         }
