@@ -28,6 +28,14 @@ namespace NoDeskDAL
             return collection.Find(new BsonDocument()).ToList();
         }
 
+        //Get all records without mapping them to an object
+        public List<BsonDocument> LoadRecordsNoMap(string table)
+        {
+            var collection = db.GetCollection<BsonDocument>(table);
+
+            return collection.Find(new BsonDocument()).ToList();
+        }
+
         // Get specific record by id
         protected T LoadRecordById<T>(string table, ObjectId id)
         {

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ScottPlot;
-using ScottPlot.Renderable;
+﻿using MongoDB.Bson;
 using NoDeskLogic;
 using NoDeskModels;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace NoDeskUI
 {
@@ -73,19 +66,34 @@ namespace NoDeskUI
 
         private void FillListView()
         {
-            List<User> users = _us.GetUsers();
+            List<BsonDocument> users = _us.GetUsers();
+
+            List<User> UserList = new List<User>();
+
+            //Fill the UserList with User objects containing only the desired information from the BsonDocuments from the DB
+            foreach (var rec in users)
+            {
+                User user = new User();
+                user.Id = (ObjectId)rec.GetValue("_id");
+                user.Firstname = (string)rec.GetValue("Firstname");
+                user.Lastname = (string)rec.GetValue("Lastname");
+                user.Email = (string)rec.GetValue("Email");
+                
+                UserList.Add(user);
+            }
+
 
             lst_UM_Users.Items.Clear();
 
-            foreach (var user in users)
+            foreach (var user in UserList)
             {
-                //ListViewItem User = new ListViewItem(user.Id.ToString());
+                ListViewItem User = new ListViewItem(user.Id.ToString());
 
-                //User.SubItems.Add(user.FirstName);
-                //User.SubItems.Add(user.LastName.ToString());
-                //User.SubItems.Add(user.Job);
+                User.SubItems.Add(user.Firstname);
+                User.SubItems.Add(user.Lastname);
+                User.SubItems.Add(user.Email);
 
-                //lst_UM_Users.Items.Add(User);
+                lst_UM_Users.Items.Add(User);
             }
         }
 
@@ -106,7 +114,7 @@ namespace NoDeskUI
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
-
+            FillListView();
         }
 
         private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)

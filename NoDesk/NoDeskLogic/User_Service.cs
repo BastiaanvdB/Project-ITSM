@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NoDeskModels;
+using MongoDB.Driver;
+using MongoDB.Bson;
 using NoDeskDAL;
 namespace NoDeskLogic
 {
@@ -20,9 +22,9 @@ namespace NoDeskLogic
             _User_DAL.InsertUser(user);
         }
 
-        public List<User> GetUsers()
+        public List<BsonDocument> GetUsers()
         {
-            return _User_DAL.GetUsers();
+            return _User_DAL.DB_GetUsers();
         }
 
         public User CheckUserLogin(LoginAttempt login)

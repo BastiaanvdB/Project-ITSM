@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Bson;
 using NoDeskModels;
 
 namespace NoDeskDAL
@@ -15,9 +16,9 @@ namespace NoDeskDAL
             InsertRecord("Users", user);
         }
 
-        public List<User> GetUsers()
+        public List<BsonDocument> DB_GetUsers()
         {
-            return LoadRecords<User>("Users");
+            return LoadRecordsNoMap("Users");
         }
 
         public void UpdateUser(User user)
