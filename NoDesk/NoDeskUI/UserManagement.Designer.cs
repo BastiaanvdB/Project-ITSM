@@ -35,32 +35,24 @@ namespace NoDeskUI
             this.LabelCurrentUser = new System.Windows.Forms.Label();
             this.lbl_logo = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonKeyManagement = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
             this.lst_UM_Users = new System.Windows.Forms.ListView();
             this.lbl_UM_title = new System.Windows.Forms.Label();
-            this.btn_UM_AddUser = new System.Windows.Forms.Button();
             this.btn_UM_EditUser = new System.Windows.Forms.Button();
             this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
             this.btn_UM_Refresh = new System.Windows.Forms.Button();
-            this.pnl_UM_AddUser = new System.Windows.Forms.Panel();
-            this.txt_UM_AddUser_Job = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_Job = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_LastName = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_LastName = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_FirstName = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_FirstName = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_Id = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_Id = new System.Windows.Forms.Label();
-            this.btn_UM_AddUser_Confirm = new System.Windows.Forms.Button();
-            this.lbl_UM_AddUser_Title = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonKeyManagement = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
+            this.col_ID = new System.Windows.Forms.ColumnHeader();
+            this.col_FirstName = new System.Windows.Forms.ColumnHeader();
+            this.col_LastName = new System.Windows.Forms.ColumnHeader();
+            this.col_Email = new System.Windows.Forms.ColumnHeader();
+            this.col_Company = new System.Windows.Forms.ColumnHeader();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
-            this.pnl_UM_AddUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -125,6 +117,53 @@ namespace NoDeskUI
             this.MenuPanel.Size = new System.Drawing.Size(1036, 41);
             this.MenuPanel.TabIndex = 0;
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.White;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogout.Location = new System.Drawing.Point(956, 9);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(77, 25);
+            this.buttonLogout.TabIndex = 18;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // buttonKeyManagement
+            // 
+            this.buttonKeyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonKeyManagement.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonKeyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKeyManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonKeyManagement.ForeColor = System.Drawing.Color.White;
+            this.buttonKeyManagement.Image = global::NoDeskUI.Properties.Resources.key_6_24;
+            this.buttonKeyManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKeyManagement.Location = new System.Drawing.Point(679, 0);
+            this.buttonKeyManagement.Name = "buttonKeyManagement";
+            this.buttonKeyManagement.Size = new System.Drawing.Size(183, 41);
+            this.buttonKeyManagement.TabIndex = 17;
+            this.buttonKeyManagement.Text = "Key Management";
+            this.buttonKeyManagement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonKeyManagement.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(532, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Admin Panel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // UMBTN
             // 
             this.UMBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
@@ -180,6 +219,12 @@ namespace NoDeskUI
             // 
             // lst_UM_Users
             // 
+            this.lst_UM_Users.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.col_ID,
+            this.col_FirstName,
+            this.col_LastName,
+            this.col_Email,
+            this.col_Company});
             this.lst_UM_Users.FullRowSelect = true;
             this.lst_UM_Users.HideSelection = false;
             this.lst_UM_Users.Location = new System.Drawing.Point(12, 191);
@@ -201,25 +246,12 @@ namespace NoDeskUI
             this.lbl_UM_title.TabIndex = 2;
             this.lbl_UM_title.Text = "System Users";
             // 
-            // btn_UM_AddUser
-            // 
-            this.btn_UM_AddUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_UM_AddUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_UM_AddUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_AddUser.Location = new System.Drawing.Point(704, 191);
-            this.btn_UM_AddUser.Name = "btn_UM_AddUser";
-            this.btn_UM_AddUser.Size = new System.Drawing.Size(320, 90);
-            this.btn_UM_AddUser.TabIndex = 3;
-            this.btn_UM_AddUser.Text = "Add User";
-            this.btn_UM_AddUser.UseVisualStyleBackColor = false;
-            this.btn_UM_AddUser.Click += new System.EventHandler(this.btn_UM_AddUser_Click);
-            // 
             // btn_UM_EditUser
             // 
             this.btn_UM_EditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.btn_UM_EditUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_EditUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_EditUser.Location = new System.Drawing.Point(831, 319);
+            this.btn_UM_EditUser.Location = new System.Drawing.Point(831, 174);
             this.btn_UM_EditUser.Name = "btn_UM_EditUser";
             this.btn_UM_EditUser.Size = new System.Drawing.Size(193, 85);
             this.btn_UM_EditUser.TabIndex = 4;
@@ -232,7 +264,7 @@ namespace NoDeskUI
             this.btn_UM_DeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_UM_DeleteUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_DeleteUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_DeleteUser.Location = new System.Drawing.Point(831, 440);
+            this.btn_UM_DeleteUser.Location = new System.Drawing.Point(831, 296);
             this.btn_UM_DeleteUser.Name = "btn_UM_DeleteUser";
             this.btn_UM_DeleteUser.Size = new System.Drawing.Size(193, 50);
             this.btn_UM_DeleteUser.TabIndex = 5;
@@ -253,172 +285,30 @@ namespace NoDeskUI
             this.btn_UM_Refresh.UseVisualStyleBackColor = false;
             this.btn_UM_Refresh.Click += new System.EventHandler(this.btn_UM_Refresh_Click);
             // 
-            // pnl_UM_AddUser
+            // col_ID
             // 
-            this.pnl_UM_AddUser.BackColor = System.Drawing.Color.White;
-            this.pnl_UM_AddUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_Job);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Job);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_LastName);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_LastName);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_FirstName);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_FirstName);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_Id);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Id);
-            this.pnl_UM_AddUser.Controls.Add(this.btn_UM_AddUser_Confirm);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Title);
-            this.pnl_UM_AddUser.Location = new System.Drawing.Point(183, 139);
-            this.pnl_UM_AddUser.Name = "pnl_UM_AddUser";
-            this.pnl_UM_AddUser.Size = new System.Drawing.Size(642, 453);
-            this.pnl_UM_AddUser.TabIndex = 7;
+            this.col_ID.Text = "ID";
+            this.col_ID.Width = 160;
             // 
-            // txt_UM_AddUser_Job
+            // col_FirstName
             // 
-            this.txt_UM_AddUser_Job.Location = new System.Drawing.Point(127, 214);
-            this.txt_UM_AddUser_Job.Name = "txt_UM_AddUser_Job";
-            this.txt_UM_AddUser_Job.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_Job.TabIndex = 9;
+            this.col_FirstName.Text = "Firstname";
+            this.col_FirstName.Width = 80;
             // 
-            // lbl_UM_AddUser_Job
+            // col_LastName
             // 
-            this.lbl_UM_AddUser_Job.AutoSize = true;
-            this.lbl_UM_AddUser_Job.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_Job.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Job.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Job.Location = new System.Drawing.Point(33, 213);
-            this.lbl_UM_AddUser_Job.Name = "lbl_UM_AddUser_Job";
-            this.lbl_UM_AddUser_Job.Size = new System.Drawing.Size(38, 20);
-            this.lbl_UM_AddUser_Job.TabIndex = 8;
-            this.lbl_UM_AddUser_Job.Text = "Job:";
+            this.col_LastName.Text = "Lastname";
+            this.col_LastName.Width = 80;
             // 
-            // txt_UM_AddUser_LastName
+            // col_Email
             // 
-            this.txt_UM_AddUser_LastName.Location = new System.Drawing.Point(127, 180);
-            this.txt_UM_AddUser_LastName.Name = "txt_UM_AddUser_LastName";
-            this.txt_UM_AddUser_LastName.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_LastName.TabIndex = 7;
+            this.col_Email.Text = "E-Mail Address";
+            this.col_Email.Width = 160;
             // 
-            // lbl_UM_AddUser_LastName
+            // col_Company
             // 
-            this.lbl_UM_AddUser_LastName.AutoSize = true;
-            this.lbl_UM_AddUser_LastName.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_LastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_LastName.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_LastName.Location = new System.Drawing.Point(33, 179);
-            this.lbl_UM_AddUser_LastName.Name = "lbl_UM_AddUser_LastName";
-            this.lbl_UM_AddUser_LastName.Size = new System.Drawing.Size(81, 20);
-            this.lbl_UM_AddUser_LastName.TabIndex = 6;
-            this.lbl_UM_AddUser_LastName.Text = "Lastname:";
-            // 
-            // txt_UM_AddUser_FirstName
-            // 
-            this.txt_UM_AddUser_FirstName.Location = new System.Drawing.Point(127, 138);
-            this.txt_UM_AddUser_FirstName.Name = "txt_UM_AddUser_FirstName";
-            this.txt_UM_AddUser_FirstName.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_FirstName.TabIndex = 5;
-            // 
-            // lbl_UM_AddUser_FirstName
-            // 
-            this.lbl_UM_AddUser_FirstName.AutoSize = true;
-            this.lbl_UM_AddUser_FirstName.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_FirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_FirstName.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_FirstName.Location = new System.Drawing.Point(33, 137);
-            this.lbl_UM_AddUser_FirstName.Name = "lbl_UM_AddUser_FirstName";
-            this.lbl_UM_AddUser_FirstName.Size = new System.Drawing.Size(83, 20);
-            this.lbl_UM_AddUser_FirstName.TabIndex = 4;
-            this.lbl_UM_AddUser_FirstName.Text = "Firstname:";
-            // 
-            // txt_UM_AddUser_Id
-            // 
-            this.txt_UM_AddUser_Id.Location = new System.Drawing.Point(127, 100);
-            this.txt_UM_AddUser_Id.Name = "txt_UM_AddUser_Id";
-            this.txt_UM_AddUser_Id.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_Id.TabIndex = 3;
-            // 
-            // lbl_UM_AddUser_Id
-            // 
-            this.lbl_UM_AddUser_Id.AutoSize = true;
-            this.lbl_UM_AddUser_Id.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_Id.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Id.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Id.Location = new System.Drawing.Point(33, 99);
-            this.lbl_UM_AddUser_Id.Name = "lbl_UM_AddUser_Id";
-            this.lbl_UM_AddUser_Id.Size = new System.Drawing.Size(65, 20);
-            this.lbl_UM_AddUser_Id.TabIndex = 2;
-            this.lbl_UM_AddUser_Id.Text = "User ID:";
-            // 
-            // btn_UM_AddUser_Confirm
-            // 
-            this.btn_UM_AddUser_Confirm.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_UM_AddUser_Confirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_UM_AddUser_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_AddUser_Confirm.Location = new System.Drawing.Point(459, 356);
-            this.btn_UM_AddUser_Confirm.Name = "btn_UM_AddUser_Confirm";
-            this.btn_UM_AddUser_Confirm.Size = new System.Drawing.Size(153, 74);
-            this.btn_UM_AddUser_Confirm.TabIndex = 1;
-            this.btn_UM_AddUser_Confirm.Text = "Confirm";
-            this.btn_UM_AddUser_Confirm.UseVisualStyleBackColor = false;
-            this.btn_UM_AddUser_Confirm.Click += new System.EventHandler(this.btn_UM_AddUser_Confirm_Click);
-            // 
-            // lbl_UM_AddUser_Title
-            // 
-            this.lbl_UM_AddUser_Title.AutoSize = true;
-            this.lbl_UM_AddUser_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
-            this.lbl_UM_AddUser_Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Title.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Title.Location = new System.Drawing.Point(33, 30);
-            this.lbl_UM_AddUser_Title.Name = "lbl_UM_AddUser_Title";
-            this.lbl_UM_AddUser_Title.Size = new System.Drawing.Size(119, 32);
-            this.lbl_UM_AddUser_Title.TabIndex = 0;
-            this.lbl_UM_AddUser_Title.Text = "Add User";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(532, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Admin Panel";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // buttonKeyManagement
-            // 
-            this.buttonKeyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.buttonKeyManagement.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonKeyManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKeyManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonKeyManagement.ForeColor = System.Drawing.Color.White;
-            this.buttonKeyManagement.Image = global::NoDeskUI.Properties.Resources.key_6_24;
-            this.buttonKeyManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonKeyManagement.Location = new System.Drawing.Point(679, 0);
-            this.buttonKeyManagement.Name = "buttonKeyManagement";
-            this.buttonKeyManagement.Size = new System.Drawing.Size(183, 41);
-            this.buttonKeyManagement.TabIndex = 17;
-            this.buttonKeyManagement.Text = "Key Management";
-            this.buttonKeyManagement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonKeyManagement.UseVisualStyleBackColor = false;
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.BackColor = System.Drawing.Color.White;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLogout.Location = new System.Drawing.Point(956, 9);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(77, 25);
-            this.buttonLogout.TabIndex = 18;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = false;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.col_Company.Text = "Company";
+            this.col_Company.Width = 80;
             // 
             // UserManagment
             // 
@@ -426,11 +316,9 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
-            this.Controls.Add(this.pnl_UM_AddUser);
             this.Controls.Add(this.btn_UM_Refresh);
             this.Controls.Add(this.btn_UM_DeleteUser);
             this.Controls.Add(this.btn_UM_EditUser);
-            this.Controls.Add(this.btn_UM_AddUser);
             this.Controls.Add(this.lbl_UM_title);
             this.Controls.Add(this.lst_UM_Users);
             this.Controls.Add(this.TopPanel);
@@ -442,8 +330,6 @@ namespace NoDeskUI
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
-            this.pnl_UM_AddUser.ResumeLayout(false);
-            this.pnl_UM_AddUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,24 +347,17 @@ namespace NoDeskUI
         private System.Windows.Forms.Label LabelLicense;
         private System.Windows.Forms.ListView lst_UM_Users;
         private System.Windows.Forms.Label lbl_UM_title;
-        private System.Windows.Forms.Button btn_UM_AddUser;
         private System.Windows.Forms.Button btn_UM_EditUser;
         private System.Windows.Forms.Button btn_UM_DeleteUser;
         private System.Windows.Forms.Button btn_UM_Refresh;
-        private System.Windows.Forms.Panel pnl_UM_AddUser;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Title;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_Job;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Job;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_LastName;
-        private System.Windows.Forms.Label lbl_UM_AddUser_LastName;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_FirstName;
-        private System.Windows.Forms.Label lbl_UM_AddUser_FirstName;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_Id;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Id;
-        private System.Windows.Forms.Button btn_UM_AddUser_Confirm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonKeyManagement;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.ColumnHeader col_ID;
+        private System.Windows.Forms.ColumnHeader col_FirstName;
+        private System.Windows.Forms.ColumnHeader col_LastName;
+        private System.Windows.Forms.ColumnHeader col_Email;
+        private System.Windows.Forms.ColumnHeader col_Company;
     }
 }
 
