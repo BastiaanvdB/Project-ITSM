@@ -44,6 +44,13 @@ namespace NoDeskUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCompanyName = new System.Windows.Forms.TextBox();
+            this.textBoxKeyOutput = new System.Windows.Forms.TextBox();
+            this.buttonGenerateKey = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonCopy = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -244,12 +251,96 @@ namespace NoDeskUI
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 11;
             // 
+            // textBoxCompanyName
+            // 
+            this.textBoxCompanyName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCompanyName.Location = new System.Drawing.Point(67, 235);
+            this.textBoxCompanyName.Name = "textBoxCompanyName";
+            this.textBoxCompanyName.Size = new System.Drawing.Size(147, 27);
+            this.textBoxCompanyName.TabIndex = 12;
+            // 
+            // textBoxKeyOutput
+            // 
+            this.textBoxKeyOutput.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxKeyOutput.Location = new System.Drawing.Point(67, 304);
+            this.textBoxKeyOutput.Multiline = true;
+            this.textBoxKeyOutput.Name = "textBoxKeyOutput";
+            this.textBoxKeyOutput.Size = new System.Drawing.Size(230, 180);
+            this.textBoxKeyOutput.TabIndex = 13;
+            // 
+            // buttonGenerateKey
+            // 
+            this.buttonGenerateKey.BackColor = System.Drawing.Color.White;
+            this.buttonGenerateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonGenerateKey.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonGenerateKey.Location = new System.Drawing.Point(220, 237);
+            this.buttonGenerateKey.Name = "buttonGenerateKey";
+            this.buttonGenerateKey.Size = new System.Drawing.Size(77, 25);
+            this.buttonGenerateKey.TabIndex = 14;
+            this.buttonGenerateKey.Text = "Generate";
+            this.buttonGenerateKey.UseVisualStyleBackColor = false;
+            this.buttonGenerateKey.Click += new System.EventHandler(this.buttonGenerateKey_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(67, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Company Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(67, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Activation Key:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(64, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 25);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Generate Activation Keys";
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.BackColor = System.Drawing.Color.White;
+            this.buttonCopy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCopy.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCopy.Location = new System.Drawing.Point(220, 490);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(77, 25);
+            this.buttonCopy.TabIndex = 18;
+            this.buttonCopy.Text = "Copy";
+            this.buttonCopy.UseVisualStyleBackColor = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            // 
             // KeyManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
+            this.Controls.Add(this.buttonCopy);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonGenerateKey);
+            this.Controls.Add(this.textBoxKeyOutput);
+            this.Controls.Add(this.textBoxCompanyName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -285,6 +376,13 @@ namespace NoDeskUI
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button KMBTN;
         private System.Windows.Forms.Button APBTN;
+        private System.Windows.Forms.TextBox textBoxCompanyName;
+        private System.Windows.Forms.TextBox textBoxKeyOutput;
+        private System.Windows.Forms.Button buttonGenerateKey;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonCopy;
     }
 }
 

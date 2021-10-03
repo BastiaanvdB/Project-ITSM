@@ -14,17 +14,16 @@ namespace Test_Terminal
 
         public void Start()
         {
-            Encryption test = new Encryption();
-
-            string encrypt = test.Encrypt("NoDesk:NoDesk2021BBJL");
+            KeyCheck keyCheck = new KeyCheck();
+             string encrypt = keyCheck.CreateActivationKey("test");
 
             Console.WriteLine(encrypt);
 
-            Console.ReadKey();
-            Console.WriteLine();
+            //Console.ReadKey();
+            //Console.WriteLine();
 
-            string decrypt = test.Decrypt(encrypt);
-            Console.WriteLine(decrypt);
+            //string decrypt = test.Decrypt(encrypt);
+            //Console.WriteLine(decrypt);
 
 
 

@@ -19,6 +19,16 @@ namespace NoDeskModels
             _encryption = new Encryption();
         }
 
+        public string CreateActivationKey(string companyName)
+        {
+            return _encryption.Encrypt(companyName + ":" + secretKeyProduct);
+        }
+
+        public string CreateInviteKey(string CompanyId)
+        {
+            return _encryption.Encrypt(CompanyId + ":" + secretKeyInvite);
+        }
+
         public bool EnterActivationKey(string key)
         {
             key = DecryptKey(key);

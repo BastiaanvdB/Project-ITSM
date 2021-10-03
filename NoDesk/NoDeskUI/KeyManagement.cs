@@ -17,10 +17,11 @@ namespace NoDeskUI
         private User _CurrentUser;
         private Login _login;
         private Dashboard _dashboard;
-
+        KeyCheck _keyCheck;
         public KeyManagement(Dashboard dashboard, Login login, User user)
         {
             InitializeComponent();
+            _keyCheck = new KeyCheck();
             _dashboard = dashboard;
             _CurrentUser = user;
             _login = login;
@@ -29,7 +30,7 @@ namespace NoDeskUI
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
-
+            buttonCopy.Enabled = false;
         }
 
         private void LoginInitialize()
@@ -82,6 +83,22 @@ namespace NoDeskUI
             }
         }
 
+        public void GenerateKey()
+        {
+            if (textBoxCompanyName.Text.Length > 0)
+            {
+                textBoxKeyOutput.Text = _keyCheck.CreateActivationKey(textBoxCompanyName.Text);
+                buttonCopy.Enabled = true;
+            }
+            else
+            {
+                buttonCopy.Enabled = false;
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Enter a company name!", "Error at generating key", buttons, MessageBoxIcon.Warning);
+            }
+        }
+
+
         private void IMBTN_Click(object sender, EventArgs e)
         {
             MenuSwitch("IncidentManagement");
@@ -100,6 +117,18 @@ namespace NoDeskUI
         private void DashboardBTN_Click(object sender, EventArgs e)
         {
             MenuSwitch("Dashboard");
+        }
+
+        private void buttonGenerateKey_Click(object sender, EventArgs e)
+        {
+            GenerateKey();
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBoxKeyOutput.Text);
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show("Key copied to clipboard", "", buttons, MessageBoxIcon.Information);
         }
     }
 }
