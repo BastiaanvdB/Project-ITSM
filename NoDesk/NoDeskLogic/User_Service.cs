@@ -30,6 +30,11 @@ namespace NoDeskLogic
             return _User_DAL.CheckUserLogin(login);
         }
 
+        public User GetUserByKey(string key)
+        {
+            return _User_DAL.GetUserByKey(key);
+        }
+
         public void UpdateUser(User user)
         {
             _User_DAL.UpdateUser(user);

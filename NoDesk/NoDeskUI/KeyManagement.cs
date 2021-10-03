@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ScottPlot;
 using ScottPlot.Renderable;
 using NoDeskModels;
+using NoDeskLogic;
 namespace NoDeskUI
 {
     public partial class KeyManagement : Form
@@ -17,11 +18,16 @@ namespace NoDeskUI
         private User _CurrentUser;
         private Login _login;
         private Dashboard _dashboard;
-        KeyCheck _keyCheck;
+        private KeyCheck _keyCheck;
+        private Company_Service _company_service;
+        private User_Service _user_Service;
+        private List<Company> _companies;
         public KeyManagement(Dashboard dashboard, Login login, User user)
         {
             InitializeComponent();
             _keyCheck = new KeyCheck();
+            _company_service = new Company_Service();
+            _user_Service = new User_Service();
             _dashboard = dashboard;
             _CurrentUser = user;
             _login = login;
@@ -31,6 +37,8 @@ namespace NoDeskUI
         private void NoDesk_Load(object sender, EventArgs e)
         {
             buttonCopy.Enabled = false;
+            LoadCompanies();
+            FillCompanyListview();
         }
 
         private void LoginInitialize()
@@ -80,6 +88,20 @@ namespace NoDeskUI
                     this.Hide();
                     _login.Show();
                     break;
+            }
+        }
+
+        public void LoadCompanies()
+        {
+            _companies = _company_service.GetCompanies();
+        }
+
+        public void FillCompanyListview()
+        {
+   
+            foreach (Company company in _companies)
+            {
+                listViewRegisteredCompanies.Items.Add(new ListViewItem(new string[] { $"{company.CompanyName}", $"{_user_Service.GetUserByKey(company.ActivationKey).Firstname + " " + _user_Service.GetUserByKey(company.ActivationKey).Lastname }", $"{_user_Service.GetUserByKey(company.ActivationKey).Email}" }));
             }
         }
 
