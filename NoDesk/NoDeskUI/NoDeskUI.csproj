@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="KeyManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -54,6 +54,11 @@ namespace NoDeskUI
                     incidentManagement.Show();
                     this.Hide();
                     break;
+                case "KeyManagement":
+                    KeyManagement keyManagement = new KeyManagement(_dashboard, _login, _currentUser);
+                    keyManagement.Show();
+                    this.Hide();
+                    break;
                 case "Logout":
                     this.Hide();
                     _login.Show();
@@ -120,7 +125,12 @@ namespace NoDeskUI
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            MenuSwitch("Logout");
+            MenuSwitch("IncidentManagement");
+        }
+
+        private void buttonKeyManagement_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("KeyManagement");
         }
     }
 }

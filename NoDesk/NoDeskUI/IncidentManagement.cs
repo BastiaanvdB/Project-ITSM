@@ -51,6 +51,11 @@ namespace NoDeskUI
                     userManagment.Show();
                     this.Hide();
                     break;
+                case "KeyManagement":
+                    KeyManagement keyManagement = new KeyManagement(_dashboard, _login, _currentUser);
+                    keyManagement.Show();
+                    this.Hide();
+                    break;
                 case "Logout":
                     this.Hide();
                     _login.Show();

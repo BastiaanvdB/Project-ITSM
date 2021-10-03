@@ -73,6 +73,11 @@ namespace NoDeskUI
                     userManagment.Show();
                     this.Hide();
                     break;
+                case "KeyManagement":
+                    KeyManagement keyManagement = new KeyManagement(this, _login, _CurrentUser);
+                    keyManagement.Show();
+                    this.Hide();
+                    break;
                 case "Logout":
                     this.Hide();
                     _login.Show();
@@ -139,5 +144,9 @@ namespace NoDeskUI
             MenuSwitch("Logout");
         }
 
+        private void KMBTN_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("KeyManagement");
+        }
     }
 }
