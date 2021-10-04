@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson;
 using NoDeskLogic;
 using NoDeskModels;
@@ -14,16 +15,19 @@ namespace Test_Terminal
 
         public void Start()
         {
-            KeyCheck keyCheck = new KeyCheck();
-             string encrypt = keyCheck.CreateActivationKey("test");
+            //KeyCheck keyCheck = new KeyCheck();
+            // string encrypt = keyCheck.CreateActivationKey("test");
 
-            Console.WriteLine(encrypt);
+            //Console.WriteLine(encrypt);
 
-            //Console.ReadKey();
-            //Console.WriteLine();
+            ////Console.ReadKey();
+            ////Console.WriteLine();
 
-            //string decrypt = test.Decrypt(encrypt);
-            //Console.WriteLine(decrypt);
+            ////string decrypt = test.Decrypt(encrypt);
+            ////Console.WriteLine(decrypt);
+            ///
+
+          
 
 
 

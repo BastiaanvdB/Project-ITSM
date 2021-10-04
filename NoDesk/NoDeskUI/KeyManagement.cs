@@ -101,7 +101,7 @@ namespace NoDeskUI
    
             foreach (Company company in _companies)
             {
-                listViewRegisteredCompanies.Items.Add(new ListViewItem(new string[] { $"{company.CompanyName}", $"{_user_Service.GetUserByKey(company.ActivationKey).Firstname + " " + _user_Service.GetUserByKey(company.ActivationKey).Lastname }", $"{_user_Service.GetUserByKey(company.ActivationKey).Email}", $"{_user_Service.LoadUsersByCompanyId(company.Id.ToString()).Count}" }));
+                listViewRegisteredCompanies.Items.Add(new ListViewItem(new string[] { $"{company.CompanyName}", $"{_user_Service.GetUserByKey(company.ActivationKey).Firstname + " " + _user_Service.GetUserByKey(company.ActivationKey).Lastname }", $"{_user_Service.GetUserByKey(company.ActivationKey).Email}", $"{_user_Service.LoadUsersByCompanyName(company.CompanyName).Count}" }));
             }
         }
 

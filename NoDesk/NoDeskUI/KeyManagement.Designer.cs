@@ -55,9 +55,9 @@ namespace NoDeskUI
             this.columnCompany = new System.Windows.Forms.ColumnHeader();
             this.columnOwner = new System.Windows.Forms.ColumnHeader();
             this.columnemail = new System.Windows.Forms.ColumnHeader();
+            this.columnTotalUsers = new System.Windows.Forms.ColumnHeader();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.columnTotalUsers = new System.Windows.Forms.ColumnHeader();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -368,6 +368,11 @@ namespace NoDeskUI
             this.columnemail.Text = "Email";
             this.columnemail.Width = 180;
             // 
+            // columnTotalUsers
+            // 
+            this.columnTotalUsers.Text = "Total Users";
+            this.columnTotalUsers.Width = 80;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -391,11 +396,6 @@ namespace NoDeskUI
             this.label6.Size = new System.Drawing.Size(209, 25);
             this.label6.TabIndex = 21;
             this.label6.Text = "Registered Companies";
-            // 
-            // columnTotalUsers
-            // 
-            this.columnTotalUsers.Text = "Total users";
-            this.columnTotalUsers.Width = 80;
             // 
             // KeyManagement
             // 

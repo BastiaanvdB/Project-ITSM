@@ -25,9 +25,9 @@ namespace NoDeskLogic
             return _User_DAL.GetUsers();
         }
 
-        public List<User> LoadUsersByCompanyId(string companyId)
+        public List<User> LoadUsersByCompanyName(string companyName)
         {
-            return _User_DAL.LoadUsersByCompanyId(companyId);
+            return _User_DAL.LoadUsersByCompanyName(companyName);
         }
 
         public User CheckUserLogin(LoginAttempt login)
