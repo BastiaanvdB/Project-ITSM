@@ -146,3 +146,4 @@ C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\ref\NoDesk.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.pdb
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.KeyManagement.resources
+C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.KeyManagement.resources

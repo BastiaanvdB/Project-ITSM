@@ -28,6 +28,14 @@ namespace NoDeskDAL
             return collection.Find(new BsonDocument()).ToList();
         }
 
+        // Get specific records
+        protected List<T> LoadRecordsByField<T>(string table, string field, string data)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(field, data);
+            return collection.Find(filter).ToList();
+        }
+
         // Get specific record by id
         protected T LoadRecordById<T>(string table, ObjectId id)
         {

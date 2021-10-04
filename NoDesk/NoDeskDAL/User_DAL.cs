@@ -60,6 +60,11 @@ namespace NoDeskDAL
             return LoadRecordByField<User>("Users", "ActivationKey", key);
         }
 
+        public List<User> LoadUsersByCompanyId(string companyId)
+        {
+            return LoadRecordsByField<User>("Users", "_id", companyId);
+        }
+
         public void DeleteUserById(User user)
         {
             DeleteRecordById<User>("Users", user.Id);

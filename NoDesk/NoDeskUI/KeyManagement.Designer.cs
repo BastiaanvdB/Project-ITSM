@@ -57,6 +57,7 @@ namespace NoDeskUI
             this.columnemail = new System.Windows.Forms.ColumnHeader();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.columnTotalUsers = new System.Windows.Forms.ColumnHeader();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -339,14 +340,15 @@ namespace NoDeskUI
             this.listViewRegisteredCompanies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnCompany,
             this.columnOwner,
-            this.columnemail});
+            this.columnemail,
+            this.columnTotalUsers});
             this.listViewRegisteredCompanies.FullRowSelect = true;
             this.listViewRegisteredCompanies.GridLines = true;
             this.listViewRegisteredCompanies.HideSelection = false;
-            this.listViewRegisteredCompanies.Location = new System.Drawing.Point(452, 235);
+            this.listViewRegisteredCompanies.Location = new System.Drawing.Point(420, 235);
             this.listViewRegisteredCompanies.MultiSelect = false;
             this.listViewRegisteredCompanies.Name = "listViewRegisteredCompanies";
-            this.listViewRegisteredCompanies.Size = new System.Drawing.Size(487, 249);
+            this.listViewRegisteredCompanies.Size = new System.Drawing.Size(545, 249);
             this.listViewRegisteredCompanies.TabIndex = 19;
             this.listViewRegisteredCompanies.UseCompatibleStateImageBehavior = false;
             this.listViewRegisteredCompanies.View = System.Windows.Forms.View.Details;
@@ -371,7 +373,7 @@ namespace NoDeskUI
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(862, 490);
+            this.button1.Location = new System.Drawing.Point(888, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 25);
             this.button1.TabIndex = 20;
@@ -384,11 +386,16 @@ namespace NoDeskUI
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(446, 164);
+            this.label6.Location = new System.Drawing.Point(420, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(209, 25);
             this.label6.TabIndex = 21;
             this.label6.Text = "Registered Companies";
+            // 
+            // columnTotalUsers
+            // 
+            this.columnTotalUsers.Text = "Total users";
+            this.columnTotalUsers.Width = 80;
             // 
             // KeyManagement
             // 
@@ -454,6 +461,7 @@ namespace NoDeskUI
         private System.Windows.Forms.ColumnHeader columnemail;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader columnTotalUsers;
     }
 }
 

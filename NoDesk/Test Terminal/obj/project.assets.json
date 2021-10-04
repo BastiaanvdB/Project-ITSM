@@ -6111,11 +6111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
+      "projectUniqueName": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
       "projectName": "Test Terminal",
-      "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
+      "projectPath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
       "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\Test Terminal\\obj\\",
+      "outputPath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\Test Terminal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6132,18 +6132,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\basti\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj": {
-              "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj"
+            "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj": {
+              "projectPath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskLogic\\NoDeskLogic.csproj"
             },
-            "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
-              "projectPath": "C:\\Users\\basti\\Desktop\\Project NoSQL\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"
+            "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj": {
+              "projectPath": "C:\\Users\\basti\\Desktop\\Project ITSM\\Project-ITSM\\NoDesk\\NoDeskModels\\NoDeskModels.csproj"
             }
           }
         }
