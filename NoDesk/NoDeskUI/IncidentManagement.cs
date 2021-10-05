@@ -33,7 +33,7 @@ namespace NoDeskUI
 
         private void LoginInitialize()
         {
-
+            PNL_CreateTicket.Hide();
             LabelCurrentUser.Text = $"Current user: {_currentUser.Firstname} {_currentUser.Lastname}";
             LabelLicense.Text = $"Licensed to: {_currentUser.Company.CompanyName}";
         }
