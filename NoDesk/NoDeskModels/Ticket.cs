@@ -20,5 +20,18 @@ namespace NoDeskModels
         public DateTime CreatedAt { get; set; }
         [BsonElement("TicketClosedAt")]
         public DateTime ClosedAt { get; set; }
+        [BsonElement("User")]
+
+        public string User { get; set; }
+        [BsonElement("Date")]
+        public DateTime Date { get; set; }
+        [BsonElement("Type")]
+        public TypeIncident Type { get; set; }
+        [BsonElement("Priority")]
+        public Priority Priority { get; set; }
+        [BsonElement("Deadline")]
+        public DateTime Deadline { get; set; }
+        [BsonElement("Description")]
+        public string Description { get; set; }
     }
 }
