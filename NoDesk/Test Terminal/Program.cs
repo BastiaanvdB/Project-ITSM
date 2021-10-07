@@ -1,4 +1,5 @@
 ﻿using System;
+using MongoDB.Bson;
 using NoDeskLogic;
 using NoDeskModels;
 namespace Test_Terminal
@@ -13,14 +14,19 @@ namespace Test_Terminal
 
         public void Start()
         {
-            // test
-            Ticket_Service ticket_Service = new Ticket_Service();
-            var recs = ticket_Service.GetTickets();
+            Encryption test = new Encryption();
 
-            foreach (var rec in recs)
-            {
-                Console.WriteLine($"{rec.Id} {rec.Subject} {rec.Text}");
-            }
+            string encrypt = test.Encrypt("NoDesk:NoDesk2021BBJL");
+
+            Console.WriteLine(encrypt);
+
+            Console.ReadKey();
+            Console.WriteLine();
+
+            string decrypt = test.Decrypt(encrypt);
+            Console.WriteLine(decrypt);
+
+
 
             Console.ReadKey();
         }

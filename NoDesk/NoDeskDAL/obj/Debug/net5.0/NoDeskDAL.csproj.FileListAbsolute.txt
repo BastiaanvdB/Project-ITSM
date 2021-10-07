@@ -43,3 +43,33 @@ C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\ref\NoDeskDAL.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.deps.json
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\ref\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskModels.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskModels.pdb
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.AssemblyInfo.cs
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.CopyComplete
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\ref\NoDeskDAL.dll
+C:\Users\basti\Desktop\e\Project-ITSM-main\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.deps.json
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\ref\NoDeskDAL.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskDAL.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskModels.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\bin\Debug\net5.0\NoDeskModels.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.AssemblyReference.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.AssemblyInfoInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.AssemblyInfo.cs
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.CoreCompileInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.csproj.CopyComplete
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\ref\NoDeskDAL.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\obj\Debug\net5.0\NoDeskDAL.pdb

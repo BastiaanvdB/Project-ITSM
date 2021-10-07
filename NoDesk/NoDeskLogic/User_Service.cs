@@ -4,37 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NoDeskModels;
+using MongoDB.Driver;
+using MongoDB.Bson;
 using NoDeskDAL;
-
 namespace NoDeskLogic
 {
     public class User_Service
     {
-        User_DAL UserDAL;
-
+        private User_DAL _User_DAL;
         public User_Service()
         {
-            UserDAL = new User_DAL();
+            _User_DAL = new User_DAL();
         }
 
-        public void AddUser(User user)
+        public void InsertUser(User user)
         {
-            UserDAL.DB_AddUser(user);
+            _User_DAL.InsertUser(user);
         }
 
         public List<User> GetUsers()
         {
-            return UserDAL.DB_GetUsers();
+            return _User_DAL.DB_GetUsers();
+        }
+
+        public List<BsonDocument> GetUsersNoMap()
+        {
+            return _User_DAL.DB_GetUsersNoMap();
+        }
+
+        public User CheckUserLogin(LoginAttempt login)
+        {
+            return _User_DAL.CheckUserLogin(login);
         }
 
         public void UpdateUser(User user)
         {
-            UserDAL.DB_UpdateUser(user);
+            _User_DAL.UpdateUser(user);
         }
 
-        public void DeleteUserOnId(User user)
+        public void DeleteUserById(User user)
         {
-            UserDAL.DB_DeleteUserOnId(user);
+            _User_DAL.DeleteUserById(user);
+        }
+
+        public User GetUserById(ObjectId Id)
+        {
+            return _User_DAL.GetUserById(Id);
         }
     }
 }

@@ -9,13 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScottPlot;
 using ScottPlot.Renderable;
+using NoDeskModels;
 namespace NoDeskUI
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        private User _CurrentUser;
+        private Login _login;
+
+        public Dashboard(User user, Login login)
         {
             InitializeComponent();
+            _CurrentUser = user;
+            _login = login;
             LoginInitialize();
         }
 
@@ -28,9 +34,26 @@ namespace NoDeskUI
         private void LoginInitialize()
         {
 
-            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
-            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
+            LabelCurrentUser.Text = $"Current user: {_CurrentUser.Firstname} {_CurrentUser.Lastname}";
+            LabelLicense.Text = $"Licensed to: {_CurrentUser.Company.CompanyName}";
 
+            switch(_CurrentUser.Role)
+            {
+                case Roles.user:
+                    APBTN.Hide();
+                    KMBTN.Hide();
+                    break;
+                case Roles.admin:
+                    APBTN.Show();
+                    KMBTN.Hide();
+                    break;
+                case Roles.god:
+                    UMBTN.Hide();
+                    IMBTN.Hide();
+                    APBTN.Show();
+                    KMBTN.Show();
+                    break;
+            }
         }
 
         private void MenuSwitch(string menuOption)
@@ -41,14 +64,18 @@ namespace NoDeskUI
 
                     break;
                 case "IncidentManagement":
-                    IncidentManagement incidentManagement = new IncidentManagement(this);
+                    IncidentManagement incidentManagement = new IncidentManagement(this, _login, _CurrentUser);
                     incidentManagement.Show();
                     this.Hide();
                     break;
                 case "UserManagement":
-                    UserManagment userManagment = new UserManagment(this);
+                    UserManagment userManagment = new UserManagment(this, _login, _CurrentUser);
                     userManagment.Show();
                     this.Hide();
+                    break;
+                case "Logout":
+                    this.Hide();
+                    _login.Show();
                     break;
             }
         }
@@ -106,5 +133,11 @@ namespace NoDeskUI
         {
             MenuSwitch("UserManagement");
         }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            MenuSwitch("Logout");
+        }
+
     }
 }

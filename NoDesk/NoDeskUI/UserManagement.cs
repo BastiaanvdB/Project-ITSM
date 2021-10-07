@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ScottPlot;
-using ScottPlot.Renderable;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using NoDeskLogic;
 using NoDeskModels;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace NoDeskUI
 {
@@ -18,11 +12,13 @@ namespace NoDeskUI
     {
         private Dashboard _dashboard;
         private User_Service _us;
-        
-
-        public UserManagment(Dashboard dashboard)
+        private Login _login;
+        private User _currentUser;
+        public UserManagment(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
+            _login = login;
+            _currentUser = user;
             _us = new User_Service();
             InitializeComponent();
             LoginInitialize();
@@ -30,16 +26,14 @@ namespace NoDeskUI
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
+            pnl_UpdateUser.Hide();
             FillListView();
         }
 
-        //tijdelijk 
         private void LoginInitialize()
         {
-
-            LabelCurrentUser.Text = $"Current user: {"Bastiaan van der bijl"}";
-            LabelLicense.Text = $"Licensed to: {"The Garden Group"}";
-
+            LabelCurrentUser.Text = $"Current user: {_currentUser.Firstname} {_currentUser.Lastname}";
+            LabelLicense.Text = $"Licensed to: {_currentUser.Company.CompanyName}";
         }
 
         private void MenuSwitch(string menuOption)
@@ -51,12 +45,13 @@ namespace NoDeskUI
                     this.Hide();
                     break;
                 case "IncidentManagement":
-                    IncidentManagement incidentManagement = new IncidentManagement(_dashboard);
+                    IncidentManagement incidentManagement = new IncidentManagement(_dashboard, _login, _currentUser);
                     incidentManagement.Show();
                     this.Hide();
                     break;
-                case "UserManagement":
-
+                case "Logout":
+                    this.Hide();
+                    _login.Show();
                     break;
             }
         }
@@ -73,50 +68,80 @@ namespace NoDeskUI
 
         private void FillListView()
         {
-            List<User> users = _us.GetUsers();
+
+            List<User> UserList = _us.GetUsers();        
 
             lst_UM_Users.Items.Clear();
 
-            foreach (var user in users)
+            foreach (var user in UserList)
             {
-                ListViewItem User = new ListViewItem(user.Id.ToString());
+                //Makes sure the person who is logged in only sees users from their company
+                if (user.Company.CompanyName == _currentUser.Company.CompanyName)
+                {
+                    ListViewItem User = new ListViewItem(user.Id.ToString());
 
-                User.SubItems.Add(user.FirstName);
-                User.SubItems.Add(user.LastName.ToString());
-                User.SubItems.Add(user.Job);
+                    User.SubItems.Add(user.Firstname);
+                    User.SubItems.Add(user.Lastname);
+                    User.SubItems.Add(user.Email);
+                    User.SubItems.Add(user.Company.CompanyName);
 
-                lst_UM_Users.Items.Add(User);
+                    lst_UM_Users.Items.Add(User);
+                }
+                
             }
-        }
-
-        private void btn_UM_AddUser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_UM_EditUser_Click(object sender, EventArgs e)
         {
+            pnl_UpdateUser.Show();
+        }
 
+        private void btn_UpdateUserConfirm_Click(object sender, EventArgs e)
+        {
+            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            User user = _us.GetUserById(Id);
+            string NewEmail = txt_NewEmailInput.Text;
+            
+            
+            DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
+            if (msbResult == DialogResult.Yes)
+            {
+                user.Email = NewEmail;
+                _us.UpdateUser(user);
+                MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
+                txt_NewEmailInput.Clear();
+                pnl_UpdateUser.Hide();
+            }
         }
 
         private void btn_UM_DeleteUser_Click(object sender, EventArgs e)
         {
+            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            User user = _us.GetUserById(Id);
+            DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
+            if (msbResult == DialogResult.Yes)
+            {
+                _us.DeleteUserById(user);
+                MessageBox.Show("User succesfully deleted!", "Delete Confirmed", MessageBoxButtons.OK);
+            }
+        }
 
+        private void btn_CancelUpdateUser_Click(object sender, EventArgs e)
+        {
+            txt_NewEmailInput.Clear();
+            pnl_UpdateUser.Hide();
         }
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
+            FillListView();
+        }      
 
-        }
-
-        private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)
+        private void buttonLogout_Click(object sender, EventArgs e)
         {
-            int Id = int.Parse(txt_UM_AddUser_Id.Text);
-            string FirstName = txt_UM_AddUser_FirstName.Text;
-            string LastName = txt_UM_AddUser_LastName.Text;
-            string Job = txt_UM_AddUser_Job.Text;
-                          
-            _us.AddUser(new User(Id, FirstName, LastName, Job));
+            MenuSwitch("Logout");
         }
+
+        
     }
 }

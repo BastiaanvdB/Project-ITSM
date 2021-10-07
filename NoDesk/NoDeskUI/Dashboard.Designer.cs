@@ -35,6 +35,9 @@ namespace NoDeskUI
             this.LabelCurrentUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.KMBTN = new System.Windows.Forms.Button();
+            this.APBTN = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
@@ -102,6 +105,9 @@ namespace NoDeskUI
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
+            this.MenuPanel.Controls.Add(this.KMBTN);
+            this.MenuPanel.Controls.Add(this.APBTN);
+            this.MenuPanel.Controls.Add(this.buttonLogout);
             this.MenuPanel.Controls.Add(this.UMBTN);
             this.MenuPanel.Controls.Add(this.IMBTN);
             this.MenuPanel.Controls.Add(this.DashboardBTN);
@@ -111,6 +117,53 @@ namespace NoDeskUI
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1036, 41);
             this.MenuPanel.TabIndex = 0;
+            // 
+            // KMBTN
+            // 
+            this.KMBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.KMBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.KMBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KMBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.KMBTN.ForeColor = System.Drawing.Color.White;
+            this.KMBTN.Image = global::NoDeskUI.Properties.Resources.key_6_24;
+            this.KMBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KMBTN.Location = new System.Drawing.Point(679, 0);
+            this.KMBTN.Name = "KMBTN";
+            this.KMBTN.Size = new System.Drawing.Size(183, 41);
+            this.KMBTN.TabIndex = 15;
+            this.KMBTN.Text = "Key Management";
+            this.KMBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KMBTN.UseVisualStyleBackColor = false;
+            // 
+            // APBTN
+            // 
+            this.APBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.APBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.APBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.APBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.APBTN.ForeColor = System.Drawing.Color.White;
+            this.APBTN.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
+            this.APBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.APBTN.Location = new System.Drawing.Point(532, 0);
+            this.APBTN.Name = "APBTN";
+            this.APBTN.Size = new System.Drawing.Size(147, 41);
+            this.APBTN.TabIndex = 14;
+            this.APBTN.Text = "Admin Panel";
+            this.APBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.APBTN.UseVisualStyleBackColor = false;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.White;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogout.Location = new System.Drawing.Point(956, 9);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(77, 25);
+            this.buttonLogout.TabIndex = 13;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // UMBTN
             // 
@@ -312,6 +365,9 @@ namespace NoDeskUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LabelCurrentUser;
         private System.Windows.Forms.Label LabelLicense;
+        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button KMBTN;
+        private System.Windows.Forms.Button APBTN;
     }
 }
 

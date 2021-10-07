@@ -101,3 +101,8 @@ C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\Test Terminal\obj\Debug\
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\ref\Test Terminal.dll
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.pdb
 C:\Users\basti\Desktop\Project ITSM\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.genruntimeconfig.cache
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\bin\Debug\net5.0\Nancy.dll
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\bin\Debug\net5.0\Newtonsoft.Json.dll

@@ -63,9 +63,49 @@ namespace NoDeskUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administrator_2_24 {
+            get {
+                object obj = ResourceManager.GetObject("administrator_2_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard_2_24 {
             get {
                 object obj = ResourceManager.GetObject("dashboard_2_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon desktop_256 {
+            get {
+                object obj = ResourceManager.GetObject("desktop_256", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon desktop_256_black {
+            get {
+                object obj = ResourceManager.GetObject("desktop_256_black", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key_6_24 {
+            get {
+                object obj = ResourceManager.GetObject("key_6_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
