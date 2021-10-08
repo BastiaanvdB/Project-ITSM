@@ -31,7 +31,7 @@ namespace NoDeskUI
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
-           // FillListview();
+            //FillListview();
         }
 
         private void LoginInitialize()
@@ -103,7 +103,10 @@ namespace NoDeskUI
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket from {} to {}?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //do it
+                    Ticket ticket = new Ticket();
+                    //ticket.Id = ObjectId.Parse(LSV_Ticketoverview.SelectedItems[0].Text);
+                    ticket.User = TXT_UserTransfer.Text.ToString();
+                    _ticketService.UpdateTicket(ticket);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -132,24 +135,24 @@ namespace NoDeskUI
             }
         }
 
-       // private void FillListview()
+      //  private void FillListview()
         //{
-            //List<Ticket> tickets = _ticketService.GetTickets();
+           // List<Ticket> tickets = _ticketService.GetTickets();
 
-            //LSV_Ticketoverview.Items.Clear();
+           // LSV_Ticketoverview.Items.Clear();
 
-           // foreach (var ticket in tickets)
+            //foreach (var ticket in tickets)
            // {
                // ListViewItem Ticket = new ListViewItem(ticket.User);
 
                // Ticket.SubItems.Add(ticket.Date.ToString());
-               // Ticket.SubItems.Add(ticket.Type);
+               // Ticket.SubItems.Add(ticket.Type.ToString());
                // Ticket.SubItems.Add(ticket.Subject);
-               // Ticket.SubItems.Add(ticket.Priority);
-               // Ticket.SubItems.Add(ticket.Deadline.ToString());
+               // Ticket.SubItems.Add(ticket.Priority.ToString());
+              //  Ticket.SubItems.Add(ticket.Deadline.ToString());
                // Ticket.SubItems.Add(ticket.Description);
 
-               // LSV_Ticketoverview.Items.Add(Ticket);
+              //  LSV_Ticketoverview.Items.Add(Ticket);
            // }
         //}
     }

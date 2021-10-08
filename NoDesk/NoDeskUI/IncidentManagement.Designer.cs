@@ -374,7 +374,7 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
             this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
-            this.PNL_CreateTicket.Location = new System.Drawing.Point(28, 139);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(249, 139);
             this.PNL_CreateTicket.Name = "PNL_CreateTicket";
             this.PNL_CreateTicket.Size = new System.Drawing.Size(515, 610);
             this.PNL_CreateTicket.TabIndex = 12;
