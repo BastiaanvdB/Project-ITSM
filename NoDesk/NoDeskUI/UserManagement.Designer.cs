@@ -29,6 +29,7 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagment));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace NoDeskUI
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
-            this.lst_UM_Users = new System.Windows.Forms.ListView();
             this.col_ID = new System.Windows.Forms.ColumnHeader();
             this.col_FirstName = new System.Windows.Forms.ColumnHeader();
             this.col_LastName = new System.Windows.Forms.ColumnHeader();
@@ -52,14 +52,21 @@ namespace NoDeskUI
             this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
             this.btn_UM_Refresh = new System.Windows.Forms.Button();
             this.pnl_UpdateUser = new System.Windows.Forms.Panel();
+            this.btn_CancelUpdateUser = new System.Windows.Forms.Button();
             this.btn_UpdateUserConfirm = new System.Windows.Forms.Button();
             this.txt_NewEmailInput = new System.Windows.Forms.TextBox();
             this.lbl_UpdateUserEmail = new System.Windows.Forms.Label();
             this.lbl_UpdateUserTitle = new System.Windows.Forms.Label();
-            this.btn_CancelUpdateUser = new System.Windows.Forms.Button();
+            this.dgv_UserData = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.pnl_UpdateUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserData)).BeginInit();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -224,48 +231,6 @@ namespace NoDeskUI
             this.DashboardBTN.UseVisualStyleBackColor = false;
             this.DashboardBTN.Click += new System.EventHandler(this.DashboardBTN_Click);
             // 
-            // lst_UM_Users
-            // 
-            this.lst_UM_Users.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.col_ID,
-            this.col_FirstName,
-            this.col_LastName,
-            this.col_Email,
-            this.col_Company});
-            this.lst_UM_Users.FullRowSelect = true;
-            this.lst_UM_Users.HideSelection = false;
-            this.lst_UM_Users.Location = new System.Drawing.Point(12, 191);
-            this.lst_UM_Users.Name = "lst_UM_Users";
-            this.lst_UM_Users.Size = new System.Drawing.Size(579, 431);
-            this.lst_UM_Users.TabIndex = 1;
-            this.lst_UM_Users.UseCompatibleStateImageBehavior = false;
-            this.lst_UM_Users.View = System.Windows.Forms.View.Details;
-            // 
-            // col_ID
-            // 
-            this.col_ID.Text = "ID";
-            this.col_ID.Width = 160;
-            // 
-            // col_FirstName
-            // 
-            this.col_FirstName.Text = "Firstname";
-            this.col_FirstName.Width = 80;
-            // 
-            // col_LastName
-            // 
-            this.col_LastName.Text = "Lastname";
-            this.col_LastName.Width = 80;
-            // 
-            // col_Email
-            // 
-            this.col_Email.Text = "E-Mail Address";
-            this.col_Email.Width = 170;
-            // 
-            // col_Company
-            // 
-            this.col_Company.Text = "Company";
-            this.col_Company.Width = 80;
-            // 
             // lbl_UM_title
             // 
             this.lbl_UM_title.AutoSize = true;
@@ -326,10 +291,23 @@ namespace NoDeskUI
             this.pnl_UpdateUser.Controls.Add(this.txt_NewEmailInput);
             this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserEmail);
             this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserTitle);
-            this.pnl_UpdateUser.Location = new System.Drawing.Point(366, 261);
+            this.pnl_UpdateUser.Location = new System.Drawing.Point(410, 257);
             this.pnl_UpdateUser.Name = "pnl_UpdateUser";
             this.pnl_UpdateUser.Size = new System.Drawing.Size(338, 148);
             this.pnl_UpdateUser.TabIndex = 7;
+            // 
+            // btn_CancelUpdateUser
+            // 
+            this.btn_CancelUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_CancelUpdateUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_CancelUpdateUser.ForeColor = System.Drawing.Color.White;
+            this.btn_CancelUpdateUser.Location = new System.Drawing.Point(13, 114);
+            this.btn_CancelUpdateUser.Name = "btn_CancelUpdateUser";
+            this.btn_CancelUpdateUser.Size = new System.Drawing.Size(78, 29);
+            this.btn_CancelUpdateUser.TabIndex = 4;
+            this.btn_CancelUpdateUser.Text = "Cancel";
+            this.btn_CancelUpdateUser.UseVisualStyleBackColor = false;
+            this.btn_CancelUpdateUser.Click += new System.EventHandler(this.btn_CancelUpdateUser_Click);
             // 
             // btn_UpdateUserConfirm
             // 
@@ -374,18 +352,60 @@ namespace NoDeskUI
             this.lbl_UpdateUserTitle.TabIndex = 0;
             this.lbl_UpdateUserTitle.Text = "Update User";
             // 
-            // btn_CancelUpdateUser
+            // dgv_UserData
             // 
-            this.btn_CancelUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_CancelUpdateUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_CancelUpdateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_CancelUpdateUser.Location = new System.Drawing.Point(13, 114);
-            this.btn_CancelUpdateUser.Name = "btn_CancelUpdateUser";
-            this.btn_CancelUpdateUser.Size = new System.Drawing.Size(78, 29);
-            this.btn_CancelUpdateUser.TabIndex = 4;
-            this.btn_CancelUpdateUser.Text = "Cancel";
-            this.btn_CancelUpdateUser.UseVisualStyleBackColor = false;
-            this.btn_CancelUpdateUser.Click += new System.EventHandler(this.btn_CancelUpdateUser_Click);
+            this.dgv_UserData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv_UserData.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_UserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_UserData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dgv_UserData.Location = new System.Drawing.Point(12, 210);
+            this.dgv_UserData.Name = "dgv_UserData";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_UserData.RowTemplate.Height = 25;
+            this.dgv_UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_UserData.Size = new System.Drawing.Size(657, 412);
+            this.dgv_UserData.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 43;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Firstname";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Lastname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 61;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Company";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // UserManagment
             // 
@@ -394,11 +414,11 @@ namespace NoDeskUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
             this.Controls.Add(this.pnl_UpdateUser);
+            this.Controls.Add(this.dgv_UserData);
             this.Controls.Add(this.btn_UM_Refresh);
             this.Controls.Add(this.btn_UM_DeleteUser);
             this.Controls.Add(this.btn_UM_EditUser);
             this.Controls.Add(this.lbl_UM_title);
-            this.Controls.Add(this.lst_UM_Users);
             this.Controls.Add(this.TopPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserManagment";
@@ -410,6 +430,7 @@ namespace NoDeskUI
             this.MenuPanel.ResumeLayout(false);
             this.pnl_UpdateUser.ResumeLayout(false);
             this.pnl_UpdateUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,7 +446,6 @@ namespace NoDeskUI
         private System.Windows.Forms.Button UMBTN;
         private System.Windows.Forms.Label LabelCurrentUser;
         private System.Windows.Forms.Label LabelLicense;
-        private System.Windows.Forms.ListView lst_UM_Users;
         private System.Windows.Forms.Label lbl_UM_title;
         private System.Windows.Forms.Button btn_UM_EditUser;
         private System.Windows.Forms.Button btn_UM_DeleteUser;
@@ -444,6 +464,12 @@ namespace NoDeskUI
         private System.Windows.Forms.Label lbl_UpdateUserEmail;
         private System.Windows.Forms.Label lbl_UpdateUserTitle;
         private System.Windows.Forms.Button btn_CancelUpdateUser;
+        private System.Windows.Forms.DataGridView dgv_UserData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
 

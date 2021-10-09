@@ -1,5 +1,4 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
 using NoDeskLogic;
 using NoDeskModels;
 using System;
@@ -27,7 +26,7 @@ namespace NoDeskUI
         private void NoDesk_Load(object sender, EventArgs e)
         {
             pnl_UpdateUser.Hide();
-            FillListView();
+            FillDataGrid();
         }
 
         private void LoginInitialize()
@@ -66,29 +65,23 @@ namespace NoDeskUI
             MenuSwitch("IncidentManagement");
         }
 
-        private void FillListView()
+        private void FillDataGrid()
         {
 
-            List<User> UserList = _us.GetUsers();        
+            List<User> UserList = _us.GetUsers();
 
-            lst_UM_Users.Items.Clear();
+            //lst_UM_Users.Items.Clear();
 
             foreach (var user in UserList)
             {
                 //Makes sure the person who is logged in only sees users from their company
                 if (user.Company.CompanyName == _currentUser.Company.CompanyName)
                 {
-                    ListViewItem User = new ListViewItem(user.Id.ToString());
-
-                    User.SubItems.Add(user.Firstname);
-                    User.SubItems.Add(user.Lastname);
-                    User.SubItems.Add(user.Email);
-                    User.SubItems.Add(user.Company.CompanyName);
-
-                    lst_UM_Users.Items.Add(User);
+                    //DataGridViewRow row = new DataGridViewRow();
+                    dgv_UserData.Rows.Add(user.Id, user.Firstname, user.Lastname, user.Email, user.Company.CompanyName);                           
                 }
-                
-            }
+
+            }                 
         }
 
         private void btn_UM_EditUser_Click(object sender, EventArgs e)
@@ -98,11 +91,11 @@ namespace NoDeskUI
 
         private void btn_UpdateUserConfirm_Click(object sender, EventArgs e)
         {
-            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
             User user = _us.GetUserById(Id);
             string NewEmail = txt_NewEmailInput.Text;
-            
-            
+
+
             DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
             if (msbResult == DialogResult.Yes)
             {
@@ -116,7 +109,7 @@ namespace NoDeskUI
 
         private void btn_UM_DeleteUser_Click(object sender, EventArgs e)
         {
-            ObjectId Id = ObjectId.Parse(lst_UM_Users.SelectedItems[0].Text);
+            ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
             User user = _us.GetUserById(Id);
             DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
             if (msbResult == DialogResult.Yes)
@@ -134,7 +127,7 @@ namespace NoDeskUI
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
-            FillListView();
+            FillDataGrid();
         }      
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -142,6 +135,5 @@ namespace NoDeskUI
             MenuSwitch("Logout");
         }
 
-        
     }
 }
