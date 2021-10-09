@@ -91,32 +91,44 @@ namespace NoDeskUI
 
         private void btn_UpdateUserConfirm_Click(object sender, EventArgs e)
         {
-            ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
-            User user = _us.GetUserById(Id);
-            string NewEmail = txt_NewEmailInput.Text;
-
-
-            DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
-            if (msbResult == DialogResult.Yes)
+            if (dgv_UserData.SelectedRows.Count == 1)
             {
-                user.Email = NewEmail;
-                _us.UpdateUser(user);
-                MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
-                txt_NewEmailInput.Clear();
-                pnl_UpdateUser.Hide();
+                ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
+                User user = _us.GetUserById(Id);
+                string NewEmail = txt_NewEmailInput.Text;
+
+
+                DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
+                if (msbResult == DialogResult.Yes)
+                {
+                    user.Email = NewEmail;
+                    _us.UpdateUser(user);
+                    MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
+                    txt_NewEmailInput.Clear();
+                    pnl_UpdateUser.Hide();
+                }
             }
+            
         }
 
         private void btn_UM_DeleteUser_Click(object sender, EventArgs e)
         {
-            ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
-            User user = _us.GetUserById(Id);
-            DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
-            if (msbResult == DialogResult.Yes)
+            if (dgv_UserData.SelectedRows.Count == 1)
             {
-                _us.DeleteUserById(user);
-                MessageBox.Show("User succesfully deleted!", "Delete Confirmed", MessageBoxButtons.OK);
+                ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
+                User user = _us.GetUserById(Id);
+                DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
+                if (msbResult == DialogResult.Yes)
+                {
+                    _us.DeleteUserById(user);
+                    MessageBox.Show("User succesfully deleted!", "Delete Confirmed", MessageBoxButtons.OK);
+                }
             }
+            else
+            {
+                MessageBox.Show("Please select an user first!", "Error", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void btn_CancelUpdateUser_Click(object sender, EventArgs e)
