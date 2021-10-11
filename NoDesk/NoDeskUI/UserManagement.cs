@@ -68,16 +68,13 @@ namespace NoDeskUI
         private void FillDataGrid()
         {
 
-            List<User> UserList = _us.GetUsers();
-
-            //lst_UM_Users.Items.Clear();
+            List<User> UserList = _us.GetUsers();          
 
             foreach (var user in UserList)
             {
                 //Makes sure the person who is logged in only sees users from their company
                 if (user.Company.CompanyName == _currentUser.Company.CompanyName)
-                {
-                    //DataGridViewRow row = new DataGridViewRow();
+                {                 
                     dgv_UserData.Rows.Add(user.Id, user.Firstname, user.Lastname, user.Email, user.Company.CompanyName);                           
                 }
 
@@ -93,20 +90,29 @@ namespace NoDeskUI
         {
             if (dgv_UserData.SelectedRows.Count == 1)
             {
+                
                 ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
-                User user = _us.GetUserById(Id);
-                string NewEmail = txt_NewEmailInput.Text;
+                User user = _us.GetUserById(Id);              
 
-
-                DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
-                if (msbResult == DialogResult.Yes)
+                if (txt_NewEmailInput.Text != "")
                 {
-                    user.Email = NewEmail;
-                    _us.UpdateUser(user);
-                    MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
-                    txt_NewEmailInput.Clear();
-                    pnl_UpdateUser.Hide();
+                    string NewEmail = txt_NewEmailInput.Text;
+
+                    DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
+                    if (msbResult == DialogResult.Yes)
+                    {
+                        user.Email = NewEmail;
+                        _us.UpdateUser(user);
+                        MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
+                        txt_NewEmailInput.Clear();
+                        pnl_UpdateUser.Hide();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please enter an email address before submitting", "Empty field", MessageBoxButtons.OK);
+                }
+                
             }
             
         }
@@ -139,6 +145,7 @@ namespace NoDeskUI
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
+            dgv_UserData.Rows.Clear();
             FillDataGrid();
         }      
 
