@@ -25,18 +25,19 @@ namespace NoDeskUI
             _dashboard = dashboard;
             _login = login;
             _currentUser = user;
+            _ticketService = new Ticket_Service();
             InitializeComponent();
             LoginInitialize();
         }
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
-            //FillListview();
+            PNL_CreateTicket.Hide();
+            FillDataGrid();
         }
 
         private void LoginInitialize()
         {
-            PNL_CreateTicket.Hide();
             LabelCurrentUser.Text = $"Current user: {_currentUser.Firstname} {_currentUser.Lastname}";
             LabelLicense.Text = $"Licensed to: {_currentUser.Company.CompanyName}";
         }
@@ -76,11 +77,6 @@ namespace NoDeskUI
             MenuSwitch("UserManagement");
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             MenuSwitch("Logout");
@@ -96,6 +92,9 @@ namespace NoDeskUI
             PNL_CreateTicket.Show();
         }
 
+
+        // Transfer ticket to another user
+
         private void BTN_Transfer_Click(object sender, EventArgs e)
         {
             if (TXT_UserTransfer.Text != "")
@@ -104,8 +103,10 @@ namespace NoDeskUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     Ticket ticket = new Ticket();
-                    //ticket.Id = ObjectId.Parse(LSV_Ticketoverview.SelectedItems[0].Text);
+
+                    //ticket.Id =  DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString(); 
                     ticket.User = TXT_UserTransfer.Text.ToString();
+
                     _ticketService.UpdateTicket(ticket);
                 }
                 else if (dialogResult == DialogResult.No)
@@ -115,9 +116,14 @@ namespace NoDeskUI
             }
             else
             {
-                MessageBox.Show("Oops, please make sure to enter a user!");
+                MessageBox.Show("Oops, please make sure to enter the user you would like to transfer the ticket to!");
             }
         }
+
+        
+
+
+        // Create a new incident ticket
 
         private void BTN_ConfirmTicket_Click(object sender, EventArgs e)
         {
@@ -126,34 +132,42 @@ namespace NoDeskUI
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to create a new incident ticket?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //do it
+                    Ticket ticket = new Ticket();
+
+                    ticket.Subject = TXTBOX_Subject.Text;
+                    //ticket.Type = Enum.Parse(typeof(Type), ComboBox_Type.Text);
+                    ticket.User = TXTBOX_User.Text;
+                    //ticket.Priority = Enum.Parse(typeof(Type), ComboBox_Priority.Text);
+                    ticket.Deadline = DateTime_Deadline.Value;
+                    ticket.Description = TXTBOX_Description.Text;
+                    ticket.Date = DateTime.Now;                     // Datum van creëren is automatisch nu
+
+                    _ticketService.InsertTicket(ticket);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
                     //don't do it
                 }
             }
+            //else
+            {
+                //MessageBox.Show("Oops, please make sure to enter all fields!");
+            }
         }
 
-      //  private void FillListview()
-        //{
-           // List<Ticket> tickets = _ticketService.GetTickets();
 
-           // LSV_Ticketoverview.Items.Clear();
 
-            //foreach (var ticket in tickets)
-           // {
-               // ListViewItem Ticket = new ListViewItem(ticket.User);
 
-               // Ticket.SubItems.Add(ticket.Date.ToString());
-               // Ticket.SubItems.Add(ticket.Type.ToString());
-               // Ticket.SubItems.Add(ticket.Subject);
-               // Ticket.SubItems.Add(ticket.Priority.ToString());
-              //  Ticket.SubItems.Add(ticket.Deadline.ToString());
-               // Ticket.SubItems.Add(ticket.Description);
+        // Fill the datagrid with incidents
 
-              //  LSV_Ticketoverview.Items.Add(Ticket);
-           // }
-        //}
+        private void FillDataGrid()
+        {
+            List<Ticket> TicketList = _ticketService.GetTickets();
+
+            foreach (var ticket in TicketList)
+            {
+                DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.User, ticket.Date, ticket.Deadline);
+            }
+        }
     }
 }
