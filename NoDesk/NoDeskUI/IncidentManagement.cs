@@ -137,7 +137,7 @@ namespace NoDeskUI
 
         private void BTN_ConfirmTicket_Click(object sender, EventArgs e)
         {
-            //if (TXTBOX_Subject.Text != "" && ComboBox_Type.SelectedItem.ToString && TXTBOX_User.Text != "" && ComboBox_Priority.ToString != "" && DateTime_Deadline != "" && TXTBOX_Description.Text != "")
+            if (TXTBOX_Subject.Text != "" && ComboBox_Type != null && TXTBOX_User.Text != "" && ComboBox_Priority != null && DateTime_Deadline != null && TXTBOX_Description.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to create a new incident ticket?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -161,9 +161,9 @@ namespace NoDeskUI
                     //don't do it
                 }
             }
-            //else
+            else
             {
-                //MessageBox.Show("Oops, please make sure to enter all fields!");
+                MessageBox.Show("Oops, please make sure to enter all fields!");
             }
         }
 
@@ -175,7 +175,6 @@ namespace NoDeskUI
         private void FillDataGrid()
         {
             List<Ticket> TicketList = _ticketService.GetTickets();
-
 
             foreach (var ticket in TicketList)
             {

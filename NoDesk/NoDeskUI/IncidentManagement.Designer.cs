@@ -29,6 +29,7 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncidentManagement));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -345,7 +346,7 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
             this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
-            this.PNL_CreateTicket.Location = new System.Drawing.Point(299, 185);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(807, 201);
             this.PNL_CreateTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_CreateTicket.Name = "PNL_CreateTicket";
             this.PNL_CreateTicket.Size = new System.Drawing.Size(589, 813);
@@ -526,6 +527,8 @@ namespace NoDeskUI
             // 
             this.DGV_Incidents.AllowUserToAddRows = false;
             this.DGV_Incidents.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.DGV_Incidents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Incidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Incidents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_ID,
@@ -538,6 +541,8 @@ namespace NoDeskUI
             this.DGV_Incidents.ReadOnly = true;
             this.DGV_Incidents.RowHeadersWidth = 51;
             this.DGV_Incidents.RowTemplate.Height = 29;
+            this.DGV_Incidents.ShowCellToolTips = false;
+            this.DGV_Incidents.ShowEditingIcon = false;
             this.DGV_Incidents.Size = new System.Drawing.Size(627, 434);
             this.DGV_Incidents.TabIndex = 15;
             // 
