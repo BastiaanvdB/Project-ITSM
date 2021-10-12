@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TrYOh4u+EZhllBqiPYwsVteQ8CfSSan9W+hWQ8mo3ezLW9pahcARgD3W0j1WqujLL1IX33Mw360MXz1lyGo/Fg==",
+  "dgSpecHash": "mRZASykMUGWgEgO//wuHUvojbjW8gx1qRMzuNjilpMIm8w7yoFBDnTNQJGtuvNGFaLkRF9AFV4CBQ645q+7lcw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bas Hulskamp\\Documents\\Persoonlijk\\HBO Informatica\\HAINF2A\\NoSQL\\NoSQL Project\\Applicatie\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
+  "projectFilePath": "C:\\Users\\Bas Hulskamp\\Documents\\HBO Informatica\\HAINF2A\\Periode 1\\NoSQL\\Project\\Applicatie\\Project-ITSM\\NoDesk\\Test Terminal\\Test Terminal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\Bas Hulskamp\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

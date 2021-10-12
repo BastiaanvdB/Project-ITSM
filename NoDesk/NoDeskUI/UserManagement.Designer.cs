@@ -64,6 +64,7 @@ namespace NoDeskUI
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.pnl_UpdateUser.SuspendLayout();
@@ -292,7 +293,7 @@ namespace NoDeskUI
             this.pnl_UpdateUser.Controls.Add(this.txt_NewEmailInput);
             this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserEmail);
             this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserTitle);
-            this.pnl_UpdateUser.Location = new System.Drawing.Point(410, 257);
+            this.pnl_UpdateUser.Location = new System.Drawing.Point(450, 250);
             this.pnl_UpdateUser.Name = "pnl_UpdateUser";
             this.pnl_UpdateUser.Size = new System.Drawing.Size(338, 148);
             this.pnl_UpdateUser.TabIndex = 7;
@@ -373,7 +374,8 @@ namespace NoDeskUI
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.col_Role});
             this.dgv_UserData.Location = new System.Drawing.Point(12, 210);
             this.dgv_UserData.MultiSelect = false;
             this.dgv_UserData.Name = "dgv_UserData";
@@ -388,7 +390,7 @@ namespace NoDeskUI
             this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UserData.RowTemplate.Height = 25;
             this.dgv_UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_UserData.Size = new System.Drawing.Size(657, 412);
+            this.dgv_UserData.Size = new System.Drawing.Size(732, 412);
             this.dgv_UserData.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -424,6 +426,12 @@ namespace NoDeskUI
             this.dataGridViewTextBoxColumn5.HeaderText = "Company";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // col_Role
+            // 
+            this.col_Role.HeaderText = "Role";
+            this.col_Role.Name = "col_Role";
+            this.col_Role.ReadOnly = true;
             // 
             // UserManagment
             // 
@@ -488,6 +496,7 @@ namespace NoDeskUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
     }
 }
 

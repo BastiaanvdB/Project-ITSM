@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = NoDeskDAL
-build_property.ProjectDir = C:\Users\Bas Hulskamp\Documents\Persoonlijk\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\
+build_property.ProjectDir = C:\Users\Bas Hulskamp\Documents\HBO Informatica\HAINF2A\Periode 1\NoSQL\Project\Applicatie\Project-ITSM\NoDesk\NoDeskDAL\

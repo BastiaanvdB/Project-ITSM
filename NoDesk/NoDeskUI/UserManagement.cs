@@ -75,7 +75,7 @@ namespace NoDeskUI
                 //Makes sure the person who is logged in only sees users from their company
                 if (user.Company.CompanyName == _currentUser.Company.CompanyName)
                 {                 
-                    dgv_UserData.Rows.Add(user.Id, user.Firstname, user.Lastname, user.Email, user.Company.CompanyName);                           
+                    dgv_UserData.Rows.Add(user.Id, user.Firstname, user.Lastname, user.Email, user.Company.CompanyName, user.Role);                           
                 }
 
             }                 
