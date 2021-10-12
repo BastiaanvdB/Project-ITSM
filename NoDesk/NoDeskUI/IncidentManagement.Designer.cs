@@ -345,7 +345,7 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
             this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
-            this.PNL_CreateTicket.Location = new System.Drawing.Point(29, 185);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(299, 185);
             this.PNL_CreateTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_CreateTicket.Name = "PNL_CreateTicket";
             this.PNL_CreateTicket.Size = new System.Drawing.Size(589, 813);
@@ -621,6 +621,7 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1184, 845);
+            this.Controls.Add(this.PNL_CreateTicket);
             this.Controls.Add(this.BTN_ChangeStatus);
             this.Controls.Add(this.LBL_SelectIncident);
             this.Controls.Add(this.LBL_ChangeStatus);
@@ -635,7 +636,6 @@ namespace NoDeskUI
             this.Controls.Add(this.LBL_Ticketoverview);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LBL_Transfertouser);
-            this.Controls.Add(this.PNL_CreateTicket);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "IncidentManagement";
