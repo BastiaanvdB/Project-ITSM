@@ -72,6 +72,9 @@ namespace NoDeskUI
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LBL_SelectIncident = new System.Windows.Forms.Label();
+            this.LBL_ChangeStatus = new System.Windows.Forms.Label();
+            this.BTN_ChangeStatus = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.PNL_CreateTicket.SuspendLayout();
@@ -265,7 +268,7 @@ namespace NoDeskUI
             this.TXTBox_Search.Name = "TXTBox_Search";
             this.TXTBox_Search.Size = new System.Drawing.Size(175, 27);
             this.TXTBox_Search.TabIndex = 3;
-            this.TXTBox_Search.Text = "Email";
+            this.TXTBox_Search.Text = "User";
             // 
             // BTN_NewTicket
             // 
@@ -289,6 +292,7 @@ namespace NoDeskUI
             this.BTN_Search.TabIndex = 6;
             this.BTN_Search.Text = "Search";
             this.BTN_Search.UseVisualStyleBackColor = false;
+            this.BTN_Search.Click += new System.EventHandler(this.BTN_Search_Click);
             // 
             // label2
             // 
@@ -316,9 +320,9 @@ namespace NoDeskUI
             // 
             this.BTN_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.BTN_Transfer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTN_Transfer.Location = new System.Drawing.Point(960, 407);
+            this.BTN_Transfer.Location = new System.Drawing.Point(969, 383);
             this.BTN_Transfer.Name = "BTN_Transfer";
-            this.BTN_Transfer.Size = new System.Drawing.Size(144, 73);
+            this.BTN_Transfer.Size = new System.Drawing.Size(144, 56);
             this.BTN_Transfer.TabIndex = 11;
             this.BTN_Transfer.Text = "Transfer Ticket";
             this.BTN_Transfer.UseVisualStyleBackColor = false;
@@ -341,7 +345,7 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
             this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
-            this.PNL_CreateTicket.Location = new System.Drawing.Point(741, 201);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(29, 185);
             this.PNL_CreateTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_CreateTicket.Name = "PNL_CreateTicket";
             this.PNL_CreateTicket.Size = new System.Drawing.Size(589, 813);
@@ -392,10 +396,6 @@ namespace NoDeskUI
             // ComboBox_Priority
             // 
             this.ComboBox_Priority.FormattingEnabled = true;
-            this.ComboBox_Priority.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "High"});
             this.ComboBox_Priority.Location = new System.Drawing.Point(226, 319);
             this.ComboBox_Priority.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBox_Priority.Name = "ComboBox_Priority";
@@ -405,10 +405,6 @@ namespace NoDeskUI
             // ComboBox_Type
             // 
             this.ComboBox_Type.FormattingEnabled = true;
-            this.ComboBox_Type.Items.AddRange(new object[] {
-            "Hardware",
-            "Software",
-            "Service"});
             this.ComboBox_Type.Location = new System.Drawing.Point(226, 213);
             this.ComboBox_Type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBox_Type.Name = "ComboBox_Type";
@@ -510,7 +506,7 @@ namespace NoDeskUI
             // 
             // TXT_UserTransfer
             // 
-            this.TXT_UserTransfer.Location = new System.Drawing.Point(854, 429);
+            this.TXT_UserTransfer.Location = new System.Drawing.Point(863, 397);
             this.TXT_UserTransfer.Name = "TXT_UserTransfer";
             this.TXT_UserTransfer.Size = new System.Drawing.Size(99, 27);
             this.TXT_UserTransfer.TabIndex = 13;
@@ -520,7 +516,7 @@ namespace NoDeskUI
             this.LBL_Transfertouser.AutoSize = true;
             this.LBL_Transfertouser.Font = new System.Drawing.Font("Segoe UI Semibold", 8.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Transfertouser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LBL_Transfertouser.Location = new System.Drawing.Point(741, 433);
+            this.LBL_Transfertouser.Location = new System.Drawing.Point(739, 401);
             this.LBL_Transfertouser.Name = "LBL_Transfertouser";
             this.LBL_Transfertouser.Size = new System.Drawing.Size(120, 20);
             this.LBL_Transfertouser.TabIndex = 14;
@@ -585,15 +581,51 @@ namespace NoDeskUI
             this.ColumnDeadline.ReadOnly = true;
             this.ColumnDeadline.Width = 125;
             // 
+            // LBL_SelectIncident
+            // 
+            this.LBL_SelectIncident.AutoSize = true;
+            this.LBL_SelectIncident.Font = new System.Drawing.Font("Segoe UI Semibold", 8.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_SelectIncident.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LBL_SelectIncident.Location = new System.Drawing.Point(752, 502);
+            this.LBL_SelectIncident.Name = "LBL_SelectIncident";
+            this.LBL_SelectIncident.Size = new System.Drawing.Size(235, 20);
+            this.LBL_SelectIncident.TabIndex = 17;
+            this.LBL_SelectIncident.Text = "Select incident and change status";
+            // 
+            // LBL_ChangeStatus
+            // 
+            this.LBL_ChangeStatus.AutoSize = true;
+            this.LBL_ChangeStatus.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_ChangeStatus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LBL_ChangeStatus.Location = new System.Drawing.Point(741, 463);
+            this.LBL_ChangeStatus.Name = "LBL_ChangeStatus";
+            this.LBL_ChangeStatus.Size = new System.Drawing.Size(315, 38);
+            this.LBL_ChangeStatus.TabIndex = 16;
+            this.LBL_ChangeStatus.Text = "Change status incident";
+            // 
+            // BTN_ChangeStatus
+            // 
+            this.BTN_ChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.BTN_ChangeStatus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BTN_ChangeStatus.Location = new System.Drawing.Point(752, 543);
+            this.BTN_ChangeStatus.Name = "BTN_ChangeStatus";
+            this.BTN_ChangeStatus.Size = new System.Drawing.Size(361, 56);
+            this.BTN_ChangeStatus.TabIndex = 18;
+            this.BTN_ChangeStatus.Text = "Change status to \"Closed\"";
+            this.BTN_ChangeStatus.UseVisualStyleBackColor = false;
+            this.BTN_ChangeStatus.Click += new System.EventHandler(this.BTN_ChangeStatus_Click);
+            // 
             // IncidentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1184, 845);
+            this.Controls.Add(this.BTN_ChangeStatus);
+            this.Controls.Add(this.LBL_SelectIncident);
+            this.Controls.Add(this.LBL_ChangeStatus);
             this.Controls.Add(this.DGV_Incidents);
             this.Controls.Add(this.TXT_UserTransfer);
-            this.Controls.Add(this.PNL_CreateTicket);
             this.Controls.Add(this.BTN_Transfer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -603,6 +635,7 @@ namespace NoDeskUI
             this.Controls.Add(this.LBL_Ticketoverview);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LBL_Transfertouser);
+            this.Controls.Add(this.PNL_CreateTicket);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "IncidentManagement";
@@ -664,6 +697,9 @@ namespace NoDeskUI
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDeadline;
+        private System.Windows.Forms.Label LBL_SelectIncident;
+        private System.Windows.Forms.Label LBL_ChangeStatus;
+        private System.Windows.Forms.Button BTN_ChangeStatus;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
 using NoDeskDAL;
 using NoDeskModels;
 namespace NoDeskLogic
@@ -30,6 +31,11 @@ namespace NoDeskLogic
         public void DeleteTicket(Ticket ticket)
         {
             _Ticket_DAL.DeleteTicketById(ticket);
+        }
+
+        public Ticket GetTicketById(ObjectId Id)
+        {
+            return _Ticket_DAL.GetTicketById(Id);
         }
     }
 }

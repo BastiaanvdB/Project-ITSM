@@ -11,6 +11,7 @@ using ScottPlot;
 using ScottPlot.Renderable;
 using NoDeskModels;
 using NoDeskLogic;
+using MongoDB.Bson;
 
 namespace NoDeskUI
 {
@@ -34,6 +35,8 @@ namespace NoDeskUI
         {
             PNL_CreateTicket.Hide();
             FillDataGrid();
+            FillComboBoxType();
+            FillComboBoxPriority();
         }
 
         private void LoginInitialize()
@@ -97,26 +100,33 @@ namespace NoDeskUI
 
         private void BTN_Transfer_Click(object sender, EventArgs e)
         {
-            if (TXT_UserTransfer.Text != "")
+            if (DGV_Incidents.SelectedRows.Count == 1)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket from {} to {}?", "Confirmation", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                ObjectId Id = ObjectId.Parse(DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString());
+                Ticket ticket = _ticketService.GetTicketById(Id);
+
+                if (TXT_UserTransfer.Text != "")
                 {
-                    Ticket ticket = new Ticket();
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket from {} to {}?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ticket.User = TXT_UserTransfer.Text.ToString();
 
-                    //ticket.Id =  DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString(); 
-                    ticket.User = TXT_UserTransfer.Text.ToString();
-
-                    _ticketService.UpdateTicket(ticket);
+                        _ticketService.UpdateTicket(ticket);
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        TXT_UserTransfer.Clear();
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
+                else
                 {
-                    TXT_UserTransfer.Clear();
+                    MessageBox.Show("Oops, please make sure to enter the user you would like to transfer the ticket to!");
                 }
             }
             else
             {
-                MessageBox.Show("Oops, please make sure to enter the user you would like to transfer the ticket to!");
+                MessageBox.Show("Oops, please make sure to select the user you would like to update");
             }
         }
 
@@ -135,12 +145,14 @@ namespace NoDeskUI
                     Ticket ticket = new Ticket();
 
                     ticket.Subject = TXTBOX_Subject.Text;
-                    //ticket.Type = Enum.Parse(typeof(Type), ComboBox_Type.Text);
+                    //ticket.Type = Enum.Parse(typeof(TypeIncident), ComboBox_Type.Text);
                     ticket.User = TXTBOX_User.Text;
-                    //ticket.Priority = Enum.Parse(typeof(Type), ComboBox_Priority.Text);
+                    string priority = ComboBox_Priority.Text;
+                    //ticket.Priority = Enum.Parse(typeof(Priority), priority);
                     ticket.Deadline = DateTime_Deadline.Value;
                     ticket.Description = TXTBOX_Description.Text;
                     ticket.Date = DateTime.Now;                     // Datum van creëren is automatisch nu
+                    ticket.Status = TicketStatus.Open;              // Status is automatisch open
 
                     _ticketService.InsertTicket(ticket);
                 }
@@ -164,9 +176,93 @@ namespace NoDeskUI
         {
             List<Ticket> TicketList = _ticketService.GetTickets();
 
+
             foreach (var ticket in TicketList)
             {
                 DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.User, ticket.Date, ticket.Deadline);
+            }
+        }
+
+
+        // Fill combo boxen
+
+        private void FillComboBoxType()
+        {
+            List<TypeIncident> typesList = new List<TypeIncident>();
+            Array Types = Enum.GetValues(typeof(TypeIncident));
+
+            foreach (TypeIncident type in Types)
+            {
+                typesList.Add(type);
+            }
+
+            ComboBox_Type.DataSource = typesList;
+        }
+
+        private void FillComboBoxPriority()
+        {
+            List<Priority> priorityList = new List<Priority>();
+            Array Priorities = Enum.GetValues(typeof(Priority));
+
+            foreach (Priority priority in Priorities)
+            {
+                priorityList.Add(priority);
+            }
+
+            ComboBox_Priority.DataSource = priorityList;
+        }
+
+
+        // Change status to 
+
+        private void BTN_ChangeStatus_Click(object sender, EventArgs e)
+        {
+            if (DGV_Incidents.SelectedRows.Count == 1)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to change the status to closed?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ObjectId Id = ObjectId.Parse(DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString());
+                    Ticket ticket = _ticketService.GetTicketById(Id);
+                    ticket.Status = TicketStatus.Closed;
+
+                    _ticketService.UpdateTicket(ticket);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // Do not do it
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Oops, please make sure to select the incident you would like to close!");
+            }
+        }
+
+
+
+        // Search user in datagrid
+
+        private void BTN_Search_Click(object sender, EventArgs e)
+        {
+            string searchValue = TXTBox_Search.Text;
+
+            DGV_Incidents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in DGV_Incidents.Rows)
+                {
+                    if (row.Cells[2].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
     }

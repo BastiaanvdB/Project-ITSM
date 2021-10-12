@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using NoDeskModels;
 namespace NoDeskDAL
@@ -30,6 +31,10 @@ namespace NoDeskDAL
         public void DeleteTicketById(Ticket ticket)
         {
             DeleteRecordById<Ticket>("Tickets", ticket.Id);
+        }
+        public Ticket GetTicketById(ObjectId Id)
+        {
+            return LoadRecordById<Ticket>("Tickets", Id);
         }
     }
 }
