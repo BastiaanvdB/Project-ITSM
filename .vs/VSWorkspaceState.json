@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NoDesk",
+    "\\NoDesk\\NoDeskUI"
   ],
-  "SelectedNode": "\\NoDesk.sln",
+  "SelectedNode": "\\NoDesk\\NoDeskUI\\IncidentManagement.cs",
   "PreviewInSolutionExplorer": false
 }

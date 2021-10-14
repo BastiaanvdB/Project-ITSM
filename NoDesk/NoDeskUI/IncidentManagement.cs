@@ -107,10 +107,10 @@ namespace NoDeskUI
 
                 if (TXT_UserTransfer.Text != "")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket from {} to {}?", "Confirmation", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket?", "Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        ticket.User = TXT_UserTransfer.Text.ToString();
+                        ticket.Creator = TXT_UserTransfer.Text;
 
                         _ticketService.UpdateTicket(ticket);
                     }
@@ -133,6 +133,7 @@ namespace NoDeskUI
         
 
 
+
         // Create a new incident ticket
 
         private void BTN_ConfirmTicket_Click(object sender, EventArgs e)
@@ -145,14 +146,46 @@ namespace NoDeskUI
                     Ticket ticket = new Ticket();
 
                     ticket.Subject = TXTBOX_Subject.Text;
-                    //ticket.Type = Enum.Parse(typeof(TypeIncident), ComboBox_Type.Text);
-                    ticket.User = TXTBOX_User.Text;
+
+
+
+                    string Type = ComboBox_Type.Text;
+                    if (Type == "Hardware")
+                    {
+                        ticket.Type = TypeIncident.Hardware;
+                    }
+                    else if (Type == "Software")
+                    {
+                        ticket.Type = TypeIncident.Software;
+                    }
+                    else if (Type == "Service")
+                    {
+                        ticket.Type = TypeIncident.Service;
+                    }
+                    ticket.Creator = TXTBOX_User.Text;
+
+
+                  
                     string priority = ComboBox_Priority.Text;
-                    //ticket.Priority = Enum.Parse(typeof(Priority), priority);
-                    ticket.Deadline = DateTime_Deadline.Value;
-                    ticket.Description = TXTBOX_Description.Text;
-                    ticket.Date = DateTime.Now;                     // Datum van creëren is automatisch nu
-                    ticket.Status = TicketStatus.Open;              // Status is automatisch open
+                    if (priority == "Low")
+                    {
+                        ticket.Priority = Priority.Low;
+                    }
+                    else if (priority == "Medium")
+                    {
+                        ticket.Priority = Priority.Medium;
+                    }
+                    else if (priority == "High")
+                    {
+                        ticket.Priority = Priority.High;
+                    }
+
+
+
+                    ticket.ClosedAt = DateTime_Deadline.Value;
+                    ticket.Text = TXTBOX_Description.Text;
+                    ticket.CreatedAt = DateTime.Now;                    // Datum van creëren is automatisch nu
+                    ticket.Status = TicketStatus.Open;                  // Status is automatisch open
 
                     _ticketService.InsertTicket(ticket);
                 }
@@ -178,7 +211,7 @@ namespace NoDeskUI
 
             foreach (var ticket in TicketList)
             {
-                DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.User, ticket.Date, ticket.Deadline);
+                DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.ClosedAt, ticket.Status, ticket.Text);
             }
         }
 
@@ -218,13 +251,13 @@ namespace NoDeskUI
         {
             if (DGV_Incidents.SelectedRows.Count == 1)
             {
+                ObjectId Id = ObjectId.Parse(DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString());
+                Ticket ticket = _ticketService.GetTicketById(Id);
+
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to change the status to closed?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ObjectId Id = ObjectId.Parse(DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString());
-                    Ticket ticket = _ticketService.GetTicketById(Id);
                     ticket.Status = TicketStatus.Closed;
-
                     _ticketService.UpdateTicket(ticket);
                 }
                 else if (dialogResult == DialogResult.No)
