@@ -537,6 +537,7 @@ namespace NoDeskUI
             this.DGV_Incidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGV_Incidents.Name = "DGV_Incidents";
             this.DGV_Incidents.ReadOnly = true;
+            this.DGV_Incidents.RowHeadersVisible = false;
             this.DGV_Incidents.RowHeadersWidth = 51;
             this.DGV_Incidents.RowTemplate.Height = 29;
             this.DGV_Incidents.ShowCellToolTips = false;

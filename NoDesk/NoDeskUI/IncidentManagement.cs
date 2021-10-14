@@ -37,6 +37,7 @@ namespace NoDeskUI
             FillDataGrid();
             FillComboBoxType();
             FillComboBoxPriority();
+            FullRowSelect();
         }
 
         private void LoginInitialize()
@@ -94,6 +95,12 @@ namespace NoDeskUI
         {
             PNL_CreateTicket.Show();
         }
+
+        private void FullRowSelect()
+        {
+            DGV_Incidents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
 
 
         // Transfer ticket to another user
