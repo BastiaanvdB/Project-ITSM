@@ -38,6 +38,7 @@ namespace NoDeskUI
             FillComboBoxType();
             FillComboBoxPriority();
             FullRowSelect();
+            DGV_Incidents.ClearSelection();
         }
 
         private void LoginInitialize()
@@ -100,6 +101,8 @@ namespace NoDeskUI
         {
             DGV_Incidents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+
 
         // Fill the datagrid with incidents
 
@@ -178,6 +181,8 @@ namespace NoDeskUI
         }
 
 
+
+
         // Create a new incident ticket
 
         private void BTN_ConfirmTicket_Click(object sender, EventArgs e)
@@ -249,6 +254,9 @@ namespace NoDeskUI
 
         
 
+
+
+
         // Change status to closed
 
         private void BTN_ChangeStatus_Click(object sender, EventArgs e)
@@ -279,6 +287,9 @@ namespace NoDeskUI
         }
 
 
+
+
+
         // Transfer ticket to another user
 
         private void BTN_Transfer_Click(object sender, EventArgs e)
@@ -297,7 +308,6 @@ namespace NoDeskUI
                         _ticketService.UpdateTicketUser(ticket);
 
                         FillDataGrid();                                     // refresh data
-
                         ClearTextBoxes();
                     }
                     else if (dialogResult == DialogResult.No)
@@ -315,6 +325,8 @@ namespace NoDeskUI
                 MessageBox.Show("Oops, please make sure to select the user you would like to update");
             }
         }
+
+
 
         private void ClearTextBoxes()
         {
