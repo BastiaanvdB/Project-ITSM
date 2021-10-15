@@ -251,7 +251,7 @@ namespace NoDeskUI
             this.LBL_Ticketoverview.AutoSize = true;
             this.LBL_Ticketoverview.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Ticketoverview.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LBL_Ticketoverview.Location = new System.Drawing.Point(12, 163);
+            this.LBL_Ticketoverview.Location = new System.Drawing.Point(12, 153);
             this.LBL_Ticketoverview.Name = "LBL_Ticketoverview";
             this.LBL_Ticketoverview.Size = new System.Drawing.Size(221, 37);
             this.LBL_Ticketoverview.TabIndex = 2;
@@ -259,10 +259,10 @@ namespace NoDeskUI
             // 
             // TXTBox_Search
             // 
-            this.TXTBox_Search.Location = new System.Drawing.Point(20, 214);
+            this.TXTBox_Search.Location = new System.Drawing.Point(12, 214);
             this.TXTBox_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTBox_Search.Name = "TXTBox_Search";
-            this.TXTBox_Search.Size = new System.Drawing.Size(154, 23);
+            this.TXTBox_Search.Size = new System.Drawing.Size(179, 23);
             this.TXTBox_Search.TabIndex = 3;
             this.TXTBox_Search.Text = "User";
             // 
@@ -270,10 +270,10 @@ namespace NoDeskUI
             // 
             this.BTN_NewTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.BTN_NewTicket.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTN_NewTicket.Location = new System.Drawing.Point(521, 213);
+            this.BTN_NewTicket.Location = new System.Drawing.Point(513, 213);
             this.BTN_NewTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_NewTicket.Name = "BTN_NewTicket";
-            this.BTN_NewTicket.Size = new System.Drawing.Size(144, 22);
+            this.BTN_NewTicket.Size = new System.Drawing.Size(169, 22);
             this.BTN_NewTicket.TabIndex = 5;
             this.BTN_NewTicket.Text = "New Ticket";
             this.BTN_NewTicket.UseVisualStyleBackColor = false;
@@ -283,10 +283,10 @@ namespace NoDeskUI
             // 
             this.BTN_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.BTN_Search.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTN_Search.Location = new System.Drawing.Point(193, 213);
+            this.BTN_Search.Location = new System.Drawing.Point(185, 213);
             this.BTN_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_Search.Name = "BTN_Search";
-            this.BTN_Search.Size = new System.Drawing.Size(82, 22);
+            this.BTN_Search.Size = new System.Drawing.Size(107, 22);
             this.BTN_Search.TabIndex = 6;
             this.BTN_Search.Text = "Search";
             this.BTN_Search.UseVisualStyleBackColor = false;
@@ -345,7 +345,7 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
             this.PNL_CreateTicket.Controls.Add(this.LBL_CreateTicket);
-            this.PNL_CreateTicket.Location = new System.Drawing.Point(239, 139);
+            this.PNL_CreateTicket.Location = new System.Drawing.Point(274, 139);
             this.PNL_CreateTicket.Name = "PNL_CreateTicket";
             this.PNL_CreateTicket.Size = new System.Drawing.Size(515, 610);
             this.PNL_CreateTicket.TabIndex = 12;
@@ -533,7 +533,7 @@ namespace NoDeskUI
             this.ColumnDeadline,
             this.Column_Status,
             this.Column_Text});
-            this.DGV_Incidents.Location = new System.Drawing.Point(20, 239);
+            this.DGV_Incidents.Location = new System.Drawing.Point(12, 239);
             this.DGV_Incidents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGV_Incidents.Name = "DGV_Incidents";
             this.DGV_Incidents.ReadOnly = true;
@@ -542,7 +542,7 @@ namespace NoDeskUI
             this.DGV_Incidents.RowTemplate.Height = 29;
             this.DGV_Incidents.ShowCellToolTips = false;
             this.DGV_Incidents.ShowEditingIcon = false;
-            this.DGV_Incidents.Size = new System.Drawing.Size(645, 378);
+            this.DGV_Incidents.Size = new System.Drawing.Size(670, 378);
             this.DGV_Incidents.TabIndex = 15;
             // 
             // Column_ID
