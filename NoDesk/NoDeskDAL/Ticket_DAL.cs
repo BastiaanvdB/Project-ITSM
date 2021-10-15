@@ -20,11 +20,17 @@ namespace NoDeskDAL
             return LoadRecords<Ticket>("Tickets");
         }
 
-        public void UpdateTicket(Ticket ticket)
+        public void UpdateTicketUser(Ticket ticket)
         {
             var update = Builders<Ticket>.Update
-                .Set(P => P.Subject, ticket.Subject)
-                .Set(P => P.Text, ticket.Text);
+                .Set(P => P.Creator, ticket.Creator);
+            UpdateRecordById("Tickets", ticket.Id, update);
+        }
+
+        public void UpdateTicketStatus(Ticket ticket)
+        {
+            var update = Builders<Ticket>.Update
+                .Set(P => P.Status, ticket.Status);
             UpdateRecordById("Tickets", ticket.Id, update);
         }
 

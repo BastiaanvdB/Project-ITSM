@@ -23,9 +23,13 @@ namespace NoDeskLogic
             return _Ticket_DAL.GetTickets();
         }
 
-        public void UpdateTicket(Ticket ticket)
+        public void UpdateTicketUser(Ticket ticket)
         {
-            _Ticket_DAL.UpdateTicket(ticket);
+            _Ticket_DAL.UpdateTicketUser(ticket);
+        }
+        public void UpdateTicketStatus(Ticket ticket)
+        {
+            _Ticket_DAL.UpdateTicketStatus(ticket);
         }
 
         public void DeleteTicket(Ticket ticket)
