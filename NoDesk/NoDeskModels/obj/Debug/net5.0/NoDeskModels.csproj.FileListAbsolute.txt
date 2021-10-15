@@ -70,3 +70,15 @@ C:\Users\Bas Hulskamp\Documents\HBO Informatica\HAINF2A\Periode 1\NoSQL\Project\
 C:\Users\Bas Hulskamp\Documents\HBO Informatica\HAINF2A\Periode 1\NoSQL\Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.dll
 C:\Users\Bas Hulskamp\Documents\HBO Informatica\HAINF2A\Periode 1\NoSQL\Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\ref\NoDeskModels.dll
 C:\Users\Bas Hulskamp\Documents\HBO Informatica\HAINF2A\Periode 1\NoSQL\Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.deps.json
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\ref\NoDeskModels.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.pdb
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.csproj.AssemblyReference.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.AssemblyInfoInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.AssemblyInfo.cs
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.csproj.CoreCompileInputs.cache
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\ref\NoDeskModels.dll
+C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.pdb

@@ -388,8 +388,11 @@ namespace NoDeskUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_UserData.RowHeadersVisible = false;
             this.dgv_UserData.RowTemplate.Height = 25;
             this.dgv_UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_UserData.ShowCellToolTips = false;
+            this.dgv_UserData.ShowEditingIcon = false;
             this.dgv_UserData.Size = new System.Drawing.Size(732, 412);
             this.dgv_UserData.TabIndex = 8;
             // 

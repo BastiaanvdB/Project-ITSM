@@ -24,9 +24,10 @@ namespace NoDeskUI
         }
 
         private void NoDesk_Load(object sender, EventArgs e)
-        {
+        {         
             pnl_UpdateUser.Hide();
             FillDataGrid();
+            dgv_UserData.ClearSelection();
         }
 
         private void LoginInitialize()
@@ -67,7 +68,7 @@ namespace NoDeskUI
 
         private void FillDataGrid()
         {
-
+            
             List<User> UserList = _us.GetUsers();          
 
             foreach (var user in UserList)
@@ -114,6 +115,10 @@ namespace NoDeskUI
                 }
                 
             }
+            else
+            {
+                MessageBox.Show("Please select an user first!", "Nothing Selected", MessageBoxButtons.OK);
+            }
             
         }
 
@@ -147,6 +152,7 @@ namespace NoDeskUI
         {
             dgv_UserData.Rows.Clear();
             FillDataGrid();
+            dgv_UserData.ClearSelection();
         }      
 
         private void buttonLogout_Click(object sender, EventArgs e)
