@@ -292,3 +292,4 @@ C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL
 C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\ref\NoDesk.dll
 C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.pdb
 C:\Users\Bas Hulskamp\Documents\Persoonlijk\School\HBO Informatica\HAINF2A\NoSQL\NoSQL Project\Applicatie\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.genruntimeconfig.cache
+C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.KeyManagement.resources
