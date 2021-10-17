@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NoDeskModels;
+using MongoDB.Driver;
+using MongoDB.Bson;
 using NoDeskDAL;
 namespace NoDeskLogic
 {
@@ -22,7 +24,12 @@ namespace NoDeskLogic
 
         public List<User> GetUsers()
         {
-            return _User_DAL.GetUsers();
+            return _User_DAL.DB_GetUsers();
+        }
+
+        public List<BsonDocument> GetUsersNoMap()
+        {
+            return _User_DAL.DB_GetUsersNoMap();
         }
 
         public List<User> LoadUsersByCompanyName(string companyName)
@@ -48,6 +55,11 @@ namespace NoDeskLogic
         public void DeleteUserById(User user)
         {
             _User_DAL.DeleteUserById(user);
+        }
+
+        public User GetUserById(ObjectId Id)
+        {
+            return _User_DAL.GetUserById(Id);
         }
     }
 }

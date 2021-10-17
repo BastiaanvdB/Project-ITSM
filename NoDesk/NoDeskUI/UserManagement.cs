@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ScottPlot;
-using ScottPlot.Renderable;
+﻿using MongoDB.Bson;
 using NoDeskLogic;
 using NoDeskModels;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace NoDeskUI
 {
@@ -31,8 +24,10 @@ namespace NoDeskUI
         }
 
         private void NoDesk_Load(object sender, EventArgs e)
-        {
-            FillListView();
+        {         
+            pnl_UpdateUser.Hide();
+            FillDataGrid();
+            dgv_UserData.ClearSelection();
         }
 
         private void LoginInitialize()
@@ -76,52 +71,94 @@ namespace NoDeskUI
             MenuSwitch("IncidentManagement");
         }
 
-        private void FillListView()
+        private void FillDataGrid()
         {
-            List<User> users = _us.GetUsers();
+            
+            List<User> UserList = _us.GetUsers();          
 
-            lst_UM_Users.Items.Clear();
-
-            foreach (var user in users)
+            foreach (var user in UserList)
             {
-                //ListViewItem User = new ListViewItem(user.Id.ToString());
+                //Makes sure the person who is logged in only sees users from their company
+                if (user.Company.CompanyName == _currentUser.Company.CompanyName)
+                {                 
+                    dgv_UserData.Rows.Add(user.Id, user.Firstname, user.Lastname, user.Email, user.Company.CompanyName, user.Role);                           
+                }
 
-                //User.SubItems.Add(user.FirstName);
-                //User.SubItems.Add(user.LastName.ToString());
-                //User.SubItems.Add(user.Job);
-
-                //lst_UM_Users.Items.Add(User);
-            }
-        }
-
-        private void btn_UM_AddUser_Click(object sender, EventArgs e)
-        {
-
+            }                 
         }
 
         private void btn_UM_EditUser_Click(object sender, EventArgs e)
         {
+            pnl_UpdateUser.Show();
+        }
 
+        private void btn_UpdateUserConfirm_Click(object sender, EventArgs e)
+        {
+            if (dgv_UserData.SelectedRows.Count == 1)
+            {
+                
+                ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
+                User user = _us.GetUserById(Id);              
+
+                if (txt_NewEmailInput.Text != "")
+                {
+                    string NewEmail = txt_NewEmailInput.Text;
+
+                    DialogResult msbResult = MessageBox.Show("Are you sure you want to update the selected user?", "Update", MessageBoxButtons.YesNo);
+                    if (msbResult == DialogResult.Yes)
+                    {
+                        user.Email = NewEmail;
+                        _us.UpdateUser(user);
+                        MessageBox.Show("User succesfully updated!", "Update Confirmed", MessageBoxButtons.OK);
+                        txt_NewEmailInput.Clear();
+                        pnl_UpdateUser.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an email address before submitting", "Empty field", MessageBoxButtons.OK);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please select an user first!", "Nothing Selected", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void btn_UM_DeleteUser_Click(object sender, EventArgs e)
         {
+            if (dgv_UserData.SelectedRows.Count == 1)
+            {
+                ObjectId Id = ObjectId.Parse(dgv_UserData.Rows[dgv_UserData.SelectedRows[0].Index].Cells[0].Value.ToString());
+                User user = _us.GetUserById(Id);
+                DialogResult msbResult = MessageBox.Show("Are you sure you want to delete the selected user?", "Delete", MessageBoxButtons.YesNo);
+                if (msbResult == DialogResult.Yes)
+                {
+                    _us.DeleteUserById(user);
+                    MessageBox.Show("User succesfully deleted!", "Delete Confirmed", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an user first!", "Error", MessageBoxButtons.OK);
+            }
+            
+        }
 
+        private void btn_CancelUpdateUser_Click(object sender, EventArgs e)
+        {
+            txt_NewEmailInput.Clear();
+            pnl_UpdateUser.Hide();
         }
 
         private void btn_UM_Refresh_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_UM_AddUser_Confirm_Click(object sender, EventArgs e)
-        {
-            //Guid Id = txt_UM_AddUser_Id.Text;
-            //string FirstName = txt_UM_AddUser_FirstName.Text;
-            //string LastName = txt_UM_AddUser_LastName.Text;
-                          
-            //_us.AddUser(new User());
-        }
+            dgv_UserData.Rows.Clear();
+            FillDataGrid();
+            dgv_UserData.ClearSelection();
+        }      
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
@@ -132,5 +169,6 @@ namespace NoDeskUI
         {
             MenuSwitch("KeyManagement");
         }
+
     }
 }

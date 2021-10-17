@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Bson;
 using NoDeskModels;
 
 namespace NoDeskDAL
@@ -15,13 +16,18 @@ namespace NoDeskDAL
             InsertRecord("Users", user);
         }
 
-        public List<User> GetUsers()
+        public List<User> DB_GetUsers()
         {
             return LoadRecords<User>("Users");
         }
 
-        public void UpdateUser(User user)
+        public List<BsonDocument> DB_GetUsersNoMap()
         {
+            return LoadRecordsNoMap("Users");
+        }
+
+        public void UpdateUser(User user)
+        {          
             var update = Builders<User>.Update
                 .Set(P => P.Firstname, user.Firstname)
                 .Set(P => P.Lastname, user.Lastname)
@@ -68,6 +74,11 @@ namespace NoDeskDAL
         public void DeleteUserById(User user)
         {
             DeleteRecordById<User>("Users", user.Id);
+        }
+
+        public User GetUserById(ObjectId Id)
+        {
+            return LoadRecordById<User>("Users", Id);
         }
     }
 }

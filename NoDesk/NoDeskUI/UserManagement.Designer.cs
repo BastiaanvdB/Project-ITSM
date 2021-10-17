@@ -29,6 +29,8 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagment));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -41,26 +43,32 @@ namespace NoDeskUI
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
-            this.lst_UM_Users = new System.Windows.Forms.ListView();
+            this.col_ID = new System.Windows.Forms.ColumnHeader();
+            this.col_FirstName = new System.Windows.Forms.ColumnHeader();
+            this.col_LastName = new System.Windows.Forms.ColumnHeader();
+            this.col_Email = new System.Windows.Forms.ColumnHeader();
+            this.col_Company = new System.Windows.Forms.ColumnHeader();
             this.lbl_UM_title = new System.Windows.Forms.Label();
-            this.btn_UM_AddUser = new System.Windows.Forms.Button();
             this.btn_UM_EditUser = new System.Windows.Forms.Button();
             this.btn_UM_DeleteUser = new System.Windows.Forms.Button();
             this.btn_UM_Refresh = new System.Windows.Forms.Button();
-            this.pnl_UM_AddUser = new System.Windows.Forms.Panel();
-            this.txt_UM_AddUser_Job = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_Job = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_LastName = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_LastName = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_FirstName = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_FirstName = new System.Windows.Forms.Label();
-            this.txt_UM_AddUser_Id = new System.Windows.Forms.TextBox();
-            this.lbl_UM_AddUser_Id = new System.Windows.Forms.Label();
-            this.btn_UM_AddUser_Confirm = new System.Windows.Forms.Button();
-            this.lbl_UM_AddUser_Title = new System.Windows.Forms.Label();
+            this.pnl_UpdateUser = new System.Windows.Forms.Panel();
+            this.btn_CancelUpdateUser = new System.Windows.Forms.Button();
+            this.btn_UpdateUserConfirm = new System.Windows.Forms.Button();
+            this.txt_NewEmailInput = new System.Windows.Forms.TextBox();
+            this.lbl_UpdateUserEmail = new System.Windows.Forms.Label();
+            this.lbl_UpdateUserTitle = new System.Windows.Forms.Label();
+            this.dgv_UserData = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
-            this.pnl_UM_AddUser.SuspendLayout();
+            this.pnl_UpdateUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserData)).BeginInit();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -154,7 +162,6 @@ namespace NoDeskUI
             this.buttonKeyManagement.Text = "Key Management";
             this.buttonKeyManagement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonKeyManagement.UseVisualStyleBackColor = false;
-            this.buttonKeyManagement.Click += new System.EventHandler(this.buttonKeyManagement_Click);
             // 
             // button1
             // 
@@ -226,17 +233,6 @@ namespace NoDeskUI
             this.DashboardBTN.UseVisualStyleBackColor = false;
             this.DashboardBTN.Click += new System.EventHandler(this.DashboardBTN_Click);
             // 
-            // lst_UM_Users
-            // 
-            this.lst_UM_Users.FullRowSelect = true;
-            this.lst_UM_Users.HideSelection = false;
-            this.lst_UM_Users.Location = new System.Drawing.Point(12, 191);
-            this.lst_UM_Users.Name = "lst_UM_Users";
-            this.lst_UM_Users.Size = new System.Drawing.Size(579, 431);
-            this.lst_UM_Users.TabIndex = 1;
-            this.lst_UM_Users.UseCompatibleStateImageBehavior = false;
-            this.lst_UM_Users.View = System.Windows.Forms.View.Details;
-            // 
             // lbl_UM_title
             // 
             this.lbl_UM_title.AutoSize = true;
@@ -249,25 +245,12 @@ namespace NoDeskUI
             this.lbl_UM_title.TabIndex = 2;
             this.lbl_UM_title.Text = "System Users";
             // 
-            // btn_UM_AddUser
-            // 
-            this.btn_UM_AddUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_UM_AddUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_UM_AddUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_AddUser.Location = new System.Drawing.Point(704, 191);
-            this.btn_UM_AddUser.Name = "btn_UM_AddUser";
-            this.btn_UM_AddUser.Size = new System.Drawing.Size(320, 90);
-            this.btn_UM_AddUser.TabIndex = 3;
-            this.btn_UM_AddUser.Text = "Add User";
-            this.btn_UM_AddUser.UseVisualStyleBackColor = false;
-            this.btn_UM_AddUser.Click += new System.EventHandler(this.btn_UM_AddUser_Click);
-            // 
             // btn_UM_EditUser
             // 
             this.btn_UM_EditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.btn_UM_EditUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_EditUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_EditUser.Location = new System.Drawing.Point(831, 319);
+            this.btn_UM_EditUser.Location = new System.Drawing.Point(831, 174);
             this.btn_UM_EditUser.Name = "btn_UM_EditUser";
             this.btn_UM_EditUser.Size = new System.Drawing.Size(193, 85);
             this.btn_UM_EditUser.TabIndex = 4;
@@ -280,7 +263,7 @@ namespace NoDeskUI
             this.btn_UM_DeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_UM_DeleteUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_DeleteUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_DeleteUser.Location = new System.Drawing.Point(831, 440);
+            this.btn_UM_DeleteUser.Location = new System.Drawing.Point(831, 296);
             this.btn_UM_DeleteUser.Name = "btn_UM_DeleteUser";
             this.btn_UM_DeleteUser.Size = new System.Drawing.Size(193, 50);
             this.btn_UM_DeleteUser.TabIndex = 5;
@@ -290,7 +273,7 @@ namespace NoDeskUI
             // 
             // btn_UM_Refresh
             // 
-            this.btn_UM_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_UM_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.btn_UM_Refresh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_UM_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_UM_Refresh.Location = new System.Drawing.Point(410, 154);
@@ -301,125 +284,157 @@ namespace NoDeskUI
             this.btn_UM_Refresh.UseVisualStyleBackColor = false;
             this.btn_UM_Refresh.Click += new System.EventHandler(this.btn_UM_Refresh_Click);
             // 
-            // pnl_UM_AddUser
+            // pnl_UpdateUser
             // 
-            this.pnl_UM_AddUser.BackColor = System.Drawing.Color.White;
-            this.pnl_UM_AddUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_Job);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Job);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_LastName);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_LastName);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_FirstName);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_FirstName);
-            this.pnl_UM_AddUser.Controls.Add(this.txt_UM_AddUser_Id);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Id);
-            this.pnl_UM_AddUser.Controls.Add(this.btn_UM_AddUser_Confirm);
-            this.pnl_UM_AddUser.Controls.Add(this.lbl_UM_AddUser_Title);
-            this.pnl_UM_AddUser.Location = new System.Drawing.Point(183, 139);
-            this.pnl_UM_AddUser.Name = "pnl_UM_AddUser";
-            this.pnl_UM_AddUser.Size = new System.Drawing.Size(642, 453);
-            this.pnl_UM_AddUser.TabIndex = 7;
+            this.pnl_UpdateUser.BackColor = System.Drawing.Color.Silver;
+            this.pnl_UpdateUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_UpdateUser.Controls.Add(this.btn_CancelUpdateUser);
+            this.pnl_UpdateUser.Controls.Add(this.btn_UpdateUserConfirm);
+            this.pnl_UpdateUser.Controls.Add(this.txt_NewEmailInput);
+            this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserEmail);
+            this.pnl_UpdateUser.Controls.Add(this.lbl_UpdateUserTitle);
+            this.pnl_UpdateUser.Location = new System.Drawing.Point(450, 250);
+            this.pnl_UpdateUser.Name = "pnl_UpdateUser";
+            this.pnl_UpdateUser.Size = new System.Drawing.Size(338, 148);
+            this.pnl_UpdateUser.TabIndex = 7;
             // 
-            // txt_UM_AddUser_Job
+            // btn_CancelUpdateUser
             // 
-            this.txt_UM_AddUser_Job.Location = new System.Drawing.Point(127, 214);
-            this.txt_UM_AddUser_Job.Name = "txt_UM_AddUser_Job";
-            this.txt_UM_AddUser_Job.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_Job.TabIndex = 9;
+            this.btn_CancelUpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_CancelUpdateUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_CancelUpdateUser.ForeColor = System.Drawing.Color.White;
+            this.btn_CancelUpdateUser.Location = new System.Drawing.Point(13, 114);
+            this.btn_CancelUpdateUser.Name = "btn_CancelUpdateUser";
+            this.btn_CancelUpdateUser.Size = new System.Drawing.Size(78, 29);
+            this.btn_CancelUpdateUser.TabIndex = 4;
+            this.btn_CancelUpdateUser.Text = "Cancel";
+            this.btn_CancelUpdateUser.UseVisualStyleBackColor = false;
+            this.btn_CancelUpdateUser.Click += new System.EventHandler(this.btn_CancelUpdateUser_Click);
             // 
-            // lbl_UM_AddUser_Job
+            // btn_UpdateUserConfirm
             // 
-            this.lbl_UM_AddUser_Job.AutoSize = true;
-            this.lbl_UM_AddUser_Job.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_Job.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Job.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Job.Location = new System.Drawing.Point(33, 213);
-            this.lbl_UM_AddUser_Job.Name = "lbl_UM_AddUser_Job";
-            this.lbl_UM_AddUser_Job.Size = new System.Drawing.Size(38, 20);
-            this.lbl_UM_AddUser_Job.TabIndex = 8;
-            this.lbl_UM_AddUser_Job.Text = "Job:";
+            this.btn_UpdateUserConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.btn_UpdateUserConfirm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_UpdateUserConfirm.ForeColor = System.Drawing.Color.White;
+            this.btn_UpdateUserConfirm.Location = new System.Drawing.Point(230, 103);
+            this.btn_UpdateUserConfirm.Name = "btn_UpdateUserConfirm";
+            this.btn_UpdateUserConfirm.Size = new System.Drawing.Size(103, 40);
+            this.btn_UpdateUserConfirm.TabIndex = 3;
+            this.btn_UpdateUserConfirm.Text = "Confirm";
+            this.btn_UpdateUserConfirm.UseVisualStyleBackColor = false;
+            this.btn_UpdateUserConfirm.Click += new System.EventHandler(this.btn_UpdateUserConfirm_Click);
             // 
-            // txt_UM_AddUser_LastName
+            // txt_NewEmailInput
             // 
-            this.txt_UM_AddUser_LastName.Location = new System.Drawing.Point(127, 180);
-            this.txt_UM_AddUser_LastName.Name = "txt_UM_AddUser_LastName";
-            this.txt_UM_AddUser_LastName.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_LastName.TabIndex = 7;
+            this.txt_NewEmailInput.ForeColor = System.Drawing.Color.Black;
+            this.txt_NewEmailInput.Location = new System.Drawing.Point(109, 70);
+            this.txt_NewEmailInput.Name = "txt_NewEmailInput";
+            this.txt_NewEmailInput.Size = new System.Drawing.Size(138, 23);
+            this.txt_NewEmailInput.TabIndex = 2;
             // 
-            // lbl_UM_AddUser_LastName
+            // lbl_UpdateUserEmail
             // 
-            this.lbl_UM_AddUser_LastName.AutoSize = true;
-            this.lbl_UM_AddUser_LastName.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_LastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_LastName.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_LastName.Location = new System.Drawing.Point(33, 179);
-            this.lbl_UM_AddUser_LastName.Name = "lbl_UM_AddUser_LastName";
-            this.lbl_UM_AddUser_LastName.Size = new System.Drawing.Size(81, 20);
-            this.lbl_UM_AddUser_LastName.TabIndex = 6;
-            this.lbl_UM_AddUser_LastName.Text = "Lastname:";
+            this.lbl_UpdateUserEmail.AutoSize = true;
+            this.lbl_UpdateUserEmail.BackColor = System.Drawing.Color.White;
+            this.lbl_UpdateUserEmail.Location = new System.Drawing.Point(13, 73);
+            this.lbl_UpdateUserEmail.Name = "lbl_UpdateUserEmail";
+            this.lbl_UpdateUserEmail.Size = new System.Drawing.Size(69, 15);
+            this.lbl_UpdateUserEmail.TabIndex = 1;
+            this.lbl_UpdateUserEmail.Text = "New Email: ";
             // 
-            // txt_UM_AddUser_FirstName
+            // lbl_UpdateUserTitle
             // 
-            this.txt_UM_AddUser_FirstName.Location = new System.Drawing.Point(127, 138);
-            this.txt_UM_AddUser_FirstName.Name = "txt_UM_AddUser_FirstName";
-            this.txt_UM_AddUser_FirstName.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_FirstName.TabIndex = 5;
+            this.lbl_UpdateUserTitle.AutoSize = true;
+            this.lbl_UpdateUserTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.lbl_UpdateUserTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_UpdateUserTitle.ForeColor = System.Drawing.Color.White;
+            this.lbl_UpdateUserTitle.Location = new System.Drawing.Point(13, 20);
+            this.lbl_UpdateUserTitle.Name = "lbl_UpdateUserTitle";
+            this.lbl_UpdateUserTitle.Size = new System.Drawing.Size(122, 25);
+            this.lbl_UpdateUserTitle.TabIndex = 0;
+            this.lbl_UpdateUserTitle.Text = "Update User";
             // 
-            // lbl_UM_AddUser_FirstName
+            // dgv_UserData
             // 
-            this.lbl_UM_AddUser_FirstName.AutoSize = true;
-            this.lbl_UM_AddUser_FirstName.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_FirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_FirstName.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_FirstName.Location = new System.Drawing.Point(33, 137);
-            this.lbl_UM_AddUser_FirstName.Name = "lbl_UM_AddUser_FirstName";
-            this.lbl_UM_AddUser_FirstName.Size = new System.Drawing.Size(83, 20);
-            this.lbl_UM_AddUser_FirstName.TabIndex = 4;
-            this.lbl_UM_AddUser_FirstName.Text = "Firstname:";
+            this.dgv_UserData.AllowUserToAddRows = false;
+            this.dgv_UserData.AllowUserToDeleteRows = false;
+            this.dgv_UserData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv_UserData.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_UserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_UserData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.col_Role});
+            this.dgv_UserData.Location = new System.Drawing.Point(12, 210);
+            this.dgv_UserData.MultiSelect = false;
+            this.dgv_UserData.Name = "dgv_UserData";
+            this.dgv_UserData.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_UserData.RowHeadersVisible = false;
+            this.dgv_UserData.RowTemplate.Height = 25;
+            this.dgv_UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_UserData.ShowCellToolTips = false;
+            this.dgv_UserData.ShowEditingIcon = false;
+            this.dgv_UserData.Size = new System.Drawing.Size(732, 412);
+            this.dgv_UserData.TabIndex = 8;
             // 
-            // txt_UM_AddUser_Id
+            // dataGridViewTextBoxColumn1
             // 
-            this.txt_UM_AddUser_Id.Location = new System.Drawing.Point(127, 100);
-            this.txt_UM_AddUser_Id.Name = "txt_UM_AddUser_Id";
-            this.txt_UM_AddUser_Id.Size = new System.Drawing.Size(100, 23);
-            this.txt_UM_AddUser_Id.TabIndex = 3;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
-            // lbl_UM_AddUser_Id
+            // dataGridViewTextBoxColumn2
             // 
-            this.lbl_UM_AddUser_Id.AutoSize = true;
-            this.lbl_UM_AddUser_Id.BackColor = System.Drawing.Color.Gray;
-            this.lbl_UM_AddUser_Id.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Id.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Id.Location = new System.Drawing.Point(33, 99);
-            this.lbl_UM_AddUser_Id.Name = "lbl_UM_AddUser_Id";
-            this.lbl_UM_AddUser_Id.Size = new System.Drawing.Size(65, 20);
-            this.lbl_UM_AddUser_Id.TabIndex = 2;
-            this.lbl_UM_AddUser_Id.Text = "User ID:";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Firstname";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // btn_UM_AddUser_Confirm
+            // dataGridViewTextBoxColumn3
             // 
-            this.btn_UM_AddUser_Confirm.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_UM_AddUser_Confirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_UM_AddUser_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_UM_AddUser_Confirm.Location = new System.Drawing.Point(459, 356);
-            this.btn_UM_AddUser_Confirm.Name = "btn_UM_AddUser_Confirm";
-            this.btn_UM_AddUser_Confirm.Size = new System.Drawing.Size(153, 74);
-            this.btn_UM_AddUser_Confirm.TabIndex = 1;
-            this.btn_UM_AddUser_Confirm.Text = "Confirm";
-            this.btn_UM_AddUser_Confirm.UseVisualStyleBackColor = false;
-            this.btn_UM_AddUser_Confirm.Click += new System.EventHandler(this.btn_UM_AddUser_Confirm_Click);
+            this.dataGridViewTextBoxColumn3.HeaderText = "Lastname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // lbl_UM_AddUser_Title
+            // dataGridViewTextBoxColumn4
             // 
-            this.lbl_UM_AddUser_Title.AutoSize = true;
-            this.lbl_UM_AddUser_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
-            this.lbl_UM_AddUser_Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UM_AddUser_Title.ForeColor = System.Drawing.Color.White;
-            this.lbl_UM_AddUser_Title.Location = new System.Drawing.Point(33, 30);
-            this.lbl_UM_AddUser_Title.Name = "lbl_UM_AddUser_Title";
-            this.lbl_UM_AddUser_Title.Size = new System.Drawing.Size(119, 32);
-            this.lbl_UM_AddUser_Title.TabIndex = 0;
-            this.lbl_UM_AddUser_Title.Text = "Add User";
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 61;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Company";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // col_Role
+            // 
+            this.col_Role.HeaderText = "Role";
+            this.col_Role.Name = "col_Role";
+            this.col_Role.ReadOnly = true;
             // 
             // UserManagment
             // 
@@ -427,13 +442,12 @@ namespace NoDeskUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
-            this.Controls.Add(this.pnl_UM_AddUser);
+            this.Controls.Add(this.pnl_UpdateUser);
+            this.Controls.Add(this.dgv_UserData);
             this.Controls.Add(this.btn_UM_Refresh);
             this.Controls.Add(this.btn_UM_DeleteUser);
             this.Controls.Add(this.btn_UM_EditUser);
-            this.Controls.Add(this.btn_UM_AddUser);
             this.Controls.Add(this.lbl_UM_title);
-            this.Controls.Add(this.lst_UM_Users);
             this.Controls.Add(this.TopPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserManagment";
@@ -443,8 +457,9 @@ namespace NoDeskUI
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
-            this.pnl_UM_AddUser.ResumeLayout(false);
-            this.pnl_UM_AddUser.PerformLayout();
+            this.pnl_UpdateUser.ResumeLayout(false);
+            this.pnl_UpdateUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,26 +475,31 @@ namespace NoDeskUI
         private System.Windows.Forms.Button UMBTN;
         private System.Windows.Forms.Label LabelCurrentUser;
         private System.Windows.Forms.Label LabelLicense;
-        private System.Windows.Forms.ListView lst_UM_Users;
         private System.Windows.Forms.Label lbl_UM_title;
-        private System.Windows.Forms.Button btn_UM_AddUser;
         private System.Windows.Forms.Button btn_UM_EditUser;
         private System.Windows.Forms.Button btn_UM_DeleteUser;
         private System.Windows.Forms.Button btn_UM_Refresh;
-        private System.Windows.Forms.Panel pnl_UM_AddUser;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Title;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_Job;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Job;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_LastName;
-        private System.Windows.Forms.Label lbl_UM_AddUser_LastName;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_FirstName;
-        private System.Windows.Forms.Label lbl_UM_AddUser_FirstName;
-        private System.Windows.Forms.TextBox txt_UM_AddUser_Id;
-        private System.Windows.Forms.Label lbl_UM_AddUser_Id;
-        private System.Windows.Forms.Button btn_UM_AddUser_Confirm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonKeyManagement;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.ColumnHeader col_ID;
+        private System.Windows.Forms.ColumnHeader col_FirstName;
+        private System.Windows.Forms.ColumnHeader col_LastName;
+        private System.Windows.Forms.ColumnHeader col_Email;
+        private System.Windows.Forms.ColumnHeader col_Company;
+        private System.Windows.Forms.Panel pnl_UpdateUser;
+        private System.Windows.Forms.Button btn_UpdateUserConfirm;
+        private System.Windows.Forms.TextBox txt_NewEmailInput;
+        private System.Windows.Forms.Label lbl_UpdateUserEmail;
+        private System.Windows.Forms.Label lbl_UpdateUserTitle;
+        private System.Windows.Forms.Button btn_CancelUpdateUser;
+        private System.Windows.Forms.DataGridView dgv_UserData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
     }
 }
 

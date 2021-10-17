@@ -26,6 +26,14 @@ namespace NoDeskDAL
         {
             var collection = db.GetCollection<T>(table);
             return collection.Find(new BsonDocument()).ToList();
+        }       
+
+        //Get all records without mapping them to an object
+        public List<BsonDocument> LoadRecordsNoMap(string table)
+        {
+            var collection = db.GetCollection<BsonDocument>(table);
+
+            return collection.Find(new BsonDocument()).ToList();
         }
 
         // Get specific records
@@ -43,6 +51,7 @@ namespace NoDeskDAL
             var filter = Builders<T>.Filter.Eq("Id", id);
             return collection.Find(filter).First();
         }
+
 
         // get specific record by field
         protected T LoadRecordByField<T>(string table, string field, string data)
