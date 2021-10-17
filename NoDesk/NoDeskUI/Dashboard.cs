@@ -90,7 +90,7 @@ namespace NoDeskUI
         {
             // chart 1
             double[] values = { 15, 35, 12 };
-            string[] labels = { "Solved", "Unresolved", "Past deadline"};
+            string[] labels = { "Closed", "Open", "Past deadline"};
             var PlotDayPie = formsPlotDayPie.Plot.AddPie(values);
             PlotDayPie.SliceLabels = labels;
             PlotDayPie.ShowLabels = true;
@@ -98,35 +98,50 @@ namespace NoDeskUI
             PlotDayPie.SliceFillColors = new Color[] { Color.Green, Color.SteelBlue, Color.DarkOrange };
             formsPlotDayPie.Render();
 
-            // chart 2
-            // generate random data to plot
-            int groupCount = 7;
-            Random rand = new(0);
-            double[] values1 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            double[] values2 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            double[] values3 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            double[] errors1 = DataGen.RandomNormal(rand, groupCount, 0, 0);
-            double[] errors2 = DataGen.RandomNormal(rand, groupCount, 0, 0);
-            double[] errors3 = DataGen.RandomNormal(rand, groupCount, 0, 0);
+            //// chart 2
+            //// generate random data to plot
+            //int groupCount = 7;
+            //Random rand = new(0);
+            //double[] values1 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            //double[] values2 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            //double[] values3 = DataGen.RandomNormal(rand, groupCount, 20, 5);
+            //double[] errors1 = DataGen.RandomNormal(rand, groupCount, 0, 0);
+            //double[] errors2 = DataGen.RandomNormal(rand, groupCount, 0, 0);
+            //double[] errors3 = DataGen.RandomNormal(rand, groupCount, 0, 0);
 
-            // group all data together
-            string[] groupNames = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-            string[] seriesNames = { "Unresolved", "Past deadline", "Resolved" };
-            double[][] valuesBySeries = { values1, values2, values3 };
-            double[][] errorsBySeries = { errors1, errors2, errors3 };
+            //// group all data together
+            //string[] groupNames = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            //string[] seriesNames = { "Unresolved", "Past deadline", "Resolved" };
+            //double[][] valuesBySeries = { values1, values2, values3 };
+            //double[][] errorsBySeries = { errors1, errors2, errors3 };
 
-            chartWeek.ForeColor = Color.Red;
+            //chartWeek.ForeColor = Color.Red;
 
-            // add the grouped bar plots and show a legend
-            chartWeek.Plot.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
-            chartWeek.Plot.Legend(location: Alignment.UpperRight);
+            //// add the grouped bar plots and show a legend
+            //chartWeek.Plot.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
+            //chartWeek.Plot.Legend(location: Alignment.UpperRight);
 
 
+
+            //chartWeek.BackColor = Color.White;
+            //chartWeek.Plot.SetAxisLimits(yMin: 0);
+            
+            //chartWeek.Render();
+
+
+            double[] valuess = { 26, 20, 23, 7, 16, 5, 9 };
+            double[] positionss = { 0, 1, 2, 3, 4, 5, 6 };
+            string[] labelss = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            chartWeek.Plot.AddBar(valuess, positionss);
+            chartWeek.Plot.XTicks(positionss, labelss);
+            chartWeek.Plot.SetAxisLimits(yMin: 0);
 
             chartWeek.BackColor = Color.White;
             chartWeek.Plot.SetAxisLimits(yMin: 0);
-            
+
             chartWeek.Render();
+
+
         }
 
         private void IMBTN_Click(object sender, EventArgs e)
@@ -148,5 +163,6 @@ namespace NoDeskUI
         {
             MenuSwitch("KeyManagement");
         }
+
     }
 }

@@ -5,7 +5,22 @@
       "ProjectGuid": "192402a1-826c-46a0-a3f9-10c82e1479c3",
       "DisplayName": "NoDeskUI",
       "ColorIndex": 0
+    },
+    "3faf8b88-f60a-4948-a6bf-be6f0e5a131e": {
+      "ProjectGuid": "3faf8b88-f60a-4948-a6bf-be6f0e5a131e",
+      "DisplayName": "NoDeskModels",
+      "ColorIndex": 1
+    },
+    "67d3a4df-e0f8-4419-a9f8-48c8d9ef3111": {
+      "ProjectGuid": "67d3a4df-e0f8-4419-a9f8-48c8d9ef3111",
+      "DisplayName": "NoDeskDAL",
+      "ColorIndex": 2
+    },
+    "1c030ab0-4d50-4977-938b-e4d489986c99": {
+      "ProjectGuid": "1c030ab0-4d50-4977-938b-e4d489986c99",
+      "DisplayName": "Test Terminal",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }

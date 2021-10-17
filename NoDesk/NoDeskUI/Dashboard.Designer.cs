@@ -310,11 +310,11 @@ namespace NoDeskUI
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(601, 189);
+            this.label4.Location = new System.Drawing.Point(560, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 17);
+            this.label4.Size = new System.Drawing.Size(265, 17);
             this.label4.TabIndex = 17;
-            this.label4.Text = "All tickets through the week";
+            this.label4.Text = "Amount created tickets through this week";
             // 
             // Dashboard
             // 

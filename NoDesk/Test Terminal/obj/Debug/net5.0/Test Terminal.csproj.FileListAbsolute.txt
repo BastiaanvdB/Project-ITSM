@@ -59,7 +59,6 @@ C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.AssemblyInfoInputs.cache
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.AssemblyInfo.cs
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.csproj.CoreCompileInputs.cache
-C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.csproj.CopyComplete
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\ref\Test Terminal.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\Test Terminal\obj\Debug\net5.0\Test Terminal.pdb
