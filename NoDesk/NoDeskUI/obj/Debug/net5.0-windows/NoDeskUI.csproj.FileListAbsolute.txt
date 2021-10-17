@@ -28,7 +28,6 @@ C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfoInputs.cache
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.AssemblyInfo.cs
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CoreCompileInputs.cache
-C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDeskUI.csproj.CopyComplete
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\ref\NoDesk.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskUI\obj\Debug\net5.0-windows\NoDesk.pdb
