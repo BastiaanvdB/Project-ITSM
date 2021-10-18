@@ -51,7 +51,6 @@ namespace NoDeskUI
             this.PNL_CreateTicket = new System.Windows.Forms.Panel();
             this.BTN_CloseNewIncident = new System.Windows.Forms.Button();
             this.DateTime_Deadline = new System.Windows.Forms.DateTimePicker();
-            this.TXTBOX_User = new System.Windows.Forms.TextBox();
             this.BTN_ConfirmTicket = new System.Windows.Forms.Button();
             this.ComboBox_Priority = new System.Windows.Forms.ComboBox();
             this.ComboBox_Type = new System.Windows.Forms.ComboBox();
@@ -59,7 +58,6 @@ namespace NoDeskUI
             this.TXTBOX_Subject = new System.Windows.Forms.TextBox();
             this.LBL_Subject = new System.Windows.Forms.Label();
             this.LBL_Type = new System.Windows.Forms.Label();
-            this.LBL_ReportedBy = new System.Windows.Forms.Label();
             this.LBL_Priority = new System.Windows.Forms.Label();
             this.LBL_Deadline = new System.Windows.Forms.Label();
             this.LBL_Description = new System.Windows.Forms.Label();
@@ -313,7 +311,6 @@ namespace NoDeskUI
             this.PNL_CreateTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.PNL_CreateTicket.Controls.Add(this.BTN_CloseNewIncident);
             this.PNL_CreateTicket.Controls.Add(this.DateTime_Deadline);
-            this.PNL_CreateTicket.Controls.Add(this.TXTBOX_User);
             this.PNL_CreateTicket.Controls.Add(this.BTN_ConfirmTicket);
             this.PNL_CreateTicket.Controls.Add(this.ComboBox_Priority);
             this.PNL_CreateTicket.Controls.Add(this.ComboBox_Type);
@@ -321,7 +318,6 @@ namespace NoDeskUI
             this.PNL_CreateTicket.Controls.Add(this.TXTBOX_Subject);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Subject);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Type);
-            this.PNL_CreateTicket.Controls.Add(this.LBL_ReportedBy);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Priority);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Deadline);
             this.PNL_CreateTicket.Controls.Add(this.LBL_Description);
@@ -345,26 +341,19 @@ namespace NoDeskUI
             // 
             // DateTime_Deadline
             // 
-            this.DateTime_Deadline.Location = new System.Drawing.Point(198, 278);
+            this.DateTime_Deadline.Location = new System.Drawing.Point(198, 236);
             this.DateTime_Deadline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTime_Deadline.MaxDate = new System.DateTime(2025, 10, 5, 0, 0, 0, 0);
-            this.DateTime_Deadline.MinDate = new System.DateTime(2021, 10, 5, 0, 0, 0, 0);
+            this.DateTime_Deadline.MinDate = new System.DateTime(2021, 10, 18, 20, 55, 54, 0);
             this.DateTime_Deadline.Name = "DateTime_Deadline";
             this.DateTime_Deadline.Size = new System.Drawing.Size(231, 23);
             this.DateTime_Deadline.TabIndex = 17;
-            this.DateTime_Deadline.Value = new System.DateTime(2021, 10, 5, 0, 0, 0, 0);
-            // 
-            // TXTBOX_User
-            // 
-            this.TXTBOX_User.Location = new System.Drawing.Point(198, 200);
-            this.TXTBOX_User.Name = "TXTBOX_User";
-            this.TXTBOX_User.Size = new System.Drawing.Size(231, 23);
-            this.TXTBOX_User.TabIndex = 16;
+            this.DateTime_Deadline.Value = new System.DateTime(2021, 10, 18, 20, 55, 54, 0);
             // 
             // BTN_ConfirmTicket
             // 
             this.BTN_ConfirmTicket.BackColor = System.Drawing.Color.White;
-            this.BTN_ConfirmTicket.Location = new System.Drawing.Point(119, 381);
+            this.BTN_ConfirmTicket.Location = new System.Drawing.Point(132, 377);
             this.BTN_ConfirmTicket.Name = "BTN_ConfirmTicket";
             this.BTN_ConfirmTicket.Size = new System.Drawing.Size(253, 28);
             this.BTN_ConfirmTicket.TabIndex = 15;
@@ -375,7 +364,7 @@ namespace NoDeskUI
             // ComboBox_Priority
             // 
             this.ComboBox_Priority.FormattingEnabled = true;
-            this.ComboBox_Priority.Location = new System.Drawing.Point(198, 239);
+            this.ComboBox_Priority.Location = new System.Drawing.Point(198, 197);
             this.ComboBox_Priority.Name = "ComboBox_Priority";
             this.ComboBox_Priority.Size = new System.Drawing.Size(231, 23);
             this.ComboBox_Priority.TabIndex = 13;
@@ -390,7 +379,7 @@ namespace NoDeskUI
             // 
             // TXTBOX_Description
             // 
-            this.TXTBOX_Description.Location = new System.Drawing.Point(198, 310);
+            this.TXTBOX_Description.Location = new System.Drawing.Point(198, 268);
             this.TXTBOX_Description.Name = "TXTBOX_Description";
             this.TXTBOX_Description.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TXTBOX_Description.Size = new System.Drawing.Size(231, 23);
@@ -425,23 +414,12 @@ namespace NoDeskUI
             this.LBL_Type.TabIndex = 6;
             this.LBL_Type.Text = "Type of incident";
             // 
-            // LBL_ReportedBy
-            // 
-            this.LBL_ReportedBy.AutoSize = true;
-            this.LBL_ReportedBy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LBL_ReportedBy.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LBL_ReportedBy.Location = new System.Drawing.Point(43, 202);
-            this.LBL_ReportedBy.Name = "LBL_ReportedBy";
-            this.LBL_ReportedBy.Size = new System.Drawing.Size(96, 15);
-            this.LBL_ReportedBy.TabIndex = 5;
-            this.LBL_ReportedBy.Text = "Reported by user";
-            // 
             // LBL_Priority
             // 
             this.LBL_Priority.AutoSize = true;
             this.LBL_Priority.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Priority.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LBL_Priority.Location = new System.Drawing.Point(43, 242);
+            this.LBL_Priority.Location = new System.Drawing.Point(43, 200);
             this.LBL_Priority.Name = "LBL_Priority";
             this.LBL_Priority.Size = new System.Drawing.Size(45, 15);
             this.LBL_Priority.TabIndex = 4;
@@ -452,7 +430,7 @@ namespace NoDeskUI
             this.LBL_Deadline.AutoSize = true;
             this.LBL_Deadline.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Deadline.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LBL_Deadline.Location = new System.Drawing.Point(43, 278);
+            this.LBL_Deadline.Location = new System.Drawing.Point(43, 236);
             this.LBL_Deadline.Name = "LBL_Deadline";
             this.LBL_Deadline.Size = new System.Drawing.Size(54, 15);
             this.LBL_Deadline.TabIndex = 3;
@@ -463,7 +441,7 @@ namespace NoDeskUI
             this.LBL_Description.AutoSize = true;
             this.LBL_Description.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LBL_Description.Location = new System.Drawing.Point(43, 314);
+            this.LBL_Description.Location = new System.Drawing.Point(43, 272);
             this.LBL_Description.Name = "LBL_Description";
             this.LBL_Description.Size = new System.Drawing.Size(68, 15);
             this.LBL_Description.TabIndex = 2;
@@ -675,13 +653,11 @@ namespace NoDeskUI
         private System.Windows.Forms.TextBox TXTBOX_Subject;
         private System.Windows.Forms.Label LBL_Subject;
         private System.Windows.Forms.Label LBL_Type;
-        private System.Windows.Forms.Label LBL_ReportedBy;
         private System.Windows.Forms.Label LBL_Priority;
         private System.Windows.Forms.Label LBL_Deadline;
         private System.Windows.Forms.Label LBL_Description;
         private System.Windows.Forms.Label LBL_CreateTicket;
         private System.Windows.Forms.DateTimePicker DateTime_Deadline;
-        private System.Windows.Forms.TextBox TXTBOX_User;
         private System.Windows.Forms.Button BTN_CloseNewIncident;
         private System.Windows.Forms.TextBox TXT_UserTransfer;
         private System.Windows.Forms.Label LBL_Transfertouser;

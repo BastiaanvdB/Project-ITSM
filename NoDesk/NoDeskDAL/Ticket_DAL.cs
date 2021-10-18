@@ -30,7 +30,8 @@ namespace NoDeskDAL
         public void UpdateTicketStatus(Ticket ticket)
         {
             var update = Builders<Ticket>.Update
-                .Set(P => P.Status, ticket.Status);
+                .Set(P => P.Status, ticket.Status)
+                .Set(P => P.ClosedAt, ticket.ClosedAt);
             UpdateRecordById("Tickets", ticket.Id, update);
         }
 

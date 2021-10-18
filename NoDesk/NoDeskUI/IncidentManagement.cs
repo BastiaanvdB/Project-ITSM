@@ -19,13 +19,15 @@ namespace NoDeskUI
     {
         private Dashboard _dashboard;
         private Ticket_Service _ticketService;
-        private Login _login;
+        private User_Service _us;
         private User _currentUser;
+        private Login _login;
         public IncidentManagement(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
             _login = login;
             _currentUser = user;
+            _us = new User_Service();
             _ticketService = new Ticket_Service();
             InitializeComponent();
             LoginInitialize();
@@ -127,8 +129,13 @@ namespace NoDeskUI
 
             foreach (var ticket in TicketList)
             {
-                DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.ClosedAt, ticket.Status, ticket.Text);
+                if (ticket.Company == _currentUser.Company.CompanyName)
+                {
+                    DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.Deadline, ticket.Status, ticket.Text);
+                }
             }
+            
+            
         }
 
 
@@ -201,7 +208,7 @@ namespace NoDeskUI
 
         private void BTN_ConfirmTicket_Click(object sender, EventArgs e)
         {
-            if (TXTBOX_Subject.Text != "" && ComboBox_Type != null && TXTBOX_User.Text != "" && ComboBox_Priority != null && DateTime_Deadline != null && TXTBOX_Description.Text != "")
+            if (TXTBOX_Subject.Text != "" && ComboBox_Type != null && ComboBox_Priority != null && DateTime_Deadline != null && TXTBOX_Description.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to create a new incident ticket?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -209,7 +216,6 @@ namespace NoDeskUI
                     Ticket ticket = new Ticket();
 
                     ticket.Subject = TXTBOX_Subject.Text;
-
 
 
                     string Type = ComboBox_Type.Text;
@@ -225,10 +231,12 @@ namespace NoDeskUI
                     {
                         ticket.Type = TypeIncident.Service;
                     }
-                    ticket.Creator = TXTBOX_User.Text;
 
+                    string CurrentUser = $"{_currentUser.Firstname} {_currentUser.Lastname}";
+                    ticket.Creator = CurrentUser;
 
-                  
+                    ticket.Company = _currentUser.Company.CompanyName;
+                     
                     string priority = ComboBox_Priority.Text;
                     if (priority == "Low")
                     {
@@ -244,8 +252,8 @@ namespace NoDeskUI
                     }
 
 
-
-                    ticket.ClosedAt = DateTime_Deadline.Value;
+                    DateTime_Deadline.MinDate = DateTime.Today;
+                    ticket.Deadline = DateTime_Deadline.Value;
                     ticket.Text = TXTBOX_Description.Text;
                     ticket.CreatedAt = DateTime.Now;                    // Datum van creëren is automatisch nu
                     ticket.Status = TicketStatus.Open;                  // Status is automatisch open
@@ -284,6 +292,7 @@ namespace NoDeskUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     ticket.Status = TicketStatus.Closed;
+                    ticket.ClosedAt = DateTime.Now;
                     _ticketService.UpdateTicketStatus(ticket);
 
                     FillDataGrid();                                     // refresh data

@@ -14,10 +14,14 @@ namespace NoDeskModels
         public string Text { get; set; }
         [BsonElement("TicketCreatedBy")]
         public string Creator { get; set; }
+        [BsonElement("Company")]
+        public string Company { get; set; }
         [BsonElement("Status")]
         public TicketStatus Status { get; set; }
         [BsonElement("TicketCreatedAt")]
         public DateTime CreatedAt { get; set; }
+        [BsonElement("Deadline")]
+        public DateTime Deadline { get; set; }
         [BsonElement("TicketClosedAt")]
         public DateTime ClosedAt { get; set; }
         [BsonElement("Type")]
