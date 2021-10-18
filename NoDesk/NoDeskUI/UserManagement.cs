@@ -191,7 +191,7 @@ namespace NoDeskUI
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            MenuSwitch("IncidentManagement");
+            MenuSwitch("Logout");
         }
 
         private void buttonKeyManagement_Click(object sender, EventArgs e)
