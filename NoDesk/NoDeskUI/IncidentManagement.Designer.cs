@@ -29,7 +29,7 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncidentManagement));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -38,7 +38,6 @@ namespace NoDeskUI
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.KMBTN = new System.Windows.Forms.Button();
-            this.APBTN = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
@@ -135,7 +134,6 @@ namespace NoDeskUI
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
             this.MenuPanel.Controls.Add(this.buttonLogout);
             this.MenuPanel.Controls.Add(this.KMBTN);
-            this.MenuPanel.Controls.Add(this.APBTN);
             this.MenuPanel.Controls.Add(this.UMBTN);
             this.MenuPanel.Controls.Add(this.IMBTN);
             this.MenuPanel.Controls.Add(this.DashboardBTN);
@@ -168,30 +166,13 @@ namespace NoDeskUI
             this.KMBTN.ForeColor = System.Drawing.Color.White;
             this.KMBTN.Image = global::NoDeskUI.Properties.Resources.key_6_24;
             this.KMBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KMBTN.Location = new System.Drawing.Point(679, 0);
+            this.KMBTN.Location = new System.Drawing.Point(532, 0);
             this.KMBTN.Name = "KMBTN";
             this.KMBTN.Size = new System.Drawing.Size(183, 41);
             this.KMBTN.TabIndex = 16;
             this.KMBTN.Text = "Key Management";
             this.KMBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.KMBTN.UseVisualStyleBackColor = false;
-            // 
-            // APBTN
-            // 
-            this.APBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.APBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.APBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.APBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.APBTN.ForeColor = System.Drawing.Color.White;
-            this.APBTN.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
-            this.APBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.APBTN.Location = new System.Drawing.Point(532, 0);
-            this.APBTN.Name = "APBTN";
-            this.APBTN.Size = new System.Drawing.Size(147, 41);
-            this.APBTN.TabIndex = 15;
-            this.APBTN.Text = "Admin Panel";
-            this.APBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.APBTN.UseVisualStyleBackColor = false;
             // 
             // UMBTN
             // 
@@ -522,8 +503,8 @@ namespace NoDeskUI
             // 
             this.DGV_Incidents.AllowUserToAddRows = false;
             this.DGV_Incidents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.DGV_Incidents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DGV_Incidents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Incidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Incidents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_ID,
@@ -684,7 +665,6 @@ namespace NoDeskUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BTN_Transfer;
-        private System.Windows.Forms.Button APBTN;
         private System.Windows.Forms.Button KMBTN;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Panel PNL_CreateTicket;

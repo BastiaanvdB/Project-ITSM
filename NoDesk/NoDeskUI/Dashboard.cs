@@ -9,19 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScottPlot;
 using ScottPlot.Renderable;
+using NoDeskLogic;
 using NoDeskModels;
+using System.Globalization;
+
 namespace NoDeskUI
 {
     public partial class Dashboard : Form
     {
         private User _CurrentUser;
         private Login _login;
+        private Ticket_Service _ticket_Service;
 
         public Dashboard(User user, Login login)
         {
             InitializeComponent();
             _CurrentUser = user;
             _login = login;
+            _ticket_Service = new Ticket_Service();
             LoginInitialize();
         }
 
@@ -40,17 +45,14 @@ namespace NoDeskUI
             switch(_CurrentUser.Role)
             {
                 case Roles.user:
-                    APBTN.Hide();
                     KMBTN.Hide();
                     break;
                 case Roles.admin:
-                    APBTN.Show();
                     KMBTN.Hide();
                     break;
                 case Roles.god:
                     UMBTN.Hide();
                     IMBTN.Hide();
-                    APBTN.Show();
                     KMBTN.Show();
                     break;
             }
@@ -85,10 +87,9 @@ namespace NoDeskUI
             }
         }
 
-
         private void TestCharts()
         {
-            // chart 1
+            // chart day
             double[] values = { 15, 35, 12 };
             string[] labels = { "Closed", "Open", "Past deadline"};
             var PlotDayPie = formsPlotDayPie.Plot.AddPie(values);
@@ -98,38 +99,44 @@ namespace NoDeskUI
             PlotDayPie.SliceFillColors = new Color[] { Color.Green, Color.SteelBlue, Color.DarkOrange };
             formsPlotDayPie.Render();
 
-            //// chart 2
-            //// generate random data to plot
-            //int groupCount = 7;
-            //Random rand = new(0);
-            //double[] values1 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            //double[] values2 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            //double[] values3 = DataGen.RandomNormal(rand, groupCount, 20, 5);
-            //double[] errors1 = DataGen.RandomNormal(rand, groupCount, 0, 0);
-            //double[] errors2 = DataGen.RandomNormal(rand, groupCount, 0, 0);
-            //double[] errors3 = DataGen.RandomNormal(rand, groupCount, 0, 0);
 
-            //// group all data together
-            //string[] groupNames = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-            //string[] seriesNames = { "Unresolved", "Past deadline", "Resolved" };
-            //double[][] valuesBySeries = { values1, values2, values3 };
-            //double[][] errorsBySeries = { errors1, errors2, errors3 };
+            // chart week
+            int mondayAmountTicket = 0, tuesdayAmountTicket = 0, wednesdayAmountTicket = 0, thursdayAmountTicket = 0, 
+                fridayAmountTicket = 0, saturdayAmountTicket = 0, sundayAmountTicket = 0;
+            List<Ticket> ticketList = _ticket_Service.GetTickets();
 
-            //chartWeek.ForeColor = Color.Red;
+            foreach (Ticket ticket in ticketList)
+            {
+                if ((GetWeekNumber(ticket.CreatedAt.Date) == GetWeekNumber(DateTime.Now.Date)))
+                {
+                    switch (ticket.CreatedAt.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                            mondayAmountTicket++;
+                            break;
+                        case DayOfWeek.Tuesday:
+                            tuesdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Wednesday:
+                            wednesdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Thursday:
+                            thursdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Friday:
+                            fridayAmountTicket++;
+                            break;
+                        case DayOfWeek.Saturday:
+                            saturdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Sunday:
+                            sundayAmountTicket++;
+                            break;
+                    }
+                }
+            }
 
-            //// add the grouped bar plots and show a legend
-            //chartWeek.Plot.AddBarGroups(groupNames, seriesNames, valuesBySeries, errorsBySeries);
-            //chartWeek.Plot.Legend(location: Alignment.UpperRight);
-
-
-
-            //chartWeek.BackColor = Color.White;
-            //chartWeek.Plot.SetAxisLimits(yMin: 0);
-            
-            //chartWeek.Render();
-
-
-            double[] valuess = { 26, 20, 23, 7, 16, 5, 9 };
+            double[] valuess = { mondayAmountTicket, tuesdayAmountTicket, wednesdayAmountTicket, thursdayAmountTicket, fridayAmountTicket, saturdayAmountTicket, sundayAmountTicket };
             double[] positionss = { 0, 1, 2, 3, 4, 5, 6 };
             string[] labelss = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
             chartWeek.Plot.AddBar(valuess, positionss);
@@ -140,8 +147,13 @@ namespace NoDeskUI
             chartWeek.Plot.SetAxisLimits(yMin: 0);
 
             chartWeek.Render();
+        }
 
-
+        private static int GetWeekNumber(DateTime dtPassed)
+        {
+            CultureInfo ciCurr = CultureInfo.CurrentCulture;
+            int weekNum = ciCurr.Calendar.GetWeekOfYear(dtPassed, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            return weekNum;
         }
 
         private void IMBTN_Click(object sender, EventArgs e)
@@ -163,6 +175,5 @@ namespace NoDeskUI
         {
             MenuSwitch("KeyManagement");
         }
-
     }
 }

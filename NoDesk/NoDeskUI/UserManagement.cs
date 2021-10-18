@@ -37,17 +37,14 @@ namespace NoDeskUI
             switch (_currentUser.Role)
             {
                 case Roles.user:
-                    APBTN.Hide();
                     KMBTN.Hide();
                     break;
                 case Roles.admin:
-                    APBTN.Show();
                     KMBTN.Hide();
                     break;
                 case Roles.god:
                     UMBTN.Hide();
                     IMBTN.Hide();
-                    APBTN.Show();
                     KMBTN.Show();
                     break;
             }

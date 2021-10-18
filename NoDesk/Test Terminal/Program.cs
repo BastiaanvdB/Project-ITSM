@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using MongoDB.Bson;
 using NoDeskLogic;
 using NoDeskModels;
@@ -11,6 +12,12 @@ namespace Test_Terminal
         {
             Program program = new Program();
             program.Start();
+        }
+        private static int GetWeekNumber(DateTime dtPassed)
+        {
+            CultureInfo ciCurr = CultureInfo.CurrentCulture;
+            int weekNum = ciCurr.Calendar.GetWeekOfYear(dtPassed, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            return weekNum;
         }
 
         public void Start()
@@ -31,29 +38,61 @@ namespace Test_Terminal
 
             Ticket_Service ticket_Service = new Ticket_Service();
 
-            int openCount = 0;
-            int closedCount = 0;
-            int delayedCount = 0;
+            int mondayAmountTicket = 0;
+            int tuesdayAmountTicket = 0;
+            int wednesdayAmountTicket = 0;
+            int thursdayAmountTicket = 0;
+            int fridayAmountTicket = 0;
+            int saturdayAmountTicket = 0;
+            int sundayAmountTicket = 0;
 
             List<Ticket> ticketList = ticket_Service.GetTickets();
             foreach (Ticket ticket in ticketList)
             {
-                if((ticket.CreatedAt.Date == DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
+
+
+                if(GetWeekNumber(ticket.CreatedAt.Date) == GetWeekNumber(DateTime.Now.Date))
                 {
-                    openCount++;
-                }
-                else if ((ticket.CreatedAt.Date == DateTime.Now.Date) && (ticket.Status == TicketStatus.Closed))
-                {
-                    closedCount++;
-                }
-                else if ((ticket.CreatedAt.Date < DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
-                {
-                    delayedCount++;
+                    switch(ticket.CreatedAt.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                            mondayAmountTicket++;
+                            break;
+                        case DayOfWeek.Tuesday:
+                            tuesdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Wednesday:
+                            wednesdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Thursday:
+                            thursdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Friday:
+                            fridayAmountTicket++;
+                            break;
+                        case DayOfWeek.Saturday:
+                            saturdayAmountTicket++;
+                            break;
+                        case DayOfWeek.Sunday:
+                            sundayAmountTicket++;
+                            break;
+                    }
                 }
             }
-            Console.WriteLine($"Open tickets: {openCount}");
-            Console.WriteLine($"closed tickets: {closedCount}");
-            Console.WriteLine($"delayed tickets: {delayedCount}");
+            Console.WriteLine($"Monday: {mondayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Tuesday: {tuesdayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Wednesday: {wednesdayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Thursday: {thursdayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Friday: {fridayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Saturday: {saturdayAmountTicket}");
+            Console.WriteLine();
+            Console.WriteLine($"Sunday: {sundayAmountTicket}");
+            Console.WriteLine();
 
             Console.ReadKey();
         }

@@ -29,8 +29,8 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagment));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -39,7 +39,6 @@ namespace NoDeskUI
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.KMBTN = new System.Windows.Forms.Button();
-            this.APBTN = new System.Windows.Forms.Button();
             this.UMBTN = new System.Windows.Forms.Button();
             this.IMBTN = new System.Windows.Forms.Button();
             this.DashboardBTN = new System.Windows.Forms.Button();
@@ -122,7 +121,6 @@ namespace NoDeskUI
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
             this.MenuPanel.Controls.Add(this.buttonLogout);
             this.MenuPanel.Controls.Add(this.KMBTN);
-            this.MenuPanel.Controls.Add(this.APBTN);
             this.MenuPanel.Controls.Add(this.UMBTN);
             this.MenuPanel.Controls.Add(this.IMBTN);
             this.MenuPanel.Controls.Add(this.DashboardBTN);
@@ -155,30 +153,13 @@ namespace NoDeskUI
             this.KMBTN.ForeColor = System.Drawing.Color.White;
             this.KMBTN.Image = global::NoDeskUI.Properties.Resources.key_6_24;
             this.KMBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KMBTN.Location = new System.Drawing.Point(679, 0);
+            this.KMBTN.Location = new System.Drawing.Point(532, 0);
             this.KMBTN.Name = "KMBTN";
             this.KMBTN.Size = new System.Drawing.Size(183, 41);
             this.KMBTN.TabIndex = 17;
             this.KMBTN.Text = "Key Management";
             this.KMBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.KMBTN.UseVisualStyleBackColor = false;
-            // 
-            // APBTN
-            // 
-            this.APBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.APBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.APBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.APBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.APBTN.ForeColor = System.Drawing.Color.White;
-            this.APBTN.Image = global::NoDeskUI.Properties.Resources.administrator_2_24;
-            this.APBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.APBTN.Location = new System.Drawing.Point(532, 0);
-            this.APBTN.Name = "APBTN";
-            this.APBTN.Size = new System.Drawing.Size(147, 41);
-            this.APBTN.TabIndex = 16;
-            this.APBTN.Text = "Admin Panel";
-            this.APBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.APBTN.UseVisualStyleBackColor = false;
             // 
             // UMBTN
             // 
@@ -360,14 +341,14 @@ namespace NoDeskUI
             this.dgv_UserData.AllowUserToDeleteRows = false;
             this.dgv_UserData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgv_UserData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UserData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_UserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -380,14 +361,14 @@ namespace NoDeskUI
             this.dgv_UserData.MultiSelect = false;
             this.dgv_UserData.Name = "dgv_UserData";
             this.dgv_UserData.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UserData.RowHeadersVisible = false;
             this.dgv_UserData.RowTemplate.Height = 25;
             this.dgv_UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -479,7 +460,6 @@ namespace NoDeskUI
         private System.Windows.Forms.Button btn_UM_EditUser;
         private System.Windows.Forms.Button btn_UM_DeleteUser;
         private System.Windows.Forms.Button btn_UM_Refresh;
-        private System.Windows.Forms.Button APBTN;
         private System.Windows.Forms.Button KMBTN;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.ColumnHeader col_ID;
