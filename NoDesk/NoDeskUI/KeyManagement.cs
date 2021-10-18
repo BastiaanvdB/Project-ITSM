@@ -111,6 +111,7 @@ namespace NoDeskUI
             else
             {
                 buttonCopy.Enabled = false;
+                textBoxKeyOutput.Clear();
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show("Enter a company name!", "Error at generating key", buttons, MessageBoxIcon.Warning);
             }

@@ -64,6 +64,9 @@ namespace NoDeskUI
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.textBoxKeyOutput = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.pnl_UpdateUser.SuspendLayout();
@@ -417,12 +420,50 @@ namespace NoDeskUI
             this.col_Role.Name = "col_Role";
             this.col_Role.ReadOnly = true;
             // 
+            // buttonCopy
+            // 
+            this.buttonCopy.BackColor = System.Drawing.Color.White;
+            this.buttonCopy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCopy.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCopy.Location = new System.Drawing.Point(947, 561);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(77, 25);
+            this.buttonCopy.TabIndex = 19;
+            this.buttonCopy.Text = "Copy Key";
+            this.buttonCopy.UseVisualStyleBackColor = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            // 
+            // textBoxKeyOutput
+            // 
+            this.textBoxKeyOutput.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxKeyOutput.Location = new System.Drawing.Point(831, 402);
+            this.textBoxKeyOutput.Multiline = true;
+            this.textBoxKeyOutput.Name = "textBoxKeyOutput";
+            this.textBoxKeyOutput.ReadOnly = true;
+            this.textBoxKeyOutput.Size = new System.Drawing.Size(193, 153);
+            this.textBoxKeyOutput.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(876, 378);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 21);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Invitation Key:";
+            // 
             // UserManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1036, 634);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxKeyOutput);
+            this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.pnl_UpdateUser);
             this.Controls.Add(this.dgv_UserData);
             this.Controls.Add(this.btn_UM_Refresh);
@@ -480,6 +521,9 @@ namespace NoDeskUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
+        private System.Windows.Forms.Button buttonCopy;
+        private System.Windows.Forms.TextBox textBoxKeyOutput;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -13,12 +13,14 @@ namespace NoDeskUI
         private User_Service _us;
         private Login _login;
         private User _currentUser;
+        private KeyCheck _keyCheck;
         public UserManagment(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
             _login = login;
             _currentUser = user;
             _us = new User_Service();
+            _keyCheck = new KeyCheck();
             InitializeComponent();
             LoginInitialize();
         }
@@ -28,6 +30,7 @@ namespace NoDeskUI
             pnl_UpdateUser.Hide();
             FillDataGrid();
             dgv_UserData.ClearSelection();
+            GenerateKey();
         }
 
         private void LoginInitialize()
@@ -160,6 +163,18 @@ namespace NoDeskUI
             }
             
         }
+        public void GenerateKey()
+        {
+            textBoxKeyOutput.Text = _keyCheck.CreateInviteKey(_currentUser.Company.Id.ToString());
+            if (textBoxKeyOutput.Text.Length > 0)
+            {
+                buttonCopy.Enabled = true;
+            }
+            else
+            {
+                buttonCopy.Enabled = false;
+            }
+        }
 
         private void btn_CancelUpdateUser_Click(object sender, EventArgs e)
         {
@@ -184,5 +199,11 @@ namespace NoDeskUI
             MenuSwitch("KeyManagement");
         }
 
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBoxKeyOutput.Text);
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show("Key copied to clipboard", "", buttons, MessageBoxIcon.Information);
+        }
     }
 }

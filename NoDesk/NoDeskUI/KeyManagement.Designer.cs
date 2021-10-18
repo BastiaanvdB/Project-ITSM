@@ -253,6 +253,7 @@ namespace NoDeskUI
             this.textBoxKeyOutput.Location = new System.Drawing.Point(67, 304);
             this.textBoxKeyOutput.Multiline = true;
             this.textBoxKeyOutput.Name = "textBoxKeyOutput";
+            this.textBoxKeyOutput.ReadOnly = true;
             this.textBoxKeyOutput.Size = new System.Drawing.Size(230, 180);
             this.textBoxKeyOutput.TabIndex = 13;
             // 
