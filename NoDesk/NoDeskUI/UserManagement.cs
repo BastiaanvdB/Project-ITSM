@@ -46,8 +46,8 @@ namespace NoDeskUI
                     KMBTN.Hide();
                     break;
                 case Roles.god:
-                    UMBTN.Hide();
-                    IMBTN.Hide();
+                    UMBTN.Show();
+                    IMBTN.Show();
                     KMBTN.Show();
                     break;
             }

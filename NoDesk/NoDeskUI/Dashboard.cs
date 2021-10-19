@@ -32,10 +32,9 @@ namespace NoDeskUI
 
         private void NoDesk_Load(object sender, EventArgs e)
         {
-            TestCharts();
+            LoadCharts();
         }
 
-        //tijdelijk 
         private void LoginInitialize()
         {
 
@@ -51,8 +50,8 @@ namespace NoDeskUI
                     KMBTN.Hide();
                     break;
                 case Roles.god:
-                    UMBTN.Hide();
-                    IMBTN.Hide();
+                    UMBTN.Show();
+                    IMBTN.Show();
                     KMBTN.Show();
                     break;
             }
@@ -87,7 +86,7 @@ namespace NoDeskUI
             }
         }
 
-        private void TestCharts()
+        private void LoadCharts()
         {
             // chart day
             double[] values = { 15, 35, 12 };
@@ -107,7 +106,7 @@ namespace NoDeskUI
 
             foreach (Ticket ticket in ticketList)
             {
-                if ((GetWeekNumber(ticket.CreatedAt.Date) == GetWeekNumber(DateTime.Now.Date)))
+                if ((GetWeekNumber(ticket.CreatedAt.Date) == GetWeekNumber(DateTime.Now.Date)) && (ticket.Company.Id == _CurrentUser.Company.Id))
                 {
                     switch (ticket.CreatedAt.DayOfWeek)
                     {

@@ -56,8 +56,8 @@ namespace NoDeskUI
                     KMBTN.Hide();
                     break;
                 case Roles.god:
-                    UMBTN.Hide();
-                    IMBTN.Hide();
+                    UMBTN.Show();
+                    IMBTN.Show();
                     KMBTN.Show();
                     break;
             }
@@ -129,7 +129,7 @@ namespace NoDeskUI
 
             foreach (var ticket in TicketList)
             {
-                if (ticket.Company == _currentUser.Company.CompanyName)
+                if (ticket.Company.Id == _currentUser.Company.Id)
                 {
                     DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.Deadline, ticket.Status, ticket.Text);
                 }
@@ -235,7 +235,7 @@ namespace NoDeskUI
                     string CurrentUser = $"{_currentUser.Firstname} {_currentUser.Lastname}";
                     ticket.Creator = CurrentUser;
 
-                    ticket.Company = _currentUser.Company.CompanyName;
+                    ticket.Company = _currentUser.Company;
                      
                     string priority = ComboBox_Priority.Text;
                     if (priority == "Low")
