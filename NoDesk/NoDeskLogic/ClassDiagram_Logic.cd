@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NoDeskLogic.Company_Service">
+    <Position X="2.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAkAAAAQAAACAAAAAAAAgQAAIAAAAAAA=</HashCode>
+      <FileName>Company_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoDeskLogic.Ticket_Service">
+    <Position X="7.25" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAoAAAAAAAAAEAAAQIAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Ticket_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoDeskLogic.User_Service">
+    <Position X="4.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>KAAAAAAMAAAAAAAAAAAGAAEAAQAgAAAAAAAAAAAAACA=</HashCode>
+      <FileName>User_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
