@@ -38,60 +38,34 @@ namespace Test_Terminal
 
             Ticket_Service ticket_Service = new Ticket_Service();
 
-            int mondayAmountTicket = 0;
-            int tuesdayAmountTicket = 0;
-            int wednesdayAmountTicket = 0;
-            int thursdayAmountTicket = 0;
-            int fridayAmountTicket = 0;
-            int saturdayAmountTicket = 0;
-            int sundayAmountTicket = 0;
+            int openticket = 0;
+            int closedticket = 0;
+            int passeddeadlineticket = 0;
+        
 
             List<Ticket> ticketList = ticket_Service.GetTickets();
+
             foreach (Ticket ticket in ticketList)
             {
-
-
-                if(GetWeekNumber(ticket.CreatedAt.Date) == GetWeekNumber(DateTime.Now.Date))
+                if((ticket.CreatedAt.Date <= DateTime.Now.Date) && (ticket.Deadline.Date > DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
                 {
-                    switch(ticket.CreatedAt.DayOfWeek)
-                    {
-                        case DayOfWeek.Monday:
-                            mondayAmountTicket++;
-                            break;
-                        case DayOfWeek.Tuesday:
-                            tuesdayAmountTicket++;
-                            break;
-                        case DayOfWeek.Wednesday:
-                            wednesdayAmountTicket++;
-                            break;
-                        case DayOfWeek.Thursday:
-                            thursdayAmountTicket++;
-                            break;
-                        case DayOfWeek.Friday:
-                            fridayAmountTicket++;
-                            break;
-                        case DayOfWeek.Saturday:
-                            saturdayAmountTicket++;
-                            break;
-                        case DayOfWeek.Sunday:
-                            sundayAmountTicket++;
-                            break;
-                    }
+                    openticket++;
+                }
+                else if ((ticket.Deadline.Date < DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
+                {
+                    passeddeadlineticket++;
+                }
+                else if ((ticket.ClosedAt.Date == DateTime.Now.Date) && (ticket.Status == TicketStatus.Closed))
+                {
+                    closedticket++;
                 }
             }
-            Console.WriteLine($"Monday: {mondayAmountTicket}");
+
+            Console.WriteLine($"Open Tickets: {openticket}");
             Console.WriteLine();
-            Console.WriteLine($"Tuesday: {tuesdayAmountTicket}");
+            Console.WriteLine($"Closed Tickets: {closedticket}");
             Console.WriteLine();
-            Console.WriteLine($"Wednesday: {wednesdayAmountTicket}");
-            Console.WriteLine();
-            Console.WriteLine($"Thursday: {thursdayAmountTicket}");
-            Console.WriteLine();
-            Console.WriteLine($"Friday: {fridayAmountTicket}");
-            Console.WriteLine();
-            Console.WriteLine($"Saturday: {saturdayAmountTicket}");
-            Console.WriteLine();
-            Console.WriteLine($"Sunday: {sundayAmountTicket}");
+            Console.WriteLine($"Tickets passed deadline: {passeddeadlineticket}");
             Console.WriteLine();
 
             Console.ReadKey();

@@ -29,6 +29,7 @@ namespace NoDeskUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.LabelLicense = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@ namespace NoDeskUI
             this.chartWeek = new ScottPlot.FormsPlot();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.timerDiagram = new System.Windows.Forms.Timer(this.components);
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -297,6 +299,10 @@ namespace NoDeskUI
             this.label4.TabIndex = 17;
             this.label4.Text = "Amount created tickets through this week";
             // 
+            // timerDiagram
+            // 
+            this.timerDiagram.Tick += new System.EventHandler(this.timerDiagram_Tick);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -349,6 +355,7 @@ namespace NoDeskUI
         private System.Windows.Forms.Label LabelLicense;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button KMBTN;
+        private System.Windows.Forms.Timer timerDiagram;
     }
 }
 

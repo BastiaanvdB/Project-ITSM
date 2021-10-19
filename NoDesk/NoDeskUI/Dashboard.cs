@@ -55,6 +55,16 @@ namespace NoDeskUI
                     KMBTN.Show();
                     break;
             }
+
+            System.Windows.Forms.Timer timerDiagram = new System.Windows.Forms.Timer();
+            timerDiagram.Interval = 20000;//20 seconds
+            timerDiagram.Tick += new System.EventHandler(timerDiagram_Tick);
+            timerDiagram.Start();
+        }
+
+        private void timerDiagram_Tick(object sender, EventArgs e)
+        {
+            LoadCharts();
         }
 
         private void MenuSwitch(string menuOption)
@@ -88,9 +98,32 @@ namespace NoDeskUI
 
         private void LoadCharts()
         {
+            List<Ticket> ticketList = _ticket_Service.GetTickets();
+
             // chart day
-            double[] values = { 15, 35, 12 };
-            string[] labels = { "Closed", "Open", "Past deadline"};
+            int openTicket = 0, closedTicket = 0, passedDeadlineTicket = 0;
+
+            foreach (Ticket ticket in ticketList)
+            {
+                if (ticket.Company.Id == _CurrentUser.Company.Id)
+                {
+                    if ((ticket.CreatedAt.Date <= DateTime.Now.Date) && (ticket.Deadline.Date > DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
+                    {
+                        openTicket++;
+                    }
+                    else if ((ticket.Deadline.Date < DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
+                    {
+                        passedDeadlineTicket++;
+                    }
+                    else if ((ticket.ClosedAt.Date == DateTime.Now.Date) && (ticket.Status == TicketStatus.Closed))
+                    {
+                        closedTicket++;
+                    }
+                }
+            }
+
+            double[] values = { closedTicket, openTicket, passedDeadlineTicket };
+            string[] labels = { $"{closedTicket}\nClosed", $"{openTicket}\nOpen", $"{passedDeadlineTicket}\n       Past Deadline" };
             var PlotDayPie = formsPlotDayPie.Plot.AddPie(values);
             PlotDayPie.SliceLabels = labels;
             PlotDayPie.ShowLabels = true;
@@ -102,7 +135,6 @@ namespace NoDeskUI
             // chart week
             int mondayAmountTicket = 0, tuesdayAmountTicket = 0, wednesdayAmountTicket = 0, thursdayAmountTicket = 0, 
                 fridayAmountTicket = 0, saturdayAmountTicket = 0, sundayAmountTicket = 0;
-            List<Ticket> ticketList = _ticket_Service.GetTickets();
 
             foreach (Ticket ticket in ticketList)
             {
@@ -138,10 +170,9 @@ namespace NoDeskUI
             double[] valuess = { mondayAmountTicket, tuesdayAmountTicket, wednesdayAmountTicket, thursdayAmountTicket, fridayAmountTicket, saturdayAmountTicket, sundayAmountTicket };
             double[] positionss = { 0, 1, 2, 3, 4, 5, 6 };
             string[] labelss = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-            chartWeek.Plot.AddBar(valuess, positionss);
+            chartWeek.Plot.AddBar(valuess, positionss, Color.SteelBlue);
             chartWeek.Plot.XTicks(positionss, labelss);
             chartWeek.Plot.SetAxisLimits(yMin: 0);
-
             chartWeek.BackColor = Color.White;
             chartWeek.Plot.SetAxisLimits(yMin: 0);
 
