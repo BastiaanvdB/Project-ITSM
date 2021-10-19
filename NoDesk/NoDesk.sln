@@ -5,13 +5,11 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoDeskDAL", "NoDeskDAL\NoDeskDAL.csproj", "{67D3A4DF-E0F8-4419-A9F8-48C8D9EF3111}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test Terminal", "Test Terminal\Test Terminal.csproj", "{1C030AB0-4D50-4977-938B-E4D489986C99}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoDeskModels", "NoDeskModels\NoDeskModels.csproj", "{3FAF8B88-F60A-4948-A6BF-BE6F0E5A131E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoDeskUI", "NoDeskUI\NoDeskUI.csproj", "{192402A1-826C-46A0-A3F9-10C82E1479C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoDeskUI", "NoDeskUI\NoDeskUI.csproj", "{192402A1-826C-46A0-A3F9-10C82E1479C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoDeskLogic", "NoDeskLogic\NoDeskLogic.csproj", "{A0902B8F-CE04-4082-AF95-3E03ACA42412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoDeskLogic", "NoDeskLogic\NoDeskLogic.csproj", "{A0902B8F-CE04-4082-AF95-3E03ACA42412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{67D3A4DF-E0F8-4419-A9F8-48C8D9EF3111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D3A4DF-E0F8-4419-A9F8-48C8D9EF3111}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67D3A4DF-E0F8-4419-A9F8-48C8D9EF3111}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C030AB0-4D50-4977-938B-E4D489986C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C030AB0-4D50-4977-938B-E4D489986C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C030AB0-4D50-4977-938B-E4D489986C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C030AB0-4D50-4977-938B-E4D489986C99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FAF8B88-F60A-4948-A6BF-BE6F0E5A131E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FAF8B88-F60A-4948-A6BF-BE6F0E5A131E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FAF8B88-F60A-4948-A6BF-BE6F0E5A131E}.Release|Any CPU.ActiveCfg = Release|Any CPU

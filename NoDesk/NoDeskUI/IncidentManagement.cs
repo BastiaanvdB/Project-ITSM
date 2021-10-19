@@ -110,6 +110,7 @@ namespace NoDeskUI
 
         private void BTN_NewTicket_Click(object sender, EventArgs e)
         {
+            DateTime_Deadline.MinDate = DateTime.Now;
             PNL_CreateTicket.Show();
         }
 
