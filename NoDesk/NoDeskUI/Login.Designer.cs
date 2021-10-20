@@ -34,7 +34,6 @@ namespace NoDeskUI
             this.TextboxPassword = new System.Windows.Forms.TextBox();
             this.BTNLogin = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.linkLabelFP = new System.Windows.Forms.LinkLabel();
             this.linkLabelR = new System.Windows.Forms.LinkLabel();
             this.labelLogo = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -101,7 +100,6 @@ namespace NoDeskUI
             // panelLogin
             // 
             this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.panelLogin.Controls.Add(this.linkLabelFP);
             this.panelLogin.Controls.Add(this.linkLabelR);
             this.panelLogin.Controls.Add(this.labelLogo);
             this.panelLogin.Controls.Add(this.labelPassword);
@@ -113,18 +111,6 @@ namespace NoDeskUI
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(346, 364);
             this.panelLogin.TabIndex = 3;
-            // 
-            // linkLabelFP
-            // 
-            this.linkLabelFP.AutoSize = true;
-            this.linkLabelFP.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabelFP.Location = new System.Drawing.Point(121, 223);
-            this.linkLabelFP.Name = "linkLabelFP";
-            this.linkLabelFP.Size = new System.Drawing.Size(100, 15);
-            this.linkLabelFP.TabIndex = 7;
-            this.linkLabelFP.TabStop = true;
-            this.linkLabelFP.Text = "Forgot password?";
-            this.linkLabelFP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFP_LinkClicked);
             // 
             // linkLabelR
             // 
@@ -463,7 +449,6 @@ namespace NoDeskUI
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelLogo;
-        private System.Windows.Forms.LinkLabel linkLabelFP;
         private System.Windows.Forms.LinkLabel linkLabelR;
         private System.Windows.Forms.Panel panelRegistration;
         private System.Windows.Forms.GroupBox groupBoxRegRole;

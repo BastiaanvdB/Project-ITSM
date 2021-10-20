@@ -21,6 +21,24 @@ namespace NoDeskDAL
             return LoadRecords<User>("Users");
         }
 
+        public bool CheckIfUserExist(string email)
+        {
+            List<User> users = GetUserByEmail(email);
+            foreach(User user in users)
+            {
+                if(user.Email == email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private List<User> GetUserByEmail(string email)
+        {
+            return LoadRecordsByField<User>("Users", "Email", email);
+        }
+
         public List<BsonDocument> DB_GetUsersNoMap()
         {
             return LoadRecordsNoMap("Users");

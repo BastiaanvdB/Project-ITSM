@@ -263,17 +263,25 @@ namespace NoDeskUI
                 {
                     if (txtRegPassword.Text == txtRegPasswordretry.Text)
                     {
-                        User user = new User
+                        if (!_user_Service.CheckIfUserExist(txtRegEmail.Text))
                         {
-                            Firstname = txtRegFirstname.Text,
-                            Lastname = txtRegLastname.Text,
-                            Email = txtRegEmail.Text,
-                            Password = _encryption.Encrypt(txtRegPassword.Text),
-                            Company = GetCompanyById(_activationCheck.CompanyID),
-                            Role = Roles.user,
-                            ActivationKey = textBoxKey.Text
-                        };
-                        InsertUser(user);
+                            User user = new User
+                            {
+                                Firstname = txtRegFirstname.Text,
+                                Lastname = txtRegLastname.Text,
+                                Email = txtRegEmail.Text,
+                                Password = _encryption.Encrypt(txtRegPassword.Text),
+                                Company = GetCompanyById(_activationCheck.CompanyID),
+                                Role = Roles.user,
+                                ActivationKey = textBoxKey.Text
+                            };
+                            InsertUser(user);
+                        }
+                        else
+                        {
+                            MessageBoxButtons buttons = MessageBoxButtons.OK;
+                            MessageBox.Show("There is already someone registrated with this E-mail!", "Registration issue", buttons, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
@@ -379,7 +387,5 @@ namespace NoDeskUI
             panelRegistration.Hide();
             panelLogin.Show();
         }
-
-        /// Forgot Password section
     }
 }

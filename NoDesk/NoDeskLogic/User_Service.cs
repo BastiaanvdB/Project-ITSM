@@ -32,6 +32,11 @@ namespace NoDeskLogic
             return _User_DAL.DB_GetUsersNoMap();
         }
 
+        public bool CheckIfUserExist(string email)
+        {
+            return _User_DAL.CheckIfUserExist(email);
+        }
+
         public List<User> LoadUsersByCompanyName(string companyName)
         {
             return _User_DAL.LoadUsersByCompanyName(companyName);
