@@ -233,8 +233,7 @@ namespace NoDeskUI
                         ticket.Type = TypeIncident.Service;
                     }
 
-                    string CurrentUser = $"{_currentUser.Firstname} {_currentUser.Lastname}";
-                    ticket.Creator = CurrentUser;
+                    ticket.Creator = _currentUser;
 
                     ticket.Company = _currentUser.Company;
                      

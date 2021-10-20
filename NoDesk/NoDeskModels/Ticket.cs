@@ -13,7 +13,7 @@ namespace NoDeskModels
         [BsonElement("Text")]
         public string Text { get; set; }
         [BsonElement("TicketCreatedBy")]
-        public string Creator { get; set; }
+        public User Creator { get; set; }
         [BsonElement("Company")]
         public Company Company { get; set; }
         [BsonElement("Status")]
