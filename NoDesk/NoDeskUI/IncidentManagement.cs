@@ -39,6 +39,7 @@ namespace NoDeskUI
             FillDataGrid();
             FillComboBoxType();
             FillComboBoxPriority();
+            FillComboBoxUserTransfer();
             FullRowSelect();
             DGV_Incidents.ClearSelection();
         }
@@ -134,9 +135,7 @@ namespace NoDeskUI
                 {
                     DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.Deadline, ticket.Status, ticket.Text);
                 }
-            }
-            
-            
+            } 
         }
 
 
@@ -168,6 +167,16 @@ namespace NoDeskUI
             ComboBox_Priority.DataSource = priorityList;
         }
 
+        private void FillComboBoxUserTransfer()
+        {
+            List<User> usersList = _us.LoadUsersByCompanyId(_currentUser.Company.Id.ToString());
+
+            foreach (User user in usersList)
+            {
+                ComboBox_UserTransfer.Items.Add(user.Firstname);
+            }
+            ComboBox_UserTransfer.DataSource = usersList;
+        }
 
 
         // Search user in datagrid
@@ -322,26 +331,18 @@ namespace NoDeskUI
                 ObjectId Id = ObjectId.Parse(DGV_Incidents.Rows[DGV_Incidents.SelectedRows[0].Index].Cells[0].Value.ToString());
                 Ticket ticket = _ticketService.GetTicketById(Id);
 
-                if (TXT_UserTransfer.Text != "")
-                {
                     DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket?", "Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        ticket.Creator = TXT_UserTransfer.Text;
+                         //ticket.Creator = ComboBox_UserTransfer;
                         _ticketService.UpdateTicketUser(ticket);
 
                         FillDataGrid();                                     // refresh data
-                        ClearTextBoxes();
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        TXT_UserTransfer.Clear();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Oops, please make sure to enter the user you would like to transfer the ticket to!");
-                }
+                    // do not do it
+                    }     
             }
             else
             {
