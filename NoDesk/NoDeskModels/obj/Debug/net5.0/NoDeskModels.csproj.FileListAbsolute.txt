@@ -82,6 +82,18 @@ C:\Users\jesse\Source\Repos\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\No
 C:\Users\jesse\Source\Repos\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.dll
 C:\Users\jesse\Source\Repos\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\ref\NoDeskModels.dll
 C:\Users\jesse\Source\Repos\Project-ITSM\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.pdb
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.deps.json
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.dll
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\bin\Debug\net5.0\ref\NoDeskModels.dll
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.pdb
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.csproj.AssemblyReference.cache
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.AssemblyInfoInputs.cache
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.AssemblyInfo.cs
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.csproj.CoreCompileInputs.cache
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.dll
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\ref\NoDeskModels.dll
+C:\Users\basti\Desktop\NoSQL Project-Groep4\NoDesk Solution\NoDesk\NoDeskModels\obj\Debug\net5.0\NoDeskModels.pdb
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.deps.json
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\NoDeskModels.dll
 C:\Users\basti\Desktop\Project NoSQL\Project-ITSM\NoDesk\NoDeskModels\bin\Debug\net5.0\ref\NoDeskModels.dll

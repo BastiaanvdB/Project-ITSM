@@ -55,6 +55,7 @@ namespace NoDeskUI
             {
                 case Roles.user:
                     KMBTN.Hide();
+                    UMBTN.Hide();
                     break;
                 case Roles.admin:
                     KMBTN.Hide();

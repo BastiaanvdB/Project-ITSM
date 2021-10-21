@@ -45,6 +45,7 @@ namespace NoDeskUI
             {
                 case Roles.user:
                     KMBTN.Hide();
+                    UMBTN.Hide();
                     break;
                 case Roles.admin:
                     KMBTN.Hide();
@@ -57,7 +58,7 @@ namespace NoDeskUI
             }
 
             System.Windows.Forms.Timer timerDiagram = new System.Windows.Forms.Timer();
-            timerDiagram.Interval = 20000;//20 seconds
+            timerDiagram.Interval = 20000;//refresh every 20 seconds
             timerDiagram.Tick += new System.EventHandler(timerDiagram_Tick);
             timerDiagram.Start();
         }
@@ -107,7 +108,7 @@ namespace NoDeskUI
             {
                 if (ticket.Company.Id == _CurrentUser.Company.Id)
                 {
-                    if ((ticket.CreatedAt.Date <= DateTime.Now.Date) && (ticket.Deadline.Date > DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
+                    if ((ticket.CreatedAt.Date <= DateTime.Now.Date) && (ticket.Deadline.Date >= DateTime.Now.Date) && (ticket.Status == TicketStatus.Open))
                     {
                         openTicket++;
                     }
