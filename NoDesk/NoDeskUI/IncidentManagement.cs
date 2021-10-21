@@ -22,6 +22,8 @@ namespace NoDeskUI
         private User_Service _us;
         private User _currentUser;
         private Login _login;
+        private List<User> _usersList;
+
         public IncidentManagement(Dashboard dashboard, Login login, User user)
         {
             _dashboard = dashboard;
@@ -29,6 +31,7 @@ namespace NoDeskUI
             _currentUser = user;
             _us = new User_Service();
             _ticketService = new Ticket_Service();
+            _usersList = new List<User>();
             InitializeComponent();
             LoginInitialize();
         }
@@ -133,7 +136,7 @@ namespace NoDeskUI
             {
                 if (ticket.Company.Id == _currentUser.Company.Id)
                 {
-                    DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ticket.Creator, ticket.Priority, ticket.Deadline, ticket.Status, ticket.Text);
+                    DGV_Incidents.Rows.Add(ticket.Id, ticket.Subject, ($"{ticket.Creator.Firstname} {ticket.Creator.Lastname}"), ticket.Priority, ticket.Deadline, ticket.Status, ticket.Text);
                 }
             } 
         }
@@ -169,13 +172,13 @@ namespace NoDeskUI
 
         private void FillComboBoxUserTransfer()
         {
-            List<User> usersList = _us.LoadUsersByCompanyId(_currentUser.Company.Id.ToString());
-
-            foreach (User user in usersList)
+            _usersList = _us.LoadUsersByCompanyName(_currentUser.Company.CompanyName);
+            ComboBox_UserTransfer.Items.Clear();
+            foreach (User user in _usersList)
             {
-                ComboBox_UserTransfer.Items.Add(user.Firstname);
+                ComboBox_UserTransfer.Items.Add($"{user.Firstname} {user.Lastname}");
             }
-            ComboBox_UserTransfer.DataSource = usersList;
+            ComboBox_UserTransfer.SelectedIndex = 0;
         }
 
 
@@ -334,7 +337,7 @@ namespace NoDeskUI
                     DialogResult dialogResult = MessageBox.Show("Are you sure you want to transfer the ticket?", "Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                         //ticket.Creator = ComboBox_UserTransfer;
+                        ticket.Creator = _usersList[ComboBox_UserTransfer.SelectedIndex];
                         _ticketService.UpdateTicketUser(ticket);
 
                         FillDataGrid();                                     // refresh data
